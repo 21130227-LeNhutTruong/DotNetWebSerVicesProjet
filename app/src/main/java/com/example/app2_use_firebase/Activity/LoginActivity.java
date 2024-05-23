@@ -53,6 +53,16 @@ public class LoginActivity extends AppCompatActivity {
         // Callback registration
         btnLoginFacebook.registerCallback(mCallbackManager, new FacebookCallback<LoginResult>() {
             @Override
+            public void onError(@NonNull FacebookException e) {
+
+            }
+
+            @Override
+            public void onCancel() {
+
+            }
+
+            @Override
             public void onSuccess(LoginResult loginResult) {
                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(intent);
