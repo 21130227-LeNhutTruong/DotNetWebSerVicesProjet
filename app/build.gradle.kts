@@ -1,3 +1,5 @@
+import com.android.build.gradle.internal.dsl.decorator.SupportedPropertyType.Collection.List.type
+
 plugins {
     id("com.android.application")
     id("com.google.gms.google-services")
@@ -33,7 +35,10 @@ android {
     buildFeatures{
         viewBinding = true
     }
+
+
 }
+
 
 dependencies {
 
@@ -52,4 +57,11 @@ dependencies {
     implementation ("androidx.appcompat:appcompat:1.6.1")
     implementation ( "androidx.core:core-ktx:1.13.1")
 
+
+}
+
+buildscript {
+    dependencies {
+        classpath("com.google.gms:google-services:4.4.1")
+    }
 }

@@ -36,7 +36,7 @@ public class CartActivity extends  BaseActivity {
     }
 
     public void bottomNavigation() {
-        ImageView home = findViewById(R.id.imgHome);
+        LinearLayout home = findViewById(R.id.home_nav);
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

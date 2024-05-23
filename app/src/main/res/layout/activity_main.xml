@@ -21,12 +21,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingBottom="110dp">
-
+           >
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:padding="20dp"
+                android:layout_marginTop="26dp"
                 android:layout_height="match_parent">
 
                 <ImageView
@@ -246,120 +246,3 @@
     <include layout="@layout/bottom_navigation" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-    <!--            <LinearLayout-->
-    <!--                android:layout_width="match_parent"-->
-    <!--                android:layout_height="60dp"-->
-    <!--                android:layout_marginBottom="40dp"-->
-    <!--                android:orientation="horizontal"-->
-    <!--                android:background="@drawable/grey_backround"-->
-    <!--                android:layout_marginEnd="10dp"-->
-    <!--                tools:ignore="UselessLeaf">-->
-
-    <!--                <LinearLayout-->
-    <!--                    android:id="@+id/home"-->
-    <!--                    android:layout_width="0dp"-->
-    <!--                    android:layout_height="match_parent"-->
-    <!--                    android:layout_gravity="center"-->
-    <!--                    android:layout_weight="0.25"-->
-    <!--                    android:gravity="center"-->
-    <!--                    android:orientation="vertical">-->
-
-    <!--                    <ImageView-->
-    <!--                        android:id="@+id/imgHome"-->
-    <!--                        android:layout_width="wrap_content"-->
-    <!--                        android:layout_height="wrap_content"-->
-    <!--                        android:layout_gravity="center"-->
-    <!--                        android:background="@drawable/btn_1"-->
-    <!--                        tools:ignore="ContentDescription" />-->
-
-    <!--                    <TextView-->
-    <!--                        android:id="@+id/textHome"-->
-    <!--                        android:layout_width="match_parent"-->
-    <!--                        android:layout_height="wrap_content"-->
-    <!--                        android:layout_marginTop="4dp"-->
-    <!--                        android:text="Explorer"-->
-    <!--                        android:textAlignment="center"-->
-    <!--                        android:textSize="12sp" />-->
-    <!--                </LinearLayout>-->
-
-    <!--                <LinearLayout-->
-    <!--                    android:id="@+id/like"-->
-    <!--                    android:layout_width="0dp"-->
-    <!--                    android:layout_height="match_parent"-->
-    <!--                    android:layout_gravity="center"-->
-    <!--                    android:layout_weight="0.25"-->
-    <!--                    android:gravity="center"-->
-    <!--                    android:orientation="vertical">-->
-
-    <!--                    <ImageView-->
-    <!--                        android:id="@+id/imgLike"-->
-    <!--                        android:layout_width="wrap_content"-->
-    <!--                        android:layout_height="wrap_content"-->
-    <!--                        android:layout_gravity="center"-->
-    <!--                        android:background="@drawable/btn_2"-->
-    <!--                        tools:ignore="ContentDescription" />-->
-
-    <!--                    <TextView-->
-    <!--                        android:id="@+id/textLike"-->
-    <!--                        android:layout_width="match_parent"-->
-    <!--                        android:layout_height="wrap_content"-->
-    <!--                        android:layout_marginTop="4dp"-->
-    <!--                        android:text="Wishlist"-->
-    <!--                        android:textAlignment="center"-->
-    <!--                        android:textSize="12sp" />-->
-    <!--                </LinearLayout>-->
-
-    <!--                <LinearLayout-->
-    <!--                    android:id="@+id/cart"-->
-    <!--                    android:layout_width="0dp"-->
-    <!--                    android:layout_height="match_parent"-->
-    <!--                    android:layout_gravity="center"-->
-    <!--                    android:layout_weight="0.25"-->
-    <!--                    android:gravity="center"-->
-    <!--                    android:orientation="vertical">-->
-
-    <!--                    <ImageView-->
-    <!--                        android:id="@+id/imgCart"-->
-    <!--                        android:layout_width="wrap_content"-->
-    <!--                        android:layout_height="wrap_content"-->
-    <!--                        android:layout_gravity="center"-->
-    <!--                        android:background="@drawable/btn_3"-->
-    <!--                        tools:ignore="ContentDescription" />-->
-
-    <!--                    <TextView-->
-    <!--                        android:id="@+id/textCart"-->
-    <!--                        android:layout_width="match_parent"-->
-    <!--                        android:layout_height="wrap_content"-->
-    <!--                        android:layout_marginTop="4dp"-->
-    <!--                        android:text="Cart"-->
-    <!--                        android:textAlignment="center"-->
-    <!--                        android:textSize="12sp" />-->
-    <!--                </LinearLayout>-->
-
-    <!--                <LinearLayout-->
-    <!--                    android:id="@+id/profile"-->
-    <!--                    android:layout_width="0dp"-->
-    <!--                    android:layout_height="match_parent"-->
-    <!--                    android:layout_gravity="center"-->
-    <!--                    android:layout_weight="0.25"-->
-    <!--                    android:gravity="center"-->
-    <!--                    android:orientation="vertical">-->
-
-    <!--                    <ImageView-->
-    <!--                        android:id="@+id/imgProfile"-->
-    <!--                        android:layout_width="wrap_content"-->
-    <!--                        android:layout_height="wrap_content"-->
-    <!--                        android:layout_gravity="center"-->
-    <!--                        android:background="@drawable/btn_4"-->
-    <!--                        tools:ignore="ContentDescription" />-->
-
-    <!--                    <TextView-->
-    <!--                        android:id="@+id/textProfile"-->
-    <!--                        android:layout_width="match_parent"-->
-    <!--                        android:layout_height="wrap_content"-->
-    <!--                        android:layout_marginTop="4dp"-->
-    <!--                        android:text="Profile"-->
-    <!--                        android:textAlignment="center"-->
-    <!--                        android:textSize="12sp" />-->
-    <!--                </LinearLayout>-->
-    <!--            </LinearLayout>-->

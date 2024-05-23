@@ -3,6 +3,8 @@ package com.example.app2_use_firebase.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
@@ -23,6 +25,8 @@ public class NotifiActivity extends BaseActivity {
 
         super.onCreate(savedInstanceState);
         bottomNavigation();
+        Window w = getWindow();
+        w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
 
     }
 
@@ -36,7 +40,7 @@ public class NotifiActivity extends BaseActivity {
                 finish();
             }
         });
-        ImageView home = findViewById(R.id.imgHome);
+        LinearLayout home = findViewById(R.id.home_nav);
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
