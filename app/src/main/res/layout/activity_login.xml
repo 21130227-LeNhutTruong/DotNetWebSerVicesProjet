@@ -86,8 +86,8 @@
             android:textAlignment="center"
             android:textSize="@dimen/h3" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button2"
+        <com.facebook.login.widget.LoginButton
+            android:id="@+id/btn_Login_Facebook"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingLeft="15dp"
