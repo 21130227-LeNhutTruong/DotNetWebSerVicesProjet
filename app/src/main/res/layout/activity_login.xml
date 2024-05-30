@@ -97,7 +97,8 @@
             android:textSize="@dimen/h3"
             android:textColor="@color/white"
             android:background="@drawable/rectangle_radius_blue_25dp"
-            android:drawableLeft="@drawable/icon_facebook_fill_white_24"/>
+            android:drawableLeft="@drawable/icon_facebook_fill_white_24"
+            tools:ignore="MissingClass" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button3"

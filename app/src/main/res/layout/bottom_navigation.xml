@@ -78,6 +78,32 @@
                     android:textAlignment="center"
                     android:textSize="12sp" />
             </LinearLayout>
+            <LinearLayout
+                android:id="@+id/bill"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="0.25"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imgbill"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/bill_icon"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/textbill"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Bill"
+                    android:textAlignment="center"
+                    android:textSize="12sp" />
+            </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/notifi"

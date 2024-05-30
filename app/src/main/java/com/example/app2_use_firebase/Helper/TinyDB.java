@@ -32,7 +32,6 @@ import android.text.TextUtils;
 import android.util.Log;
 
 import com.example.app2_use_firebase.Domain.ItemsDomain;
-import com.example.app2_use_firebase.Domain.SliderItems;
 import com.google.gson.Gson;
 
 import java.io.File;
@@ -363,7 +362,7 @@ public class TinyDB {
 
     // Put methods
 
-    public ArrayList<ItemsDomain> getListObject(String key) {
+    public ArrayList<ItemsDomain> getListObject(String key, Class<ItemsDomain> itemsDomainClass) {
         Gson gson = new Gson();
 
         ArrayList<String> objStrings = getListString(key);

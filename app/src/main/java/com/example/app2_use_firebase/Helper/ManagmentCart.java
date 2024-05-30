@@ -4,7 +4,6 @@ import android.content.Context;
 import android.widget.Toast;
 
 import com.example.app2_use_firebase.Domain.ItemsDomain;
-import com.example.app2_use_firebase.Domain.SliderItems;
 
 import java.util.ArrayList;
 
@@ -12,10 +11,19 @@ public class ManagmentCart {
 
     private Context context;
     private TinyDB tinyDB;
+    private ArrayList<ItemsDomain> listCart;
 
     public ManagmentCart(Context context) {
         this.context = context;
         this.tinyDB = new TinyDB(context);
+        this.listCart = tinyDB.getListObject("CartList", ItemsDomain.class);
+
+    }
+
+    public void clearCart() {
+        listCart.clear();
+        TinyDB tinyDB = new TinyDB(context);
+        tinyDB.putListObject("CartList", listCart);
     }
 
     public void insertFood(ItemsDomain item) {
@@ -39,7 +47,7 @@ public class ManagmentCart {
     }
 
     public ArrayList<ItemsDomain> getListCart() {
-        return tinyDB.getListObject("CartList");
+        return tinyDB.getListObject("CartList", ItemsDomain.class);
     }
 
 

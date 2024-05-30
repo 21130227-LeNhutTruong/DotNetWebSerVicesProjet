@@ -1,5 +1,11 @@
 package com.example.app2_use_firebase.Domain;
 
+import androidx.annotation.NonNull;
+
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+
+
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -89,4 +95,10 @@ public class ItemsDomain implements Serializable {
     public void setNumberinCart(int numberinCart) {
         this.NumberinCart = numberinCart;
     }
+
+
+
+
+
+
 }

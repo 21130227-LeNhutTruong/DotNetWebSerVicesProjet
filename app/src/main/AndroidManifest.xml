@@ -43,6 +43,9 @@
             android:name=".Activity.SplashScreen2"
             android:exported="false" />
         <activity
+            android:name=".Activity.BillActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activity.BaseActivity"
             android:exported="false" />
         <activity
@@ -66,7 +69,8 @@
         <activity
             android:name="com.facebook.FacebookActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
-            android:label="@string/app_name" />
+            android:label="@string/app_name"
+            tools:ignore="RedundantLabel" />
         <activity
             android:name="com.facebook.CustomTabActivity"
             android:exported="true">
@@ -82,7 +86,8 @@
 
         <provider android:authorities="com.facebook.app.FacebookContentProvider1234"
             android:name="com.facebook.FacebookContentProvider"
-            android:exported="true" />
+            android:exported="true"
+            tools:ignore="ExportedContentProvider" />
     </application>
 
 </manifest>

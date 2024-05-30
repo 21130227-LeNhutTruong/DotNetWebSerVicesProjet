@@ -57,6 +57,15 @@ public class ProfileActivity extends BaseActivity {
                 finish();
             }
         });
+        LinearLayout bill = findViewById(R.id.bill);
+        bill.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ProfileActivity.this,BillActivity.class));
+                overridePendingTransition(0, 0);
+                finish();
+            }
+        });
 
 
     }

@@ -13,15 +13,16 @@ import androidx.viewpager2.widget.MarginPageTransformer;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.widget.ImageView;
 
+import com.example.app2_use_firebase.Adapter.ColorAdapter;
 import com.example.app2_use_firebase.Adapter.SizeAdapter;
 import com.example.app2_use_firebase.Adapter.SlideViewAdapter;
 import com.example.app2_use_firebase.Domain.ItemsDomain;
 import com.example.app2_use_firebase.Domain.SlideView;
-import com.example.app2_use_firebase.Fragment.DescriptionFragment;
-import com.example.app2_use_firebase.Fragment.ReviewFragment;
-import com.example.app2_use_firebase.Fragment.SoldFragment;
+
 import com.example.app2_use_firebase.Helper.ManagmentCart;
+import com.example.app2_use_firebase.R;
 import com.example.app2_use_firebase.databinding.ActivityDetailBinding;
 
 import java.util.ArrayList;
@@ -48,7 +49,6 @@ public class DetailActivity extends BaseActivity {
         getBundles();
         banners();
         initSize();
-        setupViewPager();
     }
 
 
@@ -64,6 +64,9 @@ public class DetailActivity extends BaseActivity {
 
         binding.recycleViewSize.setAdapter(new SizeAdapter(list));
         binding.recycleViewSize.setLayoutManager(new LinearLayoutManager(this,RecyclerView.HORIZONTAL,false));
+
+        binding.recycleViewColor.setAdapter( new ColorAdapter(list));
+        binding.recycleViewColor.setLayoutManager(new LinearLayoutManager(this,RecyclerView.VERTICAL,false));
 
 
     }
@@ -98,36 +101,11 @@ public class DetailActivity extends BaseActivity {
             object.setNumberinCart(numberOrder);
             managmentCart.insertFood(object);
         });
-        binding.btnBack.setOnClickListener(v -> startActivity(new Intent(this,MainActivity.class)));
+        ImageView btnback = findViewById(R.id.btnBack);
+        btnback.setOnClickListener(v ->  startActivity(new Intent(this,MainActivity.class)));
     }
 
-    private void setupViewPager(){
 
-        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-
-        DescriptionFragment tab1 = new DescriptionFragment();
-        ReviewFragment tab2 = new ReviewFragment();
-        SoldFragment tab3 = new SoldFragment();
-
-        Bundle bundle1 = new Bundle();
-        Bundle bundle2 = new Bundle();
-        Bundle bundle3 = new Bundle();
-
-        bundle1.putString("Description", object.getDescription());
-
-        tab1.setArguments(bundle1);
-        tab2.setArguments(bundle2);
-        tab3.setArguments(bundle3);
-
-        adapter.addFrag(tab1,"Description");
-        adapter.addFrag(tab2,"Reviews");
-        adapter.addFrag(tab3,"Sold");
-
-        binding.viewPager.setAdapter(adapter);
-        binding.tabLayout.setupWithViewPager(binding.viewPager);
-
-
-    }
 
     private class ViewPagerAdapter extends FragmentPagerAdapter {
         private final List<Fragment> mFragmentList = new ArrayList<>();
