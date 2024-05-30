@@ -51,7 +51,6 @@ dependencies {
     implementation("com.google.firebase:firebase-auth:23.0.0")
     implementation("androidx.navigation:navigation-fragment:2.7.7")
     implementation("androidx.navigation:navigation-ui:2.7.7")
-    implementation("androidx.recyclerview:recyclerview:1.3.2")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
@@ -59,9 +58,11 @@ dependencies {
     implementation ( "androidx.core:core-ktx:1.13.1")
     implementation ("com.facebook.android:facebook-login:latest.release")
 
-    implementation ("com.google.firebase:firebase-firestore")
 
-    implementation (platform("com.google.firebase:firebase-bom:33.0.0"))
 }
 
-
+buildscript {
+    dependencies {
+        classpath("com.google.gms:google-services:4.4.1")
+    }
+}
