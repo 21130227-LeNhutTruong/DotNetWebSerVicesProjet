@@ -21,7 +21,6 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
         database = FirebaseDatabase.getInstance();
 
         Window w = getWindow();
