@@ -1,13 +1,14 @@
 {
   "project_info": {
-    "project_number": "17563562609",
-    "project_id": "app2-use-firebase",
-    "storage_bucket": "app2-use-firebase.appspot.com"
+    "project_number": "730592228139",
+    "firebase_url": "https://appmobileshop-b7ca3-default-rtdb.firebaseio.com",
+    "project_id": "appmobileshop-b7ca3",
+    "storage_bucket": "appmobileshop-b7ca3.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:17563562609:android:7719810671f0f00da3e1d0",
+        "mobilesdk_app_id": "1:730592228139:android:ac90e656b19da5ae1b4b6e",
         "android_client_info": {
           "package_name": "com.example.app2_use_firebase"
         }
@@ -15,7 +16,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyA8W8L3BOVfEsn2G8479Mg9vLOBmYmoQa0"
+          "current_key": "AIzaSyAWLEvLA32anM1BMBBaUtljrN8kO1RW0-A"
         }
       ],
       "services": {

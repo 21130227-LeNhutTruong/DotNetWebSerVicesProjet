@@ -106,7 +106,6 @@ public class CartActivity extends  BaseActivity {
         bill.put("sdt", sdt);
         bill.put("paymentMethod", paymentMethod);
         bill.put("totalAmount", totalAmount);
-        bill.put("items", cartList); // Lưu sản phẩm từ giỏ hàng
 
 
         List<Map<String, Object>> items = new ArrayList<>();
@@ -117,12 +116,10 @@ public class CartActivity extends  BaseActivity {
             itemMap.put("quantity", item.getNumberinCart());
             items.add(itemMap);
         }
-        bill.put("items", items);
-
         db.collection("bills")
                 .add(bill)
                 .addOnSuccessListener(documentReference -> {Toast.makeText(CartActivity.this, "Hóa đơn đã được lưu", Toast.LENGTH_SHORT).show();
-                    clearCart();
+
                 })
                 .addOnFailureListener(e -> Toast.makeText(CartActivity.this, "Lỗi khi lưu hóa đơn", Toast.LENGTH_SHORT).show());
     }
@@ -224,9 +221,4 @@ public class CartActivity extends  BaseActivity {
         binding.totalTxt.setText("$"+total);
     }
 
-    private void clearCart() {
-        managmentCart.clearCart();
-        initCartList();
-        calculatorCart();
-    }
 }
