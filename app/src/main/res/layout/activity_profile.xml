@@ -8,7 +8,8 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginBottom="115dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -65,6 +66,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/tv_userName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="User"
@@ -72,6 +74,7 @@
                         android:textStyle="bold" />
 
                     <TextView
+                        android:id="@+id/tv_email"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="User@gmail.com"
@@ -423,7 +426,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
                     android:layout_marginBottom="30dp"
-                    android:id="@+id/signOut">
+                    android:onClick="signOut">
 
                     <ImageView
                         android:id="@+id/img_icon9"
@@ -439,7 +442,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="28dp"
-                        android:text="Persional Detail"
+                        android:text="Sign Out"
                         android:textSize="@dimen/h3"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"

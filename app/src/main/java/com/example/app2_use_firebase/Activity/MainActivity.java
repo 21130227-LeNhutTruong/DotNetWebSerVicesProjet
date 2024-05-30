@@ -1,15 +1,13 @@
 package com.example.app2_use_firebase.Activity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -21,7 +19,8 @@ import com.example.app2_use_firebase.Domain.ItemsDomain;
 import com.example.app2_use_firebase.Domain.SliderItems;
 import com.example.app2_use_firebase.R;
 import com.example.app2_use_firebase.databinding.ActivityMainBinding;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -42,10 +41,11 @@ public class MainActivity extends BaseActivity {
         initPopular();
         initSlider();
 
-
         bottomNavigation();
 
     }
+
+
 
 
     public void bottomNavigation() {
@@ -54,7 +54,7 @@ public class MainActivity extends BaseActivity {
         cart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,CartActivity.class));
+                startActivity(new Intent(MainActivity.this, CartActivity.class));
                 overridePendingTransition(0, 0);
                 finish();
             }
@@ -63,7 +63,7 @@ public class MainActivity extends BaseActivity {
         notifi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,NotifiActivity.class));
+                startActivity(new Intent(MainActivity.this, NotifiActivity.class));
                 overridePendingTransition(0, 0);
                 finish();
             }
@@ -72,7 +72,7 @@ public class MainActivity extends BaseActivity {
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,ProfileActivity.class));
+                startActivity(new Intent(MainActivity.this, ProfileActivity.class));
                 overridePendingTransition(0, 0);
                 finish();
             }
@@ -88,13 +88,13 @@ public class MainActivity extends BaseActivity {
         myRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (snapshot.exists()){
-                    for (DataSnapshot issue:snapshot.getChildren()){
+                if (snapshot.exists()) {
+                    for (DataSnapshot issue : snapshot.getChildren()) {
                         itemssSliderItems.add(issue.getValue(SliderItems.class));
 
                     }
-                    if (!itemssSliderItems.isEmpty()){
-                        binding.recyclerViewSlider.setLayoutManager(new LinearLayoutManager(MainActivity.this,RecyclerView.HORIZONTAL,false));
+                    if (!itemssSliderItems.isEmpty()) {
+                        binding.recyclerViewSlider.setLayoutManager(new LinearLayoutManager(MainActivity.this, RecyclerView.HORIZONTAL, false));
                         binding.recyclerViewSlider.setAdapter(new SlideAdapter(itemssSliderItems));
 
 
@@ -112,8 +112,6 @@ public class MainActivity extends BaseActivity {
     }
 
 
-
-
     private void initPopular() {
         DatabaseReference myRef = database.getReference("Items");
         binding.progressBarPopular.setVisibility(View.VISIBLE);
@@ -121,13 +119,13 @@ public class MainActivity extends BaseActivity {
         myRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (snapshot.exists()){
-                    for (DataSnapshot issue:snapshot.getChildren()){
+                if (snapshot.exists()) {
+                    for (DataSnapshot issue : snapshot.getChildren()) {
                         items.add(issue.getValue(ItemsDomain.class));
 
                     }
-                    if (!items.isEmpty()){
-                        binding.recyclerViewPopularProduct.setLayoutManager(new LinearLayoutManager(MainActivity.this,RecyclerView.HORIZONTAL,false));
+                    if (!items.isEmpty()) {
+                        binding.recyclerViewPopularProduct.setLayoutManager(new LinearLayoutManager(MainActivity.this, RecyclerView.HORIZONTAL, false));
                         binding.recyclerViewPopularProduct.setAdapter(new PopularAdapter(items));
 
 
@@ -151,13 +149,13 @@ public class MainActivity extends BaseActivity {
         myRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (snapshot.exists()){
-                    for (DataSnapshot issue:snapshot.getChildren()){
+                if (snapshot.exists()) {
+                    for (DataSnapshot issue : snapshot.getChildren()) {
                         items.add(issue.getValue(CategoryDomain.class));
 
                     }
-                    if (!items.isEmpty()){
-                        binding.recyclerViewOffical.setLayoutManager(new LinearLayoutManager(MainActivity.this,LinearLayoutManager.HORIZONTAL,false));
+                    if (!items.isEmpty()) {
+                        binding.recyclerViewOffical.setLayoutManager(new LinearLayoutManager(MainActivity.this, LinearLayoutManager.HORIZONTAL, false));
                         binding.recyclerViewOffical.setAdapter(new CategoryAdapter(items));
 
 
@@ -173,9 +171,6 @@ public class MainActivity extends BaseActivity {
             }
         });
     }
-
-
-
 
 
 }
