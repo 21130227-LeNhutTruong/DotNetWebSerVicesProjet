@@ -1,7 +1,12 @@
 package com.example.app2_use_firebase.Activity;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -17,6 +22,8 @@ import com.google.firebase.auth.FirebaseUser;
 public class ProfileActivity extends BaseActivity {
     ActivityProfileBinding binding;
     TextView tvUserName, tvEmail;
+    private FirebaseAuth mAuth;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +36,18 @@ public class ProfileActivity extends BaseActivity {
 
         initUI();
         initProfile();
+
+
+        mAuth = FirebaseAuth.getInstance();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if (currentUser == null) {
+            startActivity(new Intent(ProfileActivity.this, LoginActivity.class));
+            finish();
+        }
+
+
+
+
 
     }
 
@@ -91,12 +110,24 @@ public class ProfileActivity extends BaseActivity {
     }
 
     public void signOut(View view) {
-        FirebaseAuth.getInstance().signOut();
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-
-        if (user == null) {
-            Intent intent = new Intent(ProfileActivity.this, SplashScreen2.class);
-            startActivity(intent);
-        }
+       logoutUser();
     }
+
+
+
+    private void logoutUser() {
+        mAuth.signOut();
+        clearLoginState();
+        startActivity(new Intent(ProfileActivity.this, LoginActivity.class));
+        finish();
+    }
+
+    private void clearLoginState() {
+        SharedPreferences sharedPref = getSharedPreferences("LoginPrefs", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.remove("userId");
+        editor.apply();
+    }
+
+
 }

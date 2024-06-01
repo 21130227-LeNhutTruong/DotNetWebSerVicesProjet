@@ -37,7 +37,6 @@ public class NotifiActivity extends BaseActivity {
             public void onClick(View v) {
                 startActivity(new Intent(NotifiActivity.this,CartActivity.class));
                 overridePendingTransition(0, 0);
-                finish();
             }
         });
         LinearLayout home = findViewById(R.id.home_nav);
@@ -46,7 +45,6 @@ public class NotifiActivity extends BaseActivity {
             public void onClick(View v) {
                 startActivity(new Intent(NotifiActivity.this,MainActivity.class));
                 overridePendingTransition(0, 0);
-                finish();
             }
         });
         LinearLayout profile = findViewById(R.id.profile);
@@ -55,7 +53,6 @@ public class NotifiActivity extends BaseActivity {
             public void onClick(View v) {
                 startActivity(new Intent(NotifiActivity.this,ProfileActivity.class));
                 overridePendingTransition(0, 0);
-                finish();
             }
         });
         LinearLayout bill = findViewById(R.id.bill);
@@ -64,7 +61,6 @@ public class NotifiActivity extends BaseActivity {
             public void onClick(View v) {
                 startActivity(new Intent(NotifiActivity.this,BillActivity.class));
                 overridePendingTransition(0, 0);
-                finish();
             }
         });
 

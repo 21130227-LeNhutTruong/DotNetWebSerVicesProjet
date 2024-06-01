@@ -46,7 +46,6 @@ public class CartActivity extends  BaseActivity {
         managmentCart = new ManagmentCart(this);
         calculatorCart();
         setVariable();
-        initCartList();
         bottomNavigation();
 
         db = FirebaseFirestore.getInstance();
@@ -132,11 +131,16 @@ public class CartActivity extends  BaseActivity {
             Toast.makeText(this, "Địa chỉ không để trống", Toast.LENGTH_SHORT).show();
             return false;
         }
-        if (sdt.isEmpty() || sdt.length() < 10) {
+        if (!isValidPhoneNumber(sdt)) {
             Toast.makeText(this, "Số điện thoại không hợp lệ", Toast.LENGTH_SHORT).show();
             return false;
         }
         return true;
+
+    }
+    private boolean isValidPhoneNumber(String phoneNumber) {
+        String phoneNumberPattern = "^(\\+84|0)\\d{9}$";
+        return phoneNumber.matches(phoneNumberPattern);
     }
     private void setupCartList() {
         if (managmentCart.getListCart().isEmpty()) {
@@ -158,7 +162,6 @@ public class CartActivity extends  BaseActivity {
             public void onClick(View v) {
                 startActivity(new Intent(CartActivity.this,MainActivity.class));
                 overridePendingTransition(0, 0);
-                finish();
             }
         });
         LinearLayout notifi = findViewById(R.id.notifi);
@@ -167,7 +170,6 @@ public class CartActivity extends  BaseActivity {
             public void onClick(View v) {
                 startActivity(new Intent(CartActivity.this,NotifiActivity.class));
                 overridePendingTransition(0, 0);
-                finish();
             }
         });
         LinearLayout profile = findViewById(R.id.profile);
@@ -176,7 +178,6 @@ public class CartActivity extends  BaseActivity {
             public void onClick(View v) {
                 startActivity(new Intent(CartActivity.this,ProfileActivity.class));
                 overridePendingTransition(0, 0);
-                finish();
             }
         });
         LinearLayout bill = findViewById(R.id.bill);
@@ -185,7 +186,6 @@ public class CartActivity extends  BaseActivity {
             public void onClick(View v) {
                 startActivity(new Intent(CartActivity.this, BillActivity.class));
                 overridePendingTransition(0, 0);
-                finish();
             }
         });
 
@@ -206,7 +206,7 @@ public class CartActivity extends  BaseActivity {
 
     }
     private void setVariable() {
-        binding.backBtn.setOnClickListener(v -> startActivity(new Intent(this,MainActivity.class)));
+        binding.backBtn.setOnClickListener(v -> startActivity(new Intent(CartActivity.this,MainActivity.class)));
     }
     private void calculatorCart() {
         double percentTax = 0.02;

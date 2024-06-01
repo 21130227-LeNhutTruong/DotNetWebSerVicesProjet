@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -54,7 +55,7 @@ public class BillActivity extends AppCompatActivity {
                         }
                         billAdapter.notifyDataSetChanged();
                     } else {
-                        // Handle errors here
+                        Toast.makeText(BillActivity.this, "Lỗi khi tải hóa đơn", Toast.LENGTH_SHORT).show();
                     }
                 });
     }
@@ -66,7 +67,6 @@ public class BillActivity extends AppCompatActivity {
             public void onClick(View v) {
                 startActivity(new Intent(BillActivity.this,MainActivity.class));
                 overridePendingTransition(0, 0);
-                finish();
             }
         });
         LinearLayout notifi = findViewById(R.id.notifi);
@@ -75,7 +75,6 @@ public class BillActivity extends AppCompatActivity {
             public void onClick(View v) {
                 startActivity(new Intent(BillActivity.this,NotifiActivity.class));
                 overridePendingTransition(0, 0);
-                finish();
             }
         });
         LinearLayout profile = findViewById(R.id.profile);
@@ -84,7 +83,6 @@ public class BillActivity extends AppCompatActivity {
             public void onClick(View v) {
                 startActivity(new Intent(BillActivity.this,ProfileActivity.class));
                 overridePendingTransition(0, 0);
-                finish();
             }
         });
         LinearLayout cart = findViewById(R.id.cart);
@@ -93,7 +91,6 @@ public class BillActivity extends AppCompatActivity {
             public void onClick(View v) {
                 startActivity(new Intent(BillActivity.this, CartActivity.class));
                 overridePendingTransition(0, 0);
-                finish();
             }
         });
 
@@ -101,7 +98,7 @@ public class BillActivity extends AppCompatActivity {
 
     private void setVariable() {
         ImageView backBtn = findViewById(R.id.backBtnBill);
-        backBtn.setOnClickListener(v -> startActivity(new Intent(this,CartActivity.class)));
+        backBtn.setOnClickListener(v -> startActivity(new Intent(BillActivity.this,CartActivity.class)));
     }
 
 }

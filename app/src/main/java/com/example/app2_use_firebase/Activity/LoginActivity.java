@@ -1,7 +1,9 @@
 package com.example.app2_use_firebase.Activity;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -143,6 +145,8 @@ public class LoginActivity extends AppCompatActivity {
                             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                             startActivity(intent);
                             finishAffinity();
+                            saveLoginState(mAuth.getCurrentUser().getUid());
+
                         } else {
                             // Handle potential exceptions
                             try {
@@ -174,6 +178,13 @@ public class LoginActivity extends AppCompatActivity {
     private void signUpOnClick() {
         Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
         startActivity(intent);
+    }
+
+    private void saveLoginState(String userId) {
+        SharedPreferences sharedPref = getSharedPreferences("LoginPrefs", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putString("userId", userId);
+        editor.apply();
     }
 
 }

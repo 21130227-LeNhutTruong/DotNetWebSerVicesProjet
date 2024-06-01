@@ -14,6 +14,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.app2_use_firebase.Adapter.ColorAdapter;
 import com.example.app2_use_firebase.Adapter.SizeAdapter;
@@ -24,6 +25,7 @@ import com.example.app2_use_firebase.Domain.SlideView;
 import com.example.app2_use_firebase.Helper.ManagmentCart;
 import com.example.app2_use_firebase.R;
 import com.example.app2_use_firebase.databinding.ActivityDetailBinding;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -105,34 +107,4 @@ public class DetailActivity extends BaseActivity {
         btnback.setOnClickListener(v ->  startActivity(new Intent(this,MainActivity.class)));
     }
 
-
-
-    private class ViewPagerAdapter extends FragmentPagerAdapter {
-        private final List<Fragment> mFragmentList = new ArrayList<>();
-        private final List<String> mFragmentTitleList = new ArrayList<>();
-
-        public ViewPagerAdapter(@NonNull FragmentManager fm) {
-            super(fm);
-        }
-
-
-        @NonNull
-        @Override
-        public Fragment getItem(int position) {
-            return mFragmentList.get(position);
-        }
-
-        @Override
-        public int getCount() {
-            return mFragmentList.size();
-        }
-        private void addFrag( Fragment fragment, String title){
-            mFragmentList.add(fragment);
-            mFragmentTitleList.add(title);
-        }
-        @Override
-        public CharSequence getPageTitle(int position){
-            return mFragmentTitleList.get(position);
-        }
-    }
 }
