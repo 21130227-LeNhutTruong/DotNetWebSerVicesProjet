@@ -13,8 +13,12 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.app2_use_firebase.Adapter.BillAdapter;
+import com.example.app2_use_firebase.Adapter.BillItemsAdapter;
 import com.example.app2_use_firebase.Domain.Bill;
+import com.example.app2_use_firebase.Domain.BillItems;
 import com.example.app2_use_firebase.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 
@@ -26,6 +30,10 @@ public class BillActivity extends AppCompatActivity {
     private ArrayList<Bill> billList;
     private BillAdapter billAdapter;
     private FirebaseFirestore db;
+    private RecyclerView rvBillItems;
+    private BillItemsAdapter billItemsAdapter;
+    private ArrayList<BillItems> billItems;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -43,10 +51,20 @@ public class BillActivity extends AppCompatActivity {
         loadBillsFromFirebase();
         setVariable();
         bottomNavigation();
+
+
+
+
     }
 
-    private void loadBillsFromFirebase() {
-        db.collection("bills").get()
+private void loadBillsFromFirebase() {
+
+    FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+    String userId = currentUser != null ? currentUser.getUid() : null;
+    if (userId != null) {
+        db.collection("bills")
+                .whereEqualTo("userId", userId)
+                .get()
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
                         for (QueryDocumentSnapshot document : task.getResult()) {
@@ -54,11 +72,18 @@ public class BillActivity extends AppCompatActivity {
                             billList.add(bill);
                         }
                         billAdapter.notifyDataSetChanged();
+
+
                     } else {
                         Toast.makeText(BillActivity.this, "Lỗi khi tải hóa đơn", Toast.LENGTH_SHORT).show();
                     }
                 });
+    } else {
+        Toast.makeText(BillActivity.this, "Không thể xác định người dùng hiện tại", Toast.LENGTH_SHORT).show();
     }
+}
+
+
 
     public void bottomNavigation() {
         LinearLayout home = findViewById(R.id.home_nav);

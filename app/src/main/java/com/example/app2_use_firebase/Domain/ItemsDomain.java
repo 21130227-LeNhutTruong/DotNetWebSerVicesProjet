@@ -1,15 +1,11 @@
 package com.example.app2_use_firebase.Domain;
 
-import androidx.annotation.NonNull;
-
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.auth.FirebaseAuth;
-
 
 import java.io.Serializable;
 import java.util.ArrayList;
 
 public class ItemsDomain implements Serializable {
+    private String id;
     private String title;
     private String description;
     private ArrayList<String> picUrl;
@@ -22,7 +18,7 @@ public class ItemsDomain implements Serializable {
     public ItemsDomain() {
     }
 
-    public ItemsDomain(String title, String description, ArrayList<String> picUrl, double price, double oldPrice, int review, double rating) {
+    public ItemsDomain(String id,String title, String description, ArrayList<String> picUrl, double price, double oldPrice, int review, double rating) {
         this.title = title;
         this.description = description;
         this.picUrl = picUrl;
@@ -30,6 +26,16 @@ public class ItemsDomain implements Serializable {
         this.oldPrice = oldPrice;
         this.review = review;
         this.rating = rating;
+        this.id = id;
+    }
+
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getTitle() {

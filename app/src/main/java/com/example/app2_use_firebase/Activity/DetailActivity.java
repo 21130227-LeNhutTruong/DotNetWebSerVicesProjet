@@ -1,18 +1,38 @@
 package com.example.app2_use_firebase.Activity;
 
+import static android.widget.Toast.makeText;
+
 import androidx.annotation.NonNull;
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.CompositePageTransformer;
 import androidx.viewpager2.widget.MarginPageTransformer;
 
+import android.content.BroadcastReceiver;
+import android.content.ComponentName;
+import android.content.ContentResolver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.content.IntentSender;
+import android.content.ServiceConnection;
+import android.content.SharedPreferences;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
+import android.content.res.AssetManager;
+import android.content.res.Configuration;
+import android.content.res.Resources;
+import android.database.DatabaseErrorHandler;
+import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
+import android.os.UserHandle;
+import android.view.Display;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -26,7 +46,14 @@ import com.example.app2_use_firebase.Helper.ManagmentCart;
 import com.example.app2_use_firebase.R;
 import com.example.app2_use_firebase.databinding.ActivityDetailBinding;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.gson.Gson;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -51,6 +78,7 @@ public class DetailActivity extends BaseActivity {
         getBundles();
         banners();
         initSize();
+
     }
 
 
@@ -72,6 +100,16 @@ public class DetailActivity extends BaseActivity {
 
 
     }
+    private void saveCartForUser(String userId, List<ItemsDomain> cartItems) {
+        SharedPreferences sharedPreferences = getSharedPreferences("users" + userId, Context.MODE_PRIVATE);
+        Gson gson = new Gson();
+        String json = gson.toJson(cartItems);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("CartList", json);
+        editor.apply();
+    }
+
+
 
     private void banners() {
         ArrayList<SlideView> slideViews = new ArrayList<>();
@@ -101,10 +139,13 @@ public class DetailActivity extends BaseActivity {
 
         binding.addToCartBtn.setOnClickListener(v -> {
             object.setNumberinCart(numberOrder);
-            managmentCart.insertFood(object);
+            managmentCart.insertProduct(object);
         });
         ImageView btnback = findViewById(R.id.btnBack);
         btnback.setOnClickListener(v ->  startActivity(new Intent(this,MainActivity.class)));
     }
-
+    private String getUserId() {
+        SharedPreferences sharedPreferences = getSharedPreferences("users", Context.MODE_PRIVATE);
+        return sharedPreferences.getString("userId", "");
+    }
 }

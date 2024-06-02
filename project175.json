@@ -36,6 +36,7 @@
   ],
   "Items": [
     {
+      "id": "1",
       "description": "This light and airy pink shirt is perfect for warm weather. Made from 100% cotton, it's breathable and comfortable to wear. It features a classic button-down collar and a relaxed fit.",
       "oldPrice": 25,
       "picUrl": [
@@ -47,6 +48,7 @@
       "title": "Pink singlet"
     },
     {
+      "id": "2",
       "description": "This light and airy pink shirt is perfect for warm weather. Made from 100% cotton, it's breathable and comfortable to wear. It features a classic button-down collar and a relaxed fit.",
       "oldPrice": 40,
       "picUrl": [
@@ -58,6 +60,7 @@
       "title": "Jean Coat"
     },
     {
+      "id": "3",
       "description": "This cozy orange cable knit sweater is perfect for winter weather. Made from 100% wool, it's warm and stylish. It features a classic crewneck collar and a relaxed fit.",
       "oldPrice": 60,
       "picUrl": [
@@ -69,6 +72,7 @@
       "title": "Orange Knit Sweater"
     },
     {
+      "id": "4",
       "description": "This stylish red and black plaid shirt is perfect for any occasion. Made from a soft cotton blend, it's comfortable to wear. It features a classic button-down collar and a relaxed fit.",
       "oldPrice": 30,
       "picUrl": [
@@ -83,22 +87,7 @@
       "title": "Plaid shirt"
     }
   ],
-  "Review": [
-    {
-      "description": "I love this dress! It's so well-made and comfortable, and it fits  beautifully. The fabric is high quality and I'm sure I can wear it for  years to come. It fits exactly as I wanted. ",
-      "ItemId": 4,
-      "name": "Elina Rief",
-      "picUrl": "https://firebasestorage.googleapis.com/v0/b/project175-f1c13.appspot.com/o/user_1.png?alt=media&token=c9f82979-86a2-44ea-84ff-1d2e4249773b",
-      "rating": 4.6
-    },
-    {
-      "description": "The quality of this dress is really amazing. The fabric is very soft and pleasant to the touch, and the stitching is very clean and delicate.",
-      "ItemId": 4,
-      "name": "Cristen Alba",
-      "picUrl": "https://firebasestorage.googleapis.com/v0/b/project175-f1c13.appspot.com/o/user_2.png?alt=media&token=bc14e560-f851-42d7-8ca7-84f8890d0a80",
-      "rating": 4.7
-    }
-  ],
+
   "SlideItems": [
     {
       "description": "This light .",

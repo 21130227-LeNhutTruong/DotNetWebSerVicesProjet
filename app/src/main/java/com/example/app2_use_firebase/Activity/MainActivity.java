@@ -40,7 +40,6 @@ public class MainActivity extends BaseActivity {
         initCategory();
         initPopular();
         initSlider();
-
         bottomNavigation();
 
     }
@@ -176,6 +175,4 @@ public class MainActivity extends BaseActivity {
             }
         });
     }
-
-
 }

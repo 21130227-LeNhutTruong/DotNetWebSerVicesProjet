@@ -20,6 +20,7 @@ public class BillAdapter extends RecyclerView.Adapter<BillAdapter.BillViewHolder
     private ArrayList<Bill> billList;
     private Context context;
 
+
     public BillAdapter(ArrayList<Bill> billList, Context context) {
         this.billList = billList;
         this.context = context;
@@ -60,7 +61,10 @@ public class BillAdapter extends RecyclerView.Adapter<BillAdapter.BillViewHolder
             tvPhone = itemView.findViewById(R.id.tvPhone);
             tvPaymentMethod = itemView.findViewById(R.id.tvPaymentMethod);
             tvTotalAmount = itemView.findViewById(R.id.tvTotalAmount);
-            tvItems = itemView.findViewById(R.id.tvItems);
+
+
+
+
         }
     }
 }
