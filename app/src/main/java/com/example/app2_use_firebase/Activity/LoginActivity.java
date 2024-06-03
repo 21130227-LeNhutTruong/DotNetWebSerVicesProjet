@@ -44,6 +44,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         FacebookSdk.sdkInitialize(getApplicationContext());
+        setBtnLoginAdmin();
 
         // Initialize Facebook Login button
         mCallbackManager = CallbackManager.Factory.create();
@@ -185,6 +186,15 @@ public class LoginActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = sharedPref.edit();
         editor.putString("userId", userId);
         editor.apply();
+    }
+    private void setBtnLoginAdmin(){
+        Button btnLoginAdmin = findViewById(R.id.btn_Login_admin);
+        btnLoginAdmin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(LoginActivity.this, LoginAdminActivity.class));
+            }
+        });
     }
 
 }

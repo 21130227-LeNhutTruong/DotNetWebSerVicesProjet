@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 public class Bill {
+    private String id;
     private String date;
     private String hoten;
     private String diachi;
@@ -13,21 +14,51 @@ public class Bill {
     private String status;
 
     private List<ItemsDomain> items;
+    private String userId;
+    private String userName;
+
+
 
     public Bill() {
         // Constructor mặc định cần thiết cho Firestore
     }
 
-    public Bill(String date, String hoten, String diachi, String sdt, String phuongthuc, double totalAmount, List<ItemsDomain> items) {
+    public Bill( String userName,String userId,String id,String date, String hoten, String diachi, String sdt, String phuongthuc, double totalAmount, List<ItemsDomain> items,String status) {
         this.date = date;
         this.hoten = hoten;
         this.diachi = diachi;
         this.sdt = sdt;
         this.phuongthuc = phuongthuc;
         this.totalAmount = totalAmount;
-        this.status = "đang xử lý";  // Trạng thái mặc định là đang xử lý
+        this.status = status;  // Trạng thái mặc định là đang xử lý
 
         this.items = items;
+        this.id = id;
+        this.userId = userId;
+        this.userName = userName;
+
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     // Getter và setter cho tất cả các thuộc tính

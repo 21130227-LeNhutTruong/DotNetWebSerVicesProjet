@@ -10,15 +10,18 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.app2_use_firebase.Activity.BillActivity;
 import com.example.app2_use_firebase.Domain.BillItems;
 import com.example.app2_use_firebase.R;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
 // Tạo BillItemsAdapter để hiển thị các mục trong hóa đơn
 public class BillItemsAdapter extends RecyclerView.Adapter<BillItemsAdapter.ViewHolder> {
     private List<BillItems> billItems;
+
 
     public void setBillItems(List<BillItems> billItems) {
         this.billItems = billItems;

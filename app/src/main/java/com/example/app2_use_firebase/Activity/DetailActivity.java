@@ -144,8 +144,5 @@ public class DetailActivity extends BaseActivity {
         ImageView btnback = findViewById(R.id.btnBack);
         btnback.setOnClickListener(v ->  startActivity(new Intent(this,MainActivity.class)));
     }
-    private String getUserId() {
-        SharedPreferences sharedPreferences = getSharedPreferences("users", Context.MODE_PRIVATE);
-        return sharedPreferences.getString("userId", "");
-    }
+
 }

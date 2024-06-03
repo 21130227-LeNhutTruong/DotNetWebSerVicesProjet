@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string-array name="status_array">
+    <item>Đã xác nhận</item>
+    <item>Đang giao hàng</item>
+    <item>Hoàn thành</item>
+</string-array>
+</resources>

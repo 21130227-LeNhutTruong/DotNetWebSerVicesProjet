@@ -49,6 +49,15 @@
             android:name=".Activity.BaseActivity"
             android:exported="false" />
         <activity
+            android:name=".Activity.BillAdminActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.AdminHomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.LoginAdminActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activity.SplashScreen"
             android:exported="true">
             <intent-filter>

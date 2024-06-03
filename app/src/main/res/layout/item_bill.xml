@@ -67,6 +67,14 @@
         android:layout_height="wrap_content"
         android:text="Tổng tiền: "
         android:textColor="@color/black"/>
+    <TextView
+        android:id="@+id/tvItemsStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Trạng Thái Đơn Hàng: "
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginTop="16dp"/>
 
     <!-- Items -->
     <TextView

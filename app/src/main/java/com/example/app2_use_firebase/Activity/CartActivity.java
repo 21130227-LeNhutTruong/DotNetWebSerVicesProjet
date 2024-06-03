@@ -16,6 +16,7 @@ import android.widget.Toast;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.example.app2_use_firebase.Adapter.CartAdapter;
+import com.example.app2_use_firebase.Domain.Bill;
 import com.example.app2_use_firebase.Domain.ItemsDomain;
 import com.example.app2_use_firebase.Helper.ManagmentCart;
 import com.example.app2_use_firebase.R;
@@ -81,8 +82,8 @@ public class CartActivity extends  BaseActivity {
 
         double percentTax = 0.02;
         double delivery = 10;
-        tax = Math.round((managmentCart.getTotalFee() * percentTax) * 100.0) / 100.0;
-        double total = Math.round((managmentCart.getTotalFee() + tax + delivery) * 100.0) / 100.0;
+        tax = Math.round((managmentCart.getTotalFee()* percentTax * 100.0))/100.0;
+        double total = Math.round((managmentCart.getTotalFee()+tax+delivery)* 100.0)/100.0;
         txttongtien.setText("Tổng Tiền: $" + total);
 
         btnxacnhan.setOnClickListener(v -> {
@@ -92,24 +93,26 @@ public class CartActivity extends  BaseActivity {
 
             if (validateInputs(hoten, diachi, sdt)) {
                 String paymentMethod = spinner.getSelectedItem().toString();
-                double totalAmount = managmentCart.getTotalFee() + tax + delivery;
-                saveBillToFirebase(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid(),hoten, diachi, sdt, paymentMethod, totalAmount);
+                double totalAmount = total;
+                saveBillToFirebase(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid(), FirebaseAuth.getInstance().getCurrentUser().getUid(),hoten, diachi, sdt, paymentMethod, totalAmount);
                 dialog.cancel();
             }
         });
     }
-    private void saveBillToFirebase(String userId,String hoten, String diachi, String sdt, String paymentMethod, double totalAmount) {
+    private void saveBillToFirebase(String userName,String userId,String hoten, String diachi, String sdt, String paymentMethod, double totalAmount) {
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         String date = sdf.format(Calendar.getInstance().getTime());
 
         Map<String, Object> bill = new HashMap<>();
         bill.put("userId", userId);
+        bill.put("userName", userName); // Lưu tên người dùng
         bill.put("date", date);
         bill.put("hoten", hoten);
         bill.put("diachi", diachi);
         bill.put("sdt", sdt);
-        bill.put("paymentMethod", paymentMethod);
+        bill.put("phuongthuc", paymentMethod);
         bill.put("totalAmount", totalAmount);
+        bill.put("status", "Đang xử lý"); // Trạng thái mặc định ban đầu
 
 
         List<Map<String, Object>> items = new ArrayList<>();
@@ -122,7 +125,7 @@ public class CartActivity extends  BaseActivity {
             items.add(itemMap);
         }
         bill.put("items",items);
-        db.collection("bills")
+        db.collection("users").document(userId).collection("bills")
                 .add(bill)
                 .addOnSuccessListener(documentReference -> {Toast.makeText(CartActivity.this, "Hóa đơn đã được lưu", Toast.LENGTH_SHORT).show();
 managmentCart.deleteItemFromCart();
