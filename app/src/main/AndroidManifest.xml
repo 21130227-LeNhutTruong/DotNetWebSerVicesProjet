@@ -23,6 +23,9 @@
             android:name=".Activity.CartActivity"
             android:exported="false" />
         <activity
+            android:name=".Activity.SettingProfileActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activity.DetailActivity"
             android:exported="false" />
         <activity

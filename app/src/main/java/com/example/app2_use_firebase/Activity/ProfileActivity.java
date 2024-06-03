@@ -36,6 +36,7 @@ public class ProfileActivity extends BaseActivity {
 
         initUI();
         initProfile();
+        setonclickIcon();
 
 
         mAuth = FirebaseAuth.getInstance();
@@ -51,6 +52,14 @@ public class ProfileActivity extends BaseActivity {
 
     }
 
+    private void setonclickIcon(){
+        binding.prDetail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ProfileActivity.this,SettingProfileActivity.class));
+            }
+        });
+    }
     private void initUI() {
         tvUserName = findViewById(R.id.tv_userName);
         tvEmail = findViewById(R.id.tv_email);
