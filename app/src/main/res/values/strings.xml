@@ -52,6 +52,7 @@
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
     <string name="title_activity_profile">activity_profile</string>
+    <string name="default_web_client_id" />
 
     <!--    <resources>-->
     <!--        &lt;!&ndash; Facebook application ID and custom URL scheme (app ID prefixed by 'fb'). &ndash;&gt;-->
