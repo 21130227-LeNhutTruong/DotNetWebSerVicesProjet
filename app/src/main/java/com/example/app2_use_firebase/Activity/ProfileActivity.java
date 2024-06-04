@@ -14,6 +14,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.constraintlayout.widget.ConstraintLayout;
+
 import com.example.app2_use_firebase.R;
 import com.example.app2_use_firebase.databinding.ActivityProfileBinding;
 import com.google.firebase.auth.FirebaseAuth;
@@ -23,6 +25,9 @@ public class ProfileActivity extends BaseActivity {
     ActivityProfileBinding binding;
     TextView tvUserName, tvEmail;
     private FirebaseAuth mAuth;
+
+
+
 
 
     @Override
@@ -36,7 +41,7 @@ public class ProfileActivity extends BaseActivity {
 
         initUI();
         initProfile();
-        setonclickIcon();
+        setonclickDetil();
 
 
         mAuth = FirebaseAuth.getInstance();
@@ -48,13 +53,14 @@ public class ProfileActivity extends BaseActivity {
 
     }
 
-    private void setonclickIcon(){
-//        binding.prDetail.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(ProfileActivity.this,SettingProfileActivity.class));
-//            }
-//        });
+    private void setonclickDetil(){
+        ConstraintLayout detail = findViewById(R.id.detail);
+        detail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ProfileActivity.this, SettingProfileActivity.class));
+            }
+        });
     }
     private void initUI() {
         tvUserName = findViewById(R.id.tv_userName);
