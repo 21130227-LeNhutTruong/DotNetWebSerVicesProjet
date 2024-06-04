@@ -129,7 +129,8 @@ public class CartActivity extends  BaseActivity {
         db.collection("users").document(userId).collection("bills")
                 .add(bill)
                 .addOnSuccessListener(documentReference -> {Toast.makeText(CartActivity.this, "Hóa đơn đã được lưu", Toast.LENGTH_SHORT).show();
-managmentCart.deleteItemFromCart();
+                    managmentCart.clearCart();
+                    startActivity(new Intent(CartActivity.this,BillActivity.class));
 displayUserCart(this);
                 })
                 .addOnFailureListener(e -> Toast.makeText(CartActivity.this, "Lỗi khi lưu hóa đơn", Toast.LENGTH_SHORT).show());

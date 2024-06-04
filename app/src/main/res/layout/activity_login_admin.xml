@@ -6,14 +6,10 @@
     android:layout_height="match_parent"
     android:background="@drawable/res00">
 
-
-
-
-
     <androidx.cardview.widget.CardView
 
         android:layout_width="match_parent"
-        android:layout_height="370dp"
+        android:layout_height="430dp"
         app:cardCornerRadius="20dp"
         app:cardBackgroundColor="@color/white"
         android:layout_marginStart="24dp"
@@ -23,6 +19,7 @@
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
+            android:padding="20dp"
             android:layout_height="match_parent">
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
@@ -35,7 +32,7 @@
                     android:hint="Nhập Email Tài Khoản"
                     android:id="@+id/editEmail"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="100dp"/>
             </com.google.android.material.textfield.TextInputLayout>
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
@@ -51,7 +48,7 @@
                     android:hint="Nhập Mật Khẩu"
                     android:id="@+id/editmatkhau"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="100dp"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button

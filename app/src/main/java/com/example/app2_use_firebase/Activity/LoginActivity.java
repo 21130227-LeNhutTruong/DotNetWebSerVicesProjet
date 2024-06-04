@@ -39,8 +39,6 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Arrays;
 
-import javax.annotation.Nullable;
-
 
 public class LoginActivity extends AppCompatActivity {
     EditText edtEmail, edtPassword;
