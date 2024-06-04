@@ -14,7 +14,6 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.example.app2_use_firebase.Adapter.CartAdapter;
@@ -23,8 +22,6 @@ import com.example.app2_use_firebase.Domain.ItemsDomain;
 import com.example.app2_use_firebase.Helper.ManagmentCart;
 import com.example.app2_use_firebase.R;
 import com.example.app2_use_firebase.databinding.ActivityCartBinding;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -132,8 +129,7 @@ public class CartActivity extends  BaseActivity {
         db.collection("users").document(userId).collection("bills")
                 .add(bill)
                 .addOnSuccessListener(documentReference -> {Toast.makeText(CartActivity.this, "Hóa đơn đã được lưu", Toast.LENGTH_SHORT).show();
-managmentCart.clearCart();
-startActivity(new Intent(CartActivity.this,BillActivity.class));
+managmentCart.deleteItemFromCart();
 displayUserCart(this);
                 })
                 .addOnFailureListener(e -> Toast.makeText(CartActivity.this, "Lỗi khi lưu hóa đơn", Toast.LENGTH_SHORT).show());

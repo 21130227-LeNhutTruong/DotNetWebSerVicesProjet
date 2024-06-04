@@ -39,6 +39,8 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Arrays;
 
+import javax.annotation.Nullable;
+
 
 public class LoginActivity extends AppCompatActivity {
     EditText edtEmail, edtPassword;
@@ -248,7 +250,9 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void setBtnLoginAdmin() {
-        Button btnLoginAdmin = findViewById(R.id.btn_Login_Facebook);
+
+        Button btnLoginAdmin = findViewById(R.id.btn_Login_admin);
+
         btnLoginAdmin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
