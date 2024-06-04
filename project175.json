@@ -34,58 +34,365 @@
       "title": "Gucci"
     }
   ],
-  "Items": [
+  "ItemsPopular": [
     {
       "id": "1",
-      "description": "This light and airy pink shirt is perfect for warm weather. Made from 100% cotton, it's breathable and comfortable to wear. It features a classic button-down collar and a relaxed fit.",
-      "oldPrice": 25,
+      "description": "- Kích thước 10-30-40(+-3cm) dây đai cực kỳ chắc chắn có thể chịu sức nặng lớn\n - Chất liệu: vải canvas\n - Style: hàn quốc gồm 1 ngăn chính 1 ngăn ngoài và bên trong gồm 2 ngăn phụ\n",
+      "oldPrice": 200000,
       "picUrl": [
-        "https://firebasestorage.googleapis.com/v0/b/project175-f1c13.appspot.com/o/item_1.png?alt=media&token=6910a49c-ddda-430d-8bfc-796beb97660f"
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_bags_3_1.jpg?alt=media&token=4e0c46ca-e809-40fe-b1ab-42ba004bc084",
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_bags_3_2.jpg?alt=media&token=37c28d88-92ac-4059-929a-57d5f809780e",
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_bags_3_3.jpg?alt=media&token=0044c274-6d47-4b23-a477-db7d98fae978"
       ],
-      "price": 35,
+      "des": "Túi Vải Túi Đeo Chéo Unisex Uzzang Canvas 100% Mã 08",
+      "price": 119000,
       "rating": 4.6,
       "review": 10,
-      "title": "Pink singlet"
+      "title": "Túi Vải Túi Đeo Chéo"
     },
     {
       "id": "2",
-      "description": "This light and airy pink shirt is perfect for warm weather. Made from 100% cotton, it's breathable and comfortable to wear. It features a classic button-down collar and a relaxed fit.",
-      "oldPrice": 40,
+      "description": "Quần Short Unisex Basic Thể Thao Mặc Thoáng Mát Phong Cách Hàn Quốc Nam Nữ Mặc Cực Chất Quần Short Unisex Basic thể thao phong cách Hàn Quốc nam nữ mặc cực chất",
+      "oldPrice": 299000,
       "picUrl": [
-        "https://firebasestorage.googleapis.com/v0/b/project175-f1c13.appspot.com/o/item_2.png?alt=media&token=c5e7de9c-e3e7-4fd2-a4de-7ef7086703a1"
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_clothes_2_1.jpg?alt=media&token=64cfb929-efa9-4db6-8e8e-a0172aeec561",
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_clothes_2_2.jpg?alt=media&token=f37eecd1-8688-493d-bee6-c69502d7ddbe",
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_clothes_2_3.jpg?alt=media&token=087ba5e9-bd9c-4570-aab7-70a92dc887ae"
       ],
-      "price": 55,
-      "rating": 4.1,
-      "review": 45,
-      "title": "Jean Coat"
+      "des": "Thể Thao Mặc Thoáng Mát Phong Cách Hàn Quốc Nam Nữ Mặc Cực Chất",
+      "price":200000 ,
+      "rating": 4.6,
+      "review": 10,
+      "title": "Quần Short Unisex Basic"
     },
     {
       "id": "3",
-      "description": "This cozy orange cable knit sweater is perfect for winter weather. Made from 100% wool, it's warm and stylish. It features a classic crewneck collar and a relaxed fit.",
-      "oldPrice": 60,
+      "description": "Quần crop mỏng nam quần thẳng quần xu hướng quần Hàn Quốc quần thời trang hoang dã quần thường ngày",
+      "oldPrice": 199.000,
       "picUrl": [
-        "https://firebasestorage.googleapis.com/v0/b/project175-f1c13.appspot.com/o/item_3.png?alt=media&token=ed69dbba-3483-48d7-892b-2fc060fe7d8f"
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_clothes_3_1.jpg?alt=media&token=cd3f7c6a-62ac-4cdc-912f-3eca4097140c",
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_clothes_3_2.jpg?alt=media&token=7740f4e2-36f7-4270-993d-4fd8f3973eb9",
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_clothes_3_3.jpg?alt=media&token=721f2d3a-47b5-4170-93f2-1727d9bcde31"
       ],
-      "price": 75,
-      "rating": 4.5,
+      "des": "quần thẳng quần xu hướng quần Hàn Quốc ",
+      "price":99000 ,
+      "rating": 4.6,
       "review": 10,
-      "title": "Orange Knit Sweater"
+      "title": "Quần crop mỏng"
     },
     {
       "id": "4",
-      "description": "This stylish red and black plaid shirt is perfect for any occasion. Made from a soft cotton blend, it's comfortable to wear. It features a classic button-down collar and a relaxed fit.",
-      "oldPrice": 30,
+      "description": "- Kích thước 10-30-40(+-3cm) dây đai cực kỳ chắc chắn có thể chịu sức nặng lớn\n - Chất liệu: vải canvas\n - Style: hàn quốc gồm 1 ngăn chính 1 ngăn ngoài và bên trong gồm 2 ngăn phụ\n",
+      "oldPrice":199.999 ,
       "picUrl": [
-        "https://firebasestorage.googleapis.com/v0/b/project175-f1c13.appspot.com/o/item_4.png?alt=media&token=237c1fe3-b071-44ad-be4d-045a64cd8120",
-        "https://firebasestorage.googleapis.com/v0/b/project175-f1c13.appspot.com/o/item_4_1.png?alt=media&token=21293576-ab82-498a-968f-7d9252d470be",
-        "https://firebasestorage.googleapis.com/v0/b/project175-f1c13.appspot.com/o/item_4_2.png?alt=media&token=5f4872d2-5660-4f28-bd2f-e6358f6d06e3",
-        "https://firebasestorage.googleapis.com/v0/b/project175-f1c13.appspot.com/o/item_4_3.png?alt=media&token=a1f381e8-f0ff-45eb-a67b-5860a138cc15"
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_bags_1_1.jpg?alt=media&token=de136c09-de2c-4ea3-80b7-7da704a544ca",
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_bags_1_2.jpg?alt=media&token=129de440-21e7-4338-8305-4757c683be47",
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_bags_1_3.jpg?alt=media&token=bd8fdfea-15f1-4a71-b516-49e3f48673d2"
       ],
-      "price": 40,
-      "rating": 4.2,
-      "review": 9,
-      "title": "Plaid shirt"
+      "des": "Túi Vải Túi Đeo Chéo Unisex Uzzang Canvas 100% Mã 08",
+      "price": 99999,
+      "rating": 4.6,
+      "review": 10,
+      "title": "Túi Vải Túi Đeo Chéo"
+    },
+    {
+      "id": "5",
+      "description": "Kết cấu: Vải\nChế độ đóng: khóa từ tính\nPhong cách: Nhật Bản và Hàn Quốc\nHình dạng: Hình vuông dọc\nPhong cách: Túi đeo vai\nTên phong cách phổ biến: Túi Tote\nKích thước: 38 * 33 cm\n",
+      "oldPrice":399999 ,
+      "picUrl": [
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_bags_2_1.jpg?alt=media&token=97c80cf4-b8fc-4fff-8015-748a6b00c032",
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_bags_2_2.jpg?alt=media&token=4633d8e4-b479-4062-8bae-3075fdfe53b7",
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_bags_2_3.jpg?alt=media&token=486e472c-df60-4a4f-942a-a55cd1af23f0",
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_bags_2_4.jpg?alt=media&token=09a08d5b-2d1a-470b-be98-ff35338bf1e9"
+      ],
+      "des": "Sức Chứa Lớn Thiết Kế Mới",
+      "price":300000 ,
+      "rating": 4.6,
+      "review": 10,
+      "title": "Túi Xách Canvas"
+    } ,
+    {
+      "id": "6",
+      "description": "Thời trang, Thường ngày, Trường học, Ở nhà, Vừa vặn với áo thun rộng rãi, Thoải mái và Mềm mại\nGiao diện thời trang, họa tiết hoạt hình đặc trưng\nNhững chiếc áo thun tốt nhất cho sự thoải mái và phong cách. xu hướng.\nSự lựa chọn tốt nhất của bạn\nĐộ tuổi phù hợp: 13-27\nGiới tính: Cùng một phong cách cho trang phục cặp đôi nam và nữ\n",
+      "oldPrice":599000 ,
+      "picUrl": [
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_clothes_8_1.jpg?alt=media&token=1f6426a3-7402-43fc-a940-4648352cb3b4",
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_clothes_8_2.jpg?alt=media&token=7d1803f5-ef9f-44d0-ba66-5c3c0e6e9ecd",
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_clothes_8_1.jpg?alt=media&token=1f6426a3-7402-43fc-a940-4648352cb3b4"
+      ],
+      "des": "Áo thun nam cổ tròn phong cách phổ biến",
+      "price": 499999,
+      "rating": 4.6,
+      "review": 10,
+      "title": "Áo thun nam cổ tròn"
+    },
+    {
+      "id": "7",
+      "description": "Thời trang, Thường ngày, Trường học, Ở nhà, Vừa vặn với áo thun rộng rãi, Thoải mái và Mềm mại\nGiao diện thời trang, họa tiết hoạt hình đặc trưng\nNhững chiếc áo thun tốt nhất cho sự thoải mái và phong cách. xu hướng.\nSự lựa chọn tốt nhất của bạn\nĐộ tuổi phù hợp: 13-27\nGiới tính: Cùng một phong cách cho trang phục cặp đôi nam và nữ\n",
+      "oldPrice":999999 ,
+      "picUrl": [
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_clothes_9_1.jpg?alt=media&token=42188026-bb49-4580-86ac-d0c1b52f04ef",
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_clothes_9_2.jpg?alt=media&token=3de5f2f9-c48d-455e-acbe-4c162259b2ae",
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_clothes_9_3.jpg?alt=media&token=5f817379-70e3-4bf5-aa0d-16d572c14142",
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_clothes_9_4.jpg?alt=media&token=9adada5a-adee-441c-addd-0f339d12f31e"
+      ],
+      "des": "Áo phông nam BURBERRY 100% cotton basic form rộng,unisex Bii Shopp",
+      "price":800000 ,
+      "rating": 4.6,
+      "review": 10,
+      "title": "Áo Wash Thun"
+    },
+    {
+      "id": "8",
+      "description": "Thời trang, Thường ngày, Trường học, Ở nhà, Vừa vặn với áo thun rộng rãi, Thoải mái và Mềm mại\nGiao diện thời trang, họa tiết hoạt hình đặc trưng\nNhững chiếc áo thun tốt nhất cho sự thoải mái và phong cách. xu hướng.\nSự lựa chọn tốt nhất của bạn\nĐộ tuổi phù hợp: 13-27\nGiới tính: Cùng một phong cách cho trang phục cặp đôi nam và nữ\n",
+      "oldPrice":599000 ,
+      "picUrl": [
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_clothes_10_1.jpg?alt=media&token=d834bb71-c566-4055-8650-3a7fa6fbbe6e",
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_clothes_10_2.jpg?alt=media&token=e7f50e22-b5b8-4d58-a4bc-e035ccc2b2d4",
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_clothes_10_3.jpg?alt=media&token=bfb3ad31-8a00-4e2d-912a-ca7aa7e3b11f"
+      ],
+      "des": "Áo thun nam cổ tròn phong cách phổ biến",
+      "price": 499999,
+      "rating": 4.6,
+      "review": 10,
+      "title": "Áo thun nam cổ tròn"
     }
+  ],
+  "ItemsClothes": [
+    {
+      "id": "1",
+      "description": "- Quần dài baggy ống rộng kaki là sự lựa chọn hoàn hảo cho các chàng trai. \n- Quần có nhiều màu trung tính rất dễ mặc, form quần vừa vặn cơ thể, thoải mái theo từng cử động.\n- Màu sắc trung tính và phối màu tuyệt vời mà rất ít quần có tạo nên sự dễ dàng trong việc phối đồ và tạo ra cho mình nhiều phong cách khác nhau.\n",
+      "oldPrice": 199000,
+      "picUrl": [
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_clothes_1_1.jpg?alt=media&token=774417c1-c7ba-4ffb-bfee-a59a81d15669",
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_clothes_1_2.jpg?alt=media&token=9c5700cb-cae8-4c4c-b3d2-cd8f1bf3bb46",
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_clothes_1_3.jpg?alt=media&token=23e8e22f-342f-49eb-8bd0-02ebad380014"
+      ],
+      "des": " Kiểu quần ống rộng basic unisex - 3 màu đen, vàng, ghi",
+      "price": 150000,
+      "rating": 4.6,
+      "review": 10,
+      "title": "Quần baggy kaki nam nữ Nasa"
+    },
+    {
+      "id": "2",
+      "description": "Quần Short Unisex Basic Thể Thao Mặc Thoáng Mát Phong Cách Hàn Quốc Nam Nữ Mặc Cực Chất Quần Short Unisex Basic thể thao phong cách Hàn Quốc nam nữ mặc cực chất",
+      "oldPrice": 299000,
+      "picUrl": [
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_clothes_2_1.jpg?alt=media&token=64cfb929-efa9-4db6-8e8e-a0172aeec561",
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_clothes_2_2.jpg?alt=media&token=f37eecd1-8688-493d-bee6-c69502d7ddbe",
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_clothes_2_3.jpg?alt=media&token=087ba5e9-bd9c-4570-aab7-70a92dc887ae"
+      ],
+      "des": "Thể Thao Mặc Thoáng Mát Phong Cách Hàn Quốc Nam Nữ Mặc Cực Chất",
+      "price":200000 ,
+      "rating": 4.6,
+      "review": 10,
+      "title": "Quần Short Unisex Basic"
+    },
+    {
+      "id": "3",
+      "description": "Quần crop mỏng nam quần thẳng quần xu hướng quần Hàn Quốc quần thời trang hoang dã quần thường ngày",
+      "oldPrice": 199000,
+      "picUrl": [
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_clothes_3_1.jpg?alt=media&token=cd3f7c6a-62ac-4cdc-912f-3eca4097140c",
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_clothes_3_2.jpg?alt=media&token=7740f4e2-36f7-4270-993d-4fd8f3973eb9",
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_clothes_3_3.jpg?alt=media&token=721f2d3a-47b5-4170-93f2-1727d9bcde31"
+      ],
+      "des": "quần thẳng quần xu hướng quần Hàn Quốc ",
+      "price":99000 ,
+      "rating": 4.6,
+      "review": 10,
+      "title": "Quần crop mỏng"
+    },
+    {
+      "id": "4",
+      "description": "Mã Sản Phẩm : QTH\nChất Liệu Vải : vải KAKI dầy dặn\nFull size: M(38-44kg),L(45-53kg)\nvòng eo size M: 64cm trở xuống, eo size L dưới 74cm\nSản Xuất : Sản xuất trực tiếp tại xưởng may Kiều Anh\n",
+      "oldPrice": 399000,
+      "picUrl": [
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_clothes_4_1.jpg?alt=media&token=0c13db28-1ed3-4572-b441-c2d0e712ae79",
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_clothes_4_2.jpg?alt=media&token=bca8f8e9-ba38-4b02-8e10-43a33732aef8",
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_clothes_4_3.jpg?alt=media&token=9f792789-e5bb-4a5f-8ed5-df7ac42a1be6"
+      ],
+      "des": "Quần hộp unisex cá tính có 2 size M và L",
+      "price":299999 ,
+      "rating": 4.6,
+      "review": 10,
+      "title": "Quần hộp kaki "
+    },
+    {
+      "id": "5",
+      "description": "- Tên sản phẩm : Quần baggy kaki Trơn nam nữ - 3 màu đen, vàng, ghi - Màu sắc : Đen - Bee - Ghi - Chất liệu : Kaki cao cấp - Size: M (40-52kg), L (53-62kg), XL (63-72kg) + Cam của kết shop: Cam kết đem đến cho khách hàng sản phẩm đúng hình ảnh mà shop mô tả, chất liệu phù hợp giá tiền. - Đổi trả 1 đổi 1 hoàn tiền 100% nếu sản phẩm bị rách, nhàu nát, sản phẩm cũ..... - Đem đến cho khách hàng sản phẩm chất lượng tốt nhất phù hợp với giá tiền người tiêu dùng.",
+      "oldPrice": 199000,
+      "picUrl": [
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_clothes_5_1.jpg?alt=media&token=b07be91c-3088-4f71-8ac8-75125a7cc2d7",
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_clothes_5_2.jpg?alt=media&token=7e093331-98c4-46e2-a79d-a9458495e0fd",
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_clothes_5_3.jpg?alt=media&token=4978393a-e4e0-413e-bd59-ba88a4052f99"
+      ],
+      "des": "Kiểu quần ống rộng basic unisex - 3 màu đen, vàng, ghi",
+      "price":100999 ,
+      "rating": 4.6,
+      "review": 10,
+      "title": "Quần baggy kaki Trơn"
+    },
+    {
+      "id": "6",
+      "description": "Thời trang, Thường ngày, Trường học, Ở nhà, Vừa vặn với áo thun rộng rãi, Thoải mái và Mềm mại\nGiao diện thời trang, họa tiết hoạt hình đặc trưng\nNhững chiếc áo thun tốt nhất cho sự thoải mái và phong cách. xu hướng.\nSự lựa chọn tốt nhất của bạn\nĐộ tuổi phù hợp: 13-27\nGiới tính: Cùng một phong cách cho trang phục cặp đôi nam và nữ\n",
+      "oldPrice":599000 ,
+      "picUrl": [
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_clothes_6_1.jpg?alt=media&token=08515f9a-4e7b-4e53-8273-47434bf53222",
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_clothes_6_2.jpg?alt=media&token=b8982f9c-1dbc-47b4-9683-a1a4ef12900b",
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_clothes_6_3.jpg?alt=media&token=c24d20cf-bdc0-4ccc-aa51-ce60d5ce5edc",
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_clothes_6_4.jpg?alt=media&token=27be398d-638b-4fea-973f-3e1a1c8c5313"
+      ],
+      "des": "Áo thun nam cổ tròn phong cách phổ biến",
+      "price": 499999,
+      "rating": 4.6,
+      "review": 10,
+      "title": "Áo thun nam cổ tròn"
+    },
+    {
+      "id": "7",
+      "description": "Thời trang, Thường ngày, Trường học, Ở nhà, Vừa vặn với áo thun rộng rãi, Thoải mái và Mềm mại\nGiao diện thời trang, họa tiết hoạt hình đặc trưng\nNhững chiếc áo thun tốt nhất cho sự thoải mái và phong cách. xu hướng.\nSự lựa chọn tốt nhất của bạn\nĐộ tuổi phù hợp: 13-27\nGiới tính: Cùng một phong cách cho trang phục cặp đôi nam và nữ\n",
+      "oldPrice":999999 ,
+      "picUrl": [
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_clothes_7_1.jpg?alt=media&token=ee9b4fd1-6bf5-4d04-b6d6-ccc958c61516",
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_clothes_7_2.jpg?alt=media&token=dc14929e-6699-4168-9e7f-51136fbc8907",
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_clothes_7_3.jpg?alt=media&token=155a86d8-e65a-4754-ba55-b40428327568"
+      ],
+      "des": "Áo phông nam BURBERRY 100% cotton basic form rộng,unisex Bii Shopp",
+      "price":800000 ,
+      "rating": 4.6,
+      "review": 10,
+      "title": "Áo Wash Thun"
+    }
+  ,
+    {
+      "id": "8",
+      "description": "Thời trang, Thường ngày, Trường học, Ở nhà, Vừa vặn với áo thun rộng rãi, Thoải mái và Mềm mại\nGiao diện thời trang, họa tiết hoạt hình đặc trưng\nNhững chiếc áo thun tốt nhất cho sự thoải mái và phong cách. xu hướng.\nSự lựa chọn tốt nhất của bạn\nĐộ tuổi phù hợp: 13-27\nGiới tính: Cùng một phong cách cho trang phục cặp đôi nam và nữ\n",
+      "oldPrice":599000 ,
+      "picUrl": [
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_clothes_8_1.jpg?alt=media&token=1f6426a3-7402-43fc-a940-4648352cb3b4",
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_clothes_8_2.jpg?alt=media&token=7d1803f5-ef9f-44d0-ba66-5c3c0e6e9ecd",
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_clothes_8_1.jpg?alt=media&token=1f6426a3-7402-43fc-a940-4648352cb3b4"
+      ],
+      "des": "Áo thun nam cổ tròn phong cách phổ biến",
+      "price": 499.999,
+      "rating": 4.6,
+      "review": 10,
+      "title": "Áo thun nam cổ tròn"
+    },
+    {
+      "id": "9",
+      "description": "Thời trang, Thường ngày, Trường học, Ở nhà, Vừa vặn với áo thun rộng rãi, Thoải mái và Mềm mại\nGiao diện thời trang, họa tiết hoạt hình đặc trưng\nNhững chiếc áo thun tốt nhất cho sự thoải mái và phong cách. xu hướng.\nSự lựa chọn tốt nhất của bạn\nĐộ tuổi phù hợp: 13-27\nGiới tính: Cùng một phong cách cho trang phục cặp đôi nam và nữ\n",
+      "oldPrice":999999 ,
+      "picUrl": [
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_clothes_9_1.jpg?alt=media&token=42188026-bb49-4580-86ac-d0c1b52f04ef",
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_clothes_9_2.jpg?alt=media&token=3de5f2f9-c48d-455e-acbe-4c162259b2ae",
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_clothes_9_3.jpg?alt=media&token=5f817379-70e3-4bf5-aa0d-16d572c14142",
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_clothes_9_4.jpg?alt=media&token=9adada5a-adee-441c-addd-0f339d12f31e"
+      ],
+      "des": "Áo phông nam BURBERRY 100% cotton basic form rộng,unisex Bii Shopp",
+      "price":800000 ,
+      "rating": 4.6,
+      "review": 10,
+      "title": "Áo Wash Thun"
+    },
+    {
+      "id": "10",
+      "description": "Thời trang, Thường ngày, Trường học, Ở nhà, Vừa vặn với áo thun rộng rãi, Thoải mái và Mềm mại\nGiao diện thời trang, họa tiết hoạt hình đặc trưng\nNhững chiếc áo thun tốt nhất cho sự thoải mái và phong cách. xu hướng.\nSự lựa chọn tốt nhất của bạn\nĐộ tuổi phù hợp: 13-27\nGiới tính: Cùng một phong cách cho trang phục cặp đôi nam và nữ\n",
+      "oldPrice":599000 ,
+      "picUrl": [
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_clothes_10_1.jpg?alt=media&token=d834bb71-c566-4055-8650-3a7fa6fbbe6e",
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_clothes_10_2.jpg?alt=media&token=e7f50e22-b5b8-4d58-a4bc-e035ccc2b2d4",
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_clothes_10_3.jpg?alt=media&token=bfb3ad31-8a00-4e2d-912a-ca7aa7e3b11f"
+      ],
+      "des": "Áo thun nam cổ tròn phong cách phổ biến",
+      "price": 499999,
+      "rating": 4.6,
+      "review": 10,
+      "title": "Áo thun nam cổ tròn"
+    }
+  ],
+  "ItemsBags": [
+    {
+      "id": "3",
+      "description": "- Kích thước 10-30-40(+-3cm) dây đai cực kỳ chắc chắn có thể chịu sức nặng lớn\n - Chất liệu: vải canvas\n - Style: hàn quốc gồm 1 ngăn chính 1 ngăn ngoài và bên trong gồm 2 ngăn phụ\n",
+      "oldPrice": 200000,
+      "picUrl": [
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_bags_3_1.jpg?alt=media&token=4e0c46ca-e809-40fe-b1ab-42ba004bc084",
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_bags_3_2.jpg?alt=media&token=37c28d88-92ac-4059-929a-57d5f809780e",
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_bags_3_3.jpg?alt=media&token=0044c274-6d47-4b23-a477-db7d98fae978"
+      ],
+      "des": "Túi Vải Túi Đeo Chéo Unisex Uzzang Canvas 100% Mã 08",
+      "price": 119000,
+      "rating": 4.6,
+      "review": 10,
+      "title": "Túi Vải Túi Đeo Chéo"
+    },
+    {
+      "id": "2",
+      "description": "- Kích thước 10-30-40(+-3cm) dây đai cực kỳ chắc chắn có thể chịu sức nặng lớn\n - Chất liệu: vải canvas\n - Style: hàn quốc gồm 1 ngăn chính 1 ngăn ngoài và bên trong gồm 2 ngăn phụ\n",
+      "oldPrice":199999 ,
+      "picUrl": [
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_bags_1_1.jpg?alt=media&token=de136c09-de2c-4ea3-80b7-7da704a544ca",
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_bags_1_2.jpg?alt=media&token=129de440-21e7-4338-8305-4757c683be47",
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_bags_1_3.jpg?alt=media&token=bd8fdfea-15f1-4a71-b516-49e3f48673d2"
+      ],
+      "des": "Túi Vải Túi Đeo Chéo Unisex Uzzang Canvas 100% Mã 08",
+      "price": 99999,
+      "rating": 4.6,
+      "review": 10,
+      "title": "Túi Vải Túi Đeo Chéo"
+    },
+    {
+      "id": "1",
+      "description": "Kết cấu: Vải\nChế độ đóng: khóa từ tính\nPhong cách: Nhật Bản và Hàn Quốc\nHình dạng: Hình vuông dọc\nPhong cách: Túi đeo vai\nTên phong cách phổ biến: Túi Tote\nKích thước: 38 * 33 cm\n",
+      "oldPrice":399999 ,
+      "picUrl": [
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_bags_2_1.jpg?alt=media&token=97c80cf4-b8fc-4fff-8015-748a6b00c032",
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_bags_2_2.jpg?alt=media&token=4633d8e4-b479-4062-8bae-3075fdfe53b7",
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_bags_2_3.jpg?alt=media&token=486e472c-df60-4a4f-942a-a55cd1af23f0",
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_bags_2_4.jpg?alt=media&token=09a08d5b-2d1a-470b-be98-ff35338bf1e9"
+      ],
+      "des": "Sức Chứa Lớn Thiết Kế Mới",
+      "price":300000 ,
+      "rating": 4.6,
+      "review": 10,
+      "title": "Túi Xách Canvas"
+    },
+    {
+      "id": "4",
+      "description": "- Sản phẩm: Túi tote cao cấp\n- Chất liệu: Vải canvas (65% Cotton, 35% Poly) \n- Chất vải thân thiện với môi trường và người dùng\n- Kích thước túi tote:30x10x29cm\n",
+      "oldPrice": 299000,
+      "picUrl": [
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_bags_4_1.jpg?alt=media&token=220b9b14-241e-4d32-9dde-33aad85cc007",
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_bags_4_2.jpg?alt=media&token=2edf157f-4e00-44ac-991b-54ba4c576b92",
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_bags_4_3.jpg?alt=media&token=c9c956a5-31c8-416d-ad82-370e37a79563",
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_bags_4_4.jpg?alt=media&token=26adda24-bc46-4438-8222-90ad33323c7a",
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_bags_4_5.jpg?alt=media&token=95c38fdd-2188-4e98-b77a-ddae909f53e4"
+      ],
+      "des": "có ngăn phụ túi đeo vai đi học đi chơi ",
+      "price":199000 ,
+      "rating": 4.6,
+      "review": 10,
+      "title": "Túi tote túi vải canvas"
+    },
+    {
+      "id": "5",
+      "description": "- Kích thước 10-30-40(+-3cm) dây đai cực kỳ chắc chắn có thể chịu sức nặng lớn\n - Chất liệu: vải canvas\n - Style: hàn quốc gồm 1 ngăn chính 1 ngăn ngoài và bên trong gồm 2 ngăn phụ\n",
+      "oldPrice": 399999,
+      "picUrl": [
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_bags_5_1.jpg?alt=media&token=5b7440d3-26c5-4cd1-bb66-bc48e27d213a",
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_bags_5_2.jpg?alt=media&token=e8ea4377-bb85-4065-a9d3-b290368fb435",
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/img_bags_5_3.jpg?alt=media&token=0c5105a7-7749-4655-a093-25c413726b78"
+      ],
+      "des": "Túi Vải Túi Đeo Chéo Unisex Uzzang Canvas 100% Mã 08",
+      "price":299999 ,
+      "rating": 4.6,
+      "review": 10,
+      "title": "Túi Vải Túi Đeo Chéo"
+    }
+
   ],
 
   "SlideItems": [

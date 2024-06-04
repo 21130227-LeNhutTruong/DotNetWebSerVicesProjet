@@ -132,9 +132,11 @@ public class DetailActivity extends BaseActivity {
     private void getBundles() {
         object = (ItemsDomain) getIntent().getSerializableExtra("object");
         binding.titleTxt.setText(object.getTitle());
-        binding.priceTxt.setText("$"+object.getOldPrice());
+        binding.priceTxt.setText(object.getPrice()+"vnd");
         binding.ratingBar.setRating((float) object.getRating());
         binding.ratingTxt.setText(object.getRating()+"Rating");
+        binding.descDetailTxt.setText(object.getDescription());
+        binding.desShort.setText(object.getDes());
 
 
         binding.addToCartBtn.setOnClickListener(v -> {

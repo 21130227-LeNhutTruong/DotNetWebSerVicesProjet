@@ -52,7 +52,7 @@ public class BillActivity extends BaseActivity {
         binding = ActivityBillListBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        rvBillList = findViewById(R.id.rvBillList);
+        rvBillList = binding.rvBillList;;
         db = FirebaseFirestore.getInstance();
         billList = new ArrayList<>();
 

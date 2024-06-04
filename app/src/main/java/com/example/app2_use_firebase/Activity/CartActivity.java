@@ -1,5 +1,6 @@
 package com.example.app2_use_firebase.Activity;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
@@ -49,9 +50,9 @@ public class CartActivity extends  BaseActivity {
         binding = ActivityCartBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         managmentCart = new ManagmentCart(this);
-        calculatorCart();
         setVariable();
         bottomNavigation();
+        calculatorCart();
 
         db = FirebaseFirestore.getInstance();
         cartList = managmentCart.getListCart();
@@ -84,7 +85,7 @@ public class CartActivity extends  BaseActivity {
         double delivery = 10;
         tax = Math.round((managmentCart.getTotalFee()* percentTax * 100.0))/100.0;
         double total = Math.round((managmentCart.getTotalFee()+tax+delivery)* 100.0)/100.0;
-        txttongtien.setText("Tổng Tiền: $" + total);
+        txttongtien.setText("Tổng Tiền: " + total);
 
         btnxacnhan.setOnClickListener(v -> {
             hoten = edithoten.getText().toString().trim();
@@ -236,6 +237,7 @@ private void displayUserCart(Context context) {
     private void setVariable() {
         binding.backBtn.setOnClickListener(v -> startActivity(new Intent(CartActivity.this,MainActivity.class)));
     }
+    @SuppressLint("SetTextI18n")
     private void calculatorCart() {
         double percentTax = 0.02;
         double delivery = 10;
@@ -243,10 +245,10 @@ private void displayUserCart(Context context) {
         double total = Math.round((managmentCart.getTotalFee()+tax+delivery)* 100.0)/100.0;
         double itemTotal = Math.round((managmentCart.getTotalFee())*100.0)/100.0;
 
-        binding.totalFeeTxt.setText("$"+itemTotal);
-        binding.taxTxt.setText("$"+tax);
-        binding.deliveryTxt.setText("$"+delivery);
-        binding.totalTxt.setText("$"+total);
+        binding.totalFeeTxt.setText(""+itemTotal);
+        binding.taxTxt.setText(""+tax);
+        binding.deliveryTxt.setText(""+delivery);
+        binding.totalTxt.setText(""+total);
     }
 
 }

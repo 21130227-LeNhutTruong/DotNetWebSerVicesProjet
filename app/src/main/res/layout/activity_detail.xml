@@ -75,6 +75,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textStyle="italic"
+                        android:id="@+id/desShort"
                         android:text="Description short"
                         android:textColor="@color/drakGray"
                         android:textSize="16sp"/>
@@ -126,6 +127,7 @@
                     <LinearLayout
                         android:layout_width="280dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="50dp"
                         android:gravity="center"
                         android:orientation="vertical">
                         <TextView
@@ -182,7 +184,7 @@
                         android:textSize="24sp"
                         android:textColor="@color/black"
                         android:textStyle="bold"
-                        android:text="Description"/>
+                        android:text="Thông Tin Sản Phẩm"/>
                     <TextView
                         android:id="@+id/descDetailTxt"
                         android:layout_width="match_parent"
@@ -237,13 +239,15 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="16dp"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal">
+                    android:orientation="vertical">
 
                     <LinearLayout
-                        android:layout_width="150dp"
+                        android:layout_width="250dp"
                         android:layout_height="wrap_content"
-                        android:gravity="center"
+                        android:layout_gravity="center"
                         android:orientation="vertical">
 
                         <TextView
@@ -254,13 +258,15 @@
                             android:textSize="16sp"
                             android:textColor="@color/black"
                             android:textStyle="italic"
-                            android:text="Total Price" />
+                            android:text="Giá" />
 
                         <TextView
                             android:id="@+id/priceTxt"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="$0"
+                            android:textAlignment="center"
+                            android:layout_gravity="center"
                             android:textColor="@color/black"
                             android:textSize="30sp"
                             android:textStyle="bold" />
@@ -271,8 +277,9 @@
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/addToCartBtn"
                         style="@android:style/Widget.Button"
-                        android:layout_width="match_parent"
+                        android:layout_width="300dp"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center"
                         android:background="@drawable/black_button_bg"
                         android:text="Add to cart"
                         android:textAppearance="@style/TextAppearance.AppCompat.Body1"

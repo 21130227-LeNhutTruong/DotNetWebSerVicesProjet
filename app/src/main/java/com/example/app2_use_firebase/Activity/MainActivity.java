@@ -8,6 +8,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -41,6 +42,8 @@ public class MainActivity extends BaseActivity {
         initPopular();
         initSlider();
         bottomNavigation();
+        initBags();
+        initClothes();
 
     }
 
@@ -117,7 +120,7 @@ public class MainActivity extends BaseActivity {
 
 
     private void initPopular() {
-        DatabaseReference myRef = database.getReference("Items");
+        DatabaseReference myRef = database.getReference("ItemsPopular");
         binding.progressBarPopular.setVisibility(View.VISIBLE);
         ArrayList<ItemsDomain> items = new ArrayList<>();
         myRef.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -145,6 +148,65 @@ public class MainActivity extends BaseActivity {
             }
         });
     }
+    private void initClothes() {
+        DatabaseReference myRef = database.getReference("ItemsClothes");
+        binding.progressBarClothes.setVisibility(View.VISIBLE);
+        ArrayList<ItemsDomain> items = new ArrayList<>();
+        myRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()) {
+                    for (DataSnapshot issue : snapshot.getChildren()) {
+                        items.add(issue.getValue(ItemsDomain.class));
+
+                    }
+                    if (!items.isEmpty()) {
+                        binding.recyclerViewClothes.setLayoutManager(new GridLayoutManager(MainActivity.this, 2));
+                        binding.recyclerViewClothes.setAdapter(new PopularAdapter(items));
+
+
+                    }
+                    binding.progressBarClothes.setVisibility(View.GONE);
+
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+    private void initBags() {
+        DatabaseReference myRef = database.getReference("ItemsBags");
+        binding.progressBarBag.setVisibility(View.VISIBLE);
+        ArrayList<ItemsDomain> items = new ArrayList<>();
+        myRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()) {
+                    for (DataSnapshot issue : snapshot.getChildren()) {
+                        items.add(issue.getValue(ItemsDomain.class));
+
+                    }
+                    if (!items.isEmpty()) {
+                        binding.recyclerViewBag.setLayoutManager(new GridLayoutManager(MainActivity.this, 2));
+                        binding.recyclerViewBag.setAdapter(new PopularAdapter(items));
+
+
+                    }
+                    binding.progressBarBag.setVisibility(View.GONE);
+
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
 
     private void initCategory() {
         DatabaseReference myRef = database.getReference("Category");

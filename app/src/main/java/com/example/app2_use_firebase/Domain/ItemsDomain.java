@@ -9,6 +9,7 @@ public class ItemsDomain implements Serializable {
     private String title;
     private String description;
     private ArrayList<String> picUrl;
+    private String des;
     private double price;
     private double oldPrice;
     private int review;
@@ -18,7 +19,7 @@ public class ItemsDomain implements Serializable {
     public ItemsDomain() {
     }
 
-    public ItemsDomain(String id,String title, String description, ArrayList<String> picUrl, double price, double oldPrice, int review, double rating) {
+    public ItemsDomain(String des,String id,String title, String description, ArrayList<String> picUrl, double price, double oldPrice, int review, double rating) {
         this.title = title;
         this.description = description;
         this.picUrl = picUrl;
@@ -27,8 +28,15 @@ public class ItemsDomain implements Serializable {
         this.review = review;
         this.rating = rating;
         this.id = id;
+        this.des = des;
     }
 
+    public String getDes() {
+        return des;
+    }
+    public void setDes(String des) {
+        this.des = des;
+    }
 
     public String getId() {
         return id;
