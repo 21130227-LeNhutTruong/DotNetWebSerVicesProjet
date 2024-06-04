@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.app2_use_firebase.R;
@@ -195,8 +196,7 @@ public class LoginActivity extends AppCompatActivity {
             return;
         }
 
-        FirebaseAuth mAuth = FirebaseAuth.getInstance();
-        mAuth.signInWithEmailAndPassword(email, password)
+        auth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
 
@@ -207,7 +207,7 @@ public class LoginActivity extends AppCompatActivity {
                             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                             startActivity(intent);
                             finishAffinity();
-                            saveLoginState(mAuth.getCurrentUser().getUid());
+                            saveLoginState(auth.getCurrentUser().getUid());
 
                         } else {
                             // Handle potential exceptions
@@ -250,7 +250,9 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void setBtnLoginAdmin() {
+
         Button btnLoginAdmin = findViewById(R.id.btn_Login_admin);
+
         btnLoginAdmin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
