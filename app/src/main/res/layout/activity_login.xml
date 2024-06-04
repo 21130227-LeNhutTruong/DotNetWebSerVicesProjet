@@ -1,148 +1,132 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="20dp"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="20dp">
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            android:layout_gravity="center"
+            android:background="@drawable/app_logo_black"
+            tools:ignore="ContentDescription" />
 
-        <LinearLayout
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_marginTop="16dp"
+            android:text="Welcome"
+            android:textSize="@dimen/h1"
+            android:textStyle="bold" />
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="170dp"
-                android:layout_gravity="center"
-                android:background="@drawable/app_logo_black"
-                tools:ignore="ContentDescription" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="pleace login or sign up to continue our app"
+            android:textSize="@dimen/h4" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Welcome"
-                android:textSize="@dimen/h1"
-                android:textStyle="bold" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Email"
+            android:textSize="@dimen/h2"
+            android:textStyle="bold" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="pleace login or sign up to continue our app"
-                android:textSize="@dimen/h4" />
+        <EditText
+            android:id="@+id/edt_Email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableRight="@drawable/icon_check_circle_24"
+            android:inputType="textEmailAddress"
+            android:padding="8dp"
+            tools:ignore="Autofill,LabelFor" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
-                android:text="Email"
-                android:textSize="@dimen/h2"
-                android:textStyle="bold" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Password"
+            android:textSize="@dimen/h2"
+            android:textStyle="bold" />
 
-            <EditText
-                android:id="@+id/edt_Email"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableRight="@drawable/icon_check_circle_24"
-                android:inputType="textEmailAddress"
-                android:padding="8dp"
-                tools:ignore="Autofill,LabelFor" />
+        <EditText
+            android:id="@+id/edt_Password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:drawableRight="@drawable/icon_check_circle_24"
+            android:inputType="textPassword"
+            android:padding="8dp"
+            tools:ignore="LabelFor" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Password"
-                android:textSize="@dimen/h2"
-                android:textStyle="bold" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_Login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/rectangle_radius_black_25dp"
+            android:text="Login"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/h3" />
 
-            <EditText
-                android:id="@+id/edt_Password"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:autofillHints=""
-                android:drawableRight="@drawable/icon_check_circle_24"
-                android:inputType="textPassword"
-                android:padding="8dp"
-                tools:ignore="LabelFor" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:text="or"
+            android:textAlignment="center"
+            android:textSize="@dimen/h3" />
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_Login"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/rectangle_radius_black_25dp"
-                android:text="Login"
-                android:textAllCaps="false"
-                android:textColor="@color/white"
-                android:textSize="@dimen/h3" />
+        <com.facebook.login.widget.LoginButton
+            android:id="@+id/btn_Login_Facebook"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rectangle_radius_blue_25dp"
+            android:drawableLeft="@drawable/icon_facebook_fill_white_24"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:text="Continue with Facebook"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/h3"
+            tools:ignore="MissingClass" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="12dp"
-                android:text="or"
-                android:textAlignment="center"
-                android:textSize="@dimen/h3" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_Login_Google"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/rectangle_radius_white_25dp"
+            android:drawableLeft="@drawable/icon_google_24"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:text="Continue with Google"
+            android:textAllCaps="false"
+            android:textSize="@dimen/h3" />
 
-            <com.facebook.login.widget.LoginButton
-                android:id="@+id/btn_Login_Facebook"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/rectangle_radius_blue_25dp"
-                android:drawableLeft="@drawable/icon_facebook_fill_white_24"
-                android:paddingLeft="15dp"
-                android:paddingRight="15dp"
-                android:text="Continue with Facebook"
-                android:textAllCaps="false"
-                android:textColor="@color/white"
-                android:textSize="@dimen/h3"
-                tools:ignore="MissingClass" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_Sign_Up"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/rectangle_radius_white_25dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:text="Sign Up"
+            android:textAllCaps="false"
+            android:textSize="@dimen/h3" />
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/button3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/rectangle_radius_white_25dp"
-                android:drawableLeft="@drawable/icon_google_24"
-                android:paddingLeft="15dp"
-                android:paddingRight="15dp"
-                android:text="Continue with Google"
-                android:textAllCaps="false"
-                android:textSize="@dimen/h3" />
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_Sign_Up"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/rectangle_radius_white_25dp"
-                android:paddingLeft="15dp"
-                android:paddingRight="15dp"
-                android:text="Sign Up"
-                android:textAllCaps="false"
-                android:textSize="@dimen/h3" />
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_Login_admin"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Login Admin"
-                android:textSize="@dimen/h3"
-                android:textAllCaps="false"
-                android:textColor="@color/white"
-                android:background="@drawable/rectangle_radius_black_25dp"/>
-
-        </LinearLayout>
-    </ScrollView>
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

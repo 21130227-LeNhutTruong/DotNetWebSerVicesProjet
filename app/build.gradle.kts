@@ -1,5 +1,3 @@
-import com.android.build.gradle.internal.dsl.decorator.SupportedPropertyType.Collection.List.type
-
 plugins {
     id("com.android.application")
     id("com.google.gms.google-services")
@@ -32,7 +30,7 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
-    buildFeatures{
+    buildFeatures {
         viewBinding = true
     }
 
@@ -54,14 +52,16 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
-    implementation ("androidx.appcompat:appcompat:1.7.0")
-    implementation ( "androidx.core:core-ktx:1.13.1")
-    implementation ("com.facebook.android:facebook-login:latest.release")
-    implementation ("com.google.firebase:firebase-firestore:25.0.0")
-    implementation ("com.google.firebase:firebase-analytics:22.0.0")
-
-    implementation ("de.hdodenhof:circleimageview:3.1.0")
-
+    implementation("androidx.appcompat:appcompat:1.7.0")
+    implementation("androidx.core:core-ktx:1.13.1")
+    implementation("com.facebook.android:facebook-login:latest.release")
+    implementation("com.google.firebase:firebase-firestore:25.0.0")
+    implementation("com.google.firebase:firebase-analytics:22.0.0")
+    implementation(platform("com.google.firebase:firebase-bom:33.1.0"))
+    implementation("com.google.android.gms:play-services-auth:21.2.0")
+    implementation("de.hdodenhof:circleimageview:3.1.0")
+    implementation("com.makeramen:roundedimageview:2.3.0")
+    implementation("com.google.firebase:firebase-auth")
 }
 
 buildscript {

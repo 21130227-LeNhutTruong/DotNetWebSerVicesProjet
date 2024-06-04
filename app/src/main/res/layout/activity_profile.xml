@@ -90,7 +90,6 @@
                 android:orientation="vertical">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/pr_detail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
@@ -102,7 +101,7 @@
                         android:layout_width="35dp"
                         android:layout_height="35dp"
                         android:background="@drawable/rectangle_radius_gray_10dp"
-                        android:src="@drawable/use_icon"
+                        android:src="@drawable/icon_google_24"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -142,7 +141,7 @@
                         android:layout_width="35dp"
                         android:layout_height="35dp"
                         android:background="@drawable/rectangle_radius_gray_10dp"
-                        android:src="@drawable/basket_icon"
+                        android:src="@drawable/icon_google_24"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -151,7 +150,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="28dp"
-                        android:text="My Order"
+                        android:text="Persional Detail"
                         android:textSize="@dimen/h3"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -182,7 +181,7 @@
                         android:layout_width="35dp"
                         android:layout_height="35dp"
                         android:background="@drawable/rectangle_radius_gray_10dp"
-                        android:src="@drawable/heart_icon"
+                        android:src="@drawable/icon_google_24"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -191,7 +190,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="28dp"
-                        android:text="My Favourites"
+                        android:text="Persional Detail"
                         android:textSize="@dimen/h3"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -222,7 +221,7 @@
                         android:layout_width="35dp"
                         android:layout_height="35dp"
                         android:background="@drawable/rectangle_radius_gray_10dp"
-                        android:src="@drawable/truck_icon"
+                        android:src="@drawable/icon_google_24"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -231,7 +230,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="28dp"
-                        android:text="Shipping Address"
+                        android:text="Persional Detail"
                         android:textSize="@dimen/h3"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -262,7 +261,7 @@
                         android:layout_width="35dp"
                         android:layout_height="35dp"
                         android:background="@drawable/rectangle_radius_gray_10dp"
-                        android:src="@drawable/card_icon"
+                        android:src="@drawable/icon_google_24"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -271,7 +270,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="28dp"
-                        android:text="My Card"
+                        android:text="Persional Detail"
                         android:textSize="@dimen/h3"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -303,7 +302,7 @@
                         android:layout_width="35dp"
                         android:layout_height="35dp"
                         android:background="@drawable/rectangle_radius_gray_10dp"
-                        android:src="@drawable/setting_icon"
+                        android:src="@drawable/icon_google_24"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -312,7 +311,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="28dp"
-                        android:text="Setting"
+                        android:text="Persional Detail"
                         android:textSize="@dimen/h3"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -337,7 +336,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
-                android:layout_marginBottom="50dp"
                 android:background="@drawable/rectangle_radius_black_line_25dp"
                 android:orientation="vertical">
 
@@ -353,7 +351,7 @@
                         android:layout_width="35dp"
                         android:layout_height="35dp"
                         android:background="@drawable/rectangle_radius_gray_10dp"
-                        android:src="@drawable/exlamation_icon"
+                        android:src="@drawable/icon_google_24"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -362,7 +360,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="28dp"
-                        android:text="FAQs"
+                        android:text="Persional Detail"
                         android:textSize="@dimen/h3"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -393,7 +391,7 @@
                         android:layout_width="35dp"
                         android:layout_height="35dp"
                         android:background="@drawable/rectangle_radius_gray_10dp"
-                        android:src="@drawable/shield_icon"
+                        android:src="@drawable/icon_google_24"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -402,7 +400,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="28dp"
-                        android:text="Privacy Policy"
+                        android:text="Persional Detail"
                         android:textSize="@dimen/h3"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
