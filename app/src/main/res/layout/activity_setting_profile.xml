@@ -53,8 +53,8 @@
                 android:gravity="center_horizontal">
 
                 <ImageView
-                    android:layout_width="70dp"
-                    android:layout_height="70dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_margin="8dp"
                     android:src="@drawable/user_1" />
 
@@ -76,7 +76,7 @@
                 android:layout_height="wrap_content"
                 android:text="Upload image"
                 android:textAlignment="center"
-                android:textSize="20sp"
+                android:textSize="24sp"
                 android:textStyle="bold" />
             <TableLayout
                 android:layout_width="match_parent"
@@ -93,7 +93,7 @@
                         android:layout_marginRight="88dp"
                         android:text="Name"
                         android:textColor="@color/drakGray"
-                        android:textSize="20sp"
+                        android:textSize="24sp"
                         android:textStyle="bold" />
 
                     <EditText
@@ -119,7 +119,7 @@
                         android:layout_marginRight="88dp"
                         android:text="Gender"
                         android:textColor="@color/drakGray"
-                        android:textSize="20sp"
+                        android:textSize="24sp"
                         android:textStyle="bold" />
 
                     <EditText
@@ -129,7 +129,7 @@
                         android:ems="10"
                         android:inputType="text"
                         android:paddingLeft="20dp"
-                        android:text="Name"
+                        android:text="Gender"
                         android:textAlignment="textStart"
                         android:textColor="@color/drakGray"
                         android:textSize="20sp" />
@@ -145,7 +145,7 @@
                         android:layout_marginRight="88dp"
                         android:text="Age"
                         android:textColor="@color/drakGray"
-                        android:textSize="20sp"
+                        android:textSize="24sp"
                         android:textStyle="bold" />
 
                     <EditText
@@ -155,7 +155,7 @@
                         android:ems="10"
                         android:inputType="text"
                         android:paddingLeft="20dp"
-                        android:text="Name"
+                        android:text="Age"
                         android:textAlignment="textStart"
                         android:textColor="@color/drakGray"
                         android:textSize="20sp" />
@@ -171,7 +171,7 @@
                         android:layout_marginRight="88dp"
                         android:text="Email"
                         android:textColor="@color/drakGray"
-                        android:textSize="20sp"
+                        android:textSize="24sp"
                         android:textStyle="bold" />
 
                     <EditText
@@ -180,18 +180,24 @@
                         android:ems="10"
                         android:inputType="text"
                         android:paddingLeft="20dp"
-                        android:text="Name"
+                        android:text="Email"
                         android:textAlignment="textStart"
                         android:textColor="@color/drakGray"
                         android:textSize="20sp" />
 
                 </TableRow>
             </TableLayout>
-
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Setting"
+                android:layout_marginTop="28dp"
+                android:textSize="28sp"
+                android:textStyle="bold" />
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="24dp"
                 android:background="@drawable/rectangle_radius_black_line_25dp"
                 android:orientation="vertical">
 
@@ -248,7 +254,7 @@
                         android:layout_width="35dp"
                         android:layout_height="35dp"
                         android:background="@drawable/rectangle_radius_gray_10dp"
-                        android:src="@drawable/icon_google_24"
+                        android:src="@drawable/notification_icon"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -329,7 +335,7 @@
                         android:layout_width="35dp"
                         android:layout_height="35dp"
                         android:background="@drawable/rectangle_radius_gray_10dp"
-                        android:src="@drawable/icon_google_24"
+                        android:src="@drawable/exlamation_icon"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -359,11 +365,14 @@
 
             </LinearLayout>
             <Button
+
                 android:id="@+id/button4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="40dp"
                 android:text="Log Out"
+                android:background="@drawable/bottom_logout"
+                android:textSize="20sp"
                 tools:layout_editor_absoluteX="0dp"
                 tools:layout_editor_absoluteY="667dp" />
         </LinearLayout>
