@@ -93,6 +93,7 @@ public class MainActivity extends BaseActivity {
 
 
     private void initSlider() {
+
         DatabaseReference myRef = database.getReference("SlideItems");
         binding.progressBarBanner.setVisibility(View.GONE);
         ArrayList<SliderItems> itemssSliderItems = new ArrayList<>();

@@ -62,6 +62,7 @@ public class SignUpActivity extends AppCompatActivity {
 
     }
 
+    // đăng nhập
     private void registerOnClick() {
         progressDialog.show();
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
@@ -71,6 +72,7 @@ public class SignUpActivity extends AppCompatActivity {
         password = String.valueOf(edtPassword.getText());
         repassword = String.valueOf(edtRepassword.getText());
 
+        // Kiểm tra thông tin đăng nhập
         if (TextUtils.isEmpty(username)) {
             progressDialog.dismiss();
             Toast.makeText(SignUpActivity.this, "Enter username", Toast.LENGTH_SHORT).show();
@@ -101,12 +103,14 @@ public class SignUpActivity extends AppCompatActivity {
             return;
         }
 
+        // Đăng ký
         mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(SignUpActivity.this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 progressDialog.dismiss();
                 if (task.isSuccessful()) {
                     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                    // Update user profile with username
                     UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder().setDisplayName(username).build();
                     user.updateProfile(profileUpdates);
 

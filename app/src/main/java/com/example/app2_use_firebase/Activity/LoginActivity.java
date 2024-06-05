@@ -248,7 +248,6 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void setBtnLoginAdmin() {
-
         Button btnLoginAdmin = findViewById(R.id.btn_Login_admin);
 
         btnLoginAdmin.setOnClickListener(new View.OnClickListener() {

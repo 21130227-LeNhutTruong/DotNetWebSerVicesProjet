@@ -39,6 +39,7 @@ public class AdminBillAdapter extends RecyclerView.Adapter<AdminBillAdapter.Bill
 
     @Override
     public void onBindViewHolder(@NonNull BillViewHolder holder, int position) {
+        //liên kết dữ liệu
         Bill bill = billList.get(position);
         holder.tvDate.setText("Ngày đặt: " + bill.getDate());
         holder.tvName.setText("Họ tên: " + bill.getHoten());
@@ -47,9 +48,11 @@ public class AdminBillAdapter extends RecyclerView.Adapter<AdminBillAdapter.Bill
         holder.tvPaymentMethod.setText("Phương thức: " + bill.getPhuongthuc());
         holder.tvTotalAmount.setText("Tổng tiền: $" + bill.getTotalAmount());
         holder.tvStatus.setText("Trạng thái: " + bill.getStatus());
-        holder.tvUserName.setText("Tên người dùng: " + FirebaseAuth.getInstance().getCurrentUser().getDisplayName()); // Assuming Bill class has getUserName() method
+        holder.tvUserName.setText("Tên người dùng: " + FirebaseAuth.getInstance().getCurrentUser().getDisplayName());
 
+        //sự kiện click
         holder.itemView.setOnClickListener(v -> {
+            //truyền dữ liệu vào activity
             if (onItemClickListener != null) {
                 onItemClickListener.onItemClick(bill);
             }
@@ -66,6 +69,7 @@ public class AdminBillAdapter extends RecyclerView.Adapter<AdminBillAdapter.Bill
 
         public BillViewHolder(@NonNull View itemView) {
             super(itemView);
+            //truyền id vào các view
             tvDate = itemView.findViewById(R.id.tvDate);
             tvName = itemView.findViewById(R.id.tvName);
             tvAddress = itemView.findViewById(R.id.tvAddress);

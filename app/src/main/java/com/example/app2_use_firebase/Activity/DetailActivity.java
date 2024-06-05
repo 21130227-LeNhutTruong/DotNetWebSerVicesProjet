@@ -139,6 +139,7 @@ public class DetailActivity extends BaseActivity {
         binding.desShort.setText(object.getDes());
 
 
+        // xét sự kiện click vào button thêm vào giỏ hàng
         binding.addToCartBtn.setOnClickListener(v -> {
             object.setNumberinCart(numberOrder);
             managmentCart.insertProduct(object);

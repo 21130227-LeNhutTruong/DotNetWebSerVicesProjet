@@ -28,6 +28,7 @@ public class BillAdapter extends RecyclerView.Adapter<BillAdapter.BillViewHolder
     @NonNull
     @Override
     public BillViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        //Inflate layout
         View view = LayoutInflater.from(context).inflate(R.layout.item_bill, parent, false);
         return new BillViewHolder(view);
     }
@@ -35,11 +36,12 @@ public class BillAdapter extends RecyclerView.Adapter<BillAdapter.BillViewHolder
     @Override
     public void onBindViewHolder(@NonNull BillViewHolder holder, int position) {
         Bill bill = billList.get(position);
+        //Gán giá trị cho view
         holder.tvDate.setText("Ngày đặt: " + bill.getDate());
         holder.tvName.setText("Họ tên: " + bill.getHoten());
         holder.tvAddress.setText("Địa chỉ: " + bill.getDiachi());
         holder.tvPhone.setText("Số điện thoại: " + bill.getSdt());
-        holder.tvPaymentMethod.setText("Phương thức: " + bill.getStatus());
+        holder.tvPaymentMethod.setText("Phương thức: " + bill.getPhuongthuc());
         holder.tvTotalAmount.setText("Tổng tiền: $" + bill.getTotalAmount());
         holder.tvItemsStatus.setText("Trạng thái: " + bill.getStatus());
 
@@ -56,6 +58,7 @@ public class BillAdapter extends RecyclerView.Adapter<BillAdapter.BillViewHolder
 
         public BillViewHolder(@NonNull View itemView) {
             super(itemView);
+            //Lấy id của view
             tvDate = itemView.findViewById(R.id.tvDate);
             tvName = itemView.findViewById(R.id.tvName);
             tvAddress = itemView.findViewById(R.id.tvAddress);

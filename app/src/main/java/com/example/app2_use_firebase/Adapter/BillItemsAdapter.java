@@ -55,6 +55,7 @@ public class BillItemsAdapter extends RecyclerView.Adapter<BillItemsAdapter.View
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+            // Lấy các View trong mục và gán vào ViewHolder
             ivItemImage = itemView.findViewById(R.id.ivItemImage);
             tvItemName = itemView.findViewById(R.id.tvItemName);
             tvItemPrice = itemView.findViewById(R.id.tvItemPrice);

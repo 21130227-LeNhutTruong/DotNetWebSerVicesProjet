@@ -163,10 +163,12 @@ public class TinyDB {
      * @param bitmap   the image as a Bitmap
      * @return true if it successfully saved, false otherwise
      */
+    // Lưu hình ảnh vào stoge
     private boolean saveBitmap(String fullPath, Bitmap bitmap) {
         if (fullPath == null || bitmap == null)
             return false;
 
+        // Tạo thư mục mẹ nếu chúng không tồn tại
         boolean fileCreated = false;
         boolean bitmapCompressed = false;
         boolean streamClosed = false;
@@ -363,15 +365,20 @@ public class TinyDB {
     // Put methods
 
     public ArrayList<ItemsDomain> getListObject(String key, Class<ItemsDomain> itemsDomainClass) {
+
         Gson gson = new Gson();
 
+        // Nhận mảng chuỗi từ SharedPreferences
         ArrayList<String> objStrings = getListString(key);
         ArrayList<ItemsDomain> playerList = new ArrayList<ItemsDomain>();
 
+        // Chuyển chuỗi thành đối tượng
         for (String jObjString : objStrings) {
             ItemsDomain player = gson.fromJson(jObjString, ItemsDomain.class);
+            // Add vào mảng
             playerList.add(player);
         }
+        // Trả về mảng
         return playerList;
     }
 
@@ -471,8 +478,11 @@ public class TinyDB {
      * @param value String value to be added
      */
     public void putString(String key, String value) {
+        // Chuyển chuỗi thành mảng chuỗi
         checkForNullKey(key);
+        // Chuyển chuỗi thành mảng chuỗi
         checkForNullValue(value);
+        // Thêm chuỗi vào SharedPreferences
         preferences.edit().putString(key, value).apply();
     }
 
@@ -533,12 +543,19 @@ public class TinyDB {
     }
 
     public void putListObject(String key, ArrayList<ItemsDomain> playerList) {
+        // Chuyển đối tượng thành chuỗi
         checkForNullKey(key);
+        // Tạo mảng chuỗi
         Gson gson = new Gson();
+        // Chuyển mảng đối tượng thành chuỗi
         ArrayList<String> objStrings = new ArrayList<String>();
+        // Thêm chuỗi vào mảng
         for (ItemsDomain player : playerList) {
+            // Add vào mảng
             objStrings.add(gson.toJson(player));
+
         }
+        // Thêm mảng chuỗi vào SharedPreferences
         putListString(key, objStrings);
     }
 
@@ -611,7 +628,7 @@ public class TinyDB {
     }
 
     /**
-     * null keys would corrupt the shared pref file and make them unreadable this is a preventive measure
+     * null keys would corrupt t he shared pref file and make them unreadable this is a preventive measure
      *
      * @param value the pref value to check
      */

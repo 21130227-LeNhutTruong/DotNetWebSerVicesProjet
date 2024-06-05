@@ -58,26 +58,25 @@ public class ManagmentCart {
 //    }
 public void insertProduct(ItemsDomain item) {
     FirebaseFirestore db = FirebaseFirestore.getInstance();
-
     // Lấy thông tin đăng nhập của người dùng
     FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
     if (currentUser != null) {
         String userId = currentUser.getUid();
 
-        ArrayList<ItemsDomain> listfood = getListCart();
+        ArrayList<ItemsDomain> listProduct = getListCart();
         boolean existAlready = false;
         int n = 0;
-        for (int y = 0; y < listfood.size(); y++) {
-            if (listfood.get(y).getTitle().equals(item.getTitle())) {
+        for (int y = 0; y < listProduct.size(); y++) {
+            if (listProduct.get(y).getTitle().equals(item.getTitle())) {
                 existAlready = true;
                 n = y;
                 break;
             }
         }
         if (existAlready) {
-            listfood.get(n).setNumberinCart(item.getNumberinCart());
+            listProduct.get(n).setNumberinCart(item.getNumberinCart());
         } else {
-            listfood.add(item);
+            listProduct.add(item);
         }
 
         // Lưu sản phẩm cho từng người dùng vào Firestore
@@ -149,11 +148,11 @@ public void insertProduct(ItemsDomain item) {
         if (currentUser != null) {
             String userId = currentUser.getUid();
 
-            ArrayList<ItemsDomain> listfood = getListCart();
+            ArrayList<ItemsDomain> listProduct = getListCart();
             boolean existAlready = false;
             int n = 0;
-            for (int y = 0; y < listfood.size(); y++) {
-                if (listfood.get(y).getTitle().equals(item.getTitle())) {
+            for (int y = 0; y < listProduct.size(); y++) {
+                if (listProduct.get(y).getTitle().equals(item.getTitle())) {
                     existAlready = true;
                     n = y;
                     break;
@@ -161,7 +160,7 @@ public void insertProduct(ItemsDomain item) {
             }
             if (existAlready) {
                 // Xóa sản phẩm khỏi danh sách cục bộ
-                listfood.remove(n);
+                listProduct.remove(n);
 
                 // Xóa sản phẩm khỏi Firestore
                 db.collection("users").document(userId).collection("carts")
@@ -187,31 +186,41 @@ public void insertProduct(ItemsDomain item) {
 
 
     public ArrayList<ItemsDomain> getListCart() {
+        // Lấy danh sách sản phẩm từ SharedPreferences
         return tinyDB.getListObject("CartList", ItemsDomain.class);
     }
 
 
-    public void minusItem(ArrayList<ItemsDomain> listfood, int position, ChangeNumberItemsListener changeNumberItemsListener) {
-        if (listfood.get(position).getNumberinCart() == 1) {
-            listfood.remove(position);
+    public void minusItem(ArrayList<ItemsDomain> listProduct, int position, ChangeNumberItemsListener changeNumberItemsListener) {
+        // Kiểm tra số lượng sản phẩm trong giỏ hàng
+        if (listProduct.get(position).getNumberinCart() == 1) {
+            listProduct.remove(position);
         } else {
-            listfood.get(position).setNumberinCart(listfood.get(position).getNumberinCart() - 1);
+            // Giảm số lượng sản phẩm trong giỏ hàng
+            listProduct.get(position).setNumberinCart(listProduct.get(position).getNumberinCart() - 1);
         }
-        tinyDB.putListObject("CartList", listfood);
+        // Lưu danh sách sản phẩm vào SharedPreferences
+        tinyDB.putListObject("CartList", listProduct);
         changeNumberItemsListener.changed();
     }
 
-    public void plusItem(ArrayList<ItemsDomain> listfood, int position, ChangeNumberItemsListener changeNumberItemsListener) {
-        listfood.get(position).setNumberinCart(listfood.get(position).getNumberinCart() + 1);
-        tinyDB.putListObject("CartList", listfood);
+    public void plusItem(ArrayList<ItemsDomain> listProduct, int position, ChangeNumberItemsListener changeNumberItemsListener) {
+        // Tăng số lượng sản phẩm trong giỏ hàng
+        listProduct.get(position).setNumberinCart(listProduct.get(position).getNumberinCart() + 1);
+        // Lưu danh sách sản phẩm vào SharedPreferences
+        tinyDB.putListObject("CartList", listProduct);
         changeNumberItemsListener.changed();
     }
 
     public Double getTotalFee() {
-        ArrayList<ItemsDomain> listfood2 = getListCart();
+        // Lấy danh sách sản phẩm từ SharedPreferences
+        ArrayList<ItemsDomain> listProduct2 = getListCart();
+        // Tính tổng tiền
         double fee = 0;
-        for (int i = 0; i < listfood2.size(); i++) {
-            fee = fee + (listfood2.get(i).getPrice() * listfood2.get(i).getNumberinCart());
+        // Lặp qua danh sách sản phẩm và tính tổng tiền
+        for (int i = 0; i < listProduct2.size(); i++) {
+            // Tính tổng tiền của mỗi sản phẩm
+            fee = fee + (listProduct2.get(i).getPrice() * listProduct2.get(i).getNumberinCart());
         }
         return fee;
     }

@@ -65,6 +65,7 @@ public class CartActivity extends  BaseActivity {
     }
 
     private void showPaymentDialog() {
+        // Tạo dialog
         Dialog dialog = new Dialog(CartActivity.this);
         dialog.setContentView(R.layout.dialog_thanhtoan);
         dialog.show();
@@ -76,6 +77,7 @@ public class CartActivity extends  BaseActivity {
         TextView txttongtien = dialog.findViewById(R.id.txttongtien);
         Button btnxacnhan = dialog.findViewById(R.id.btnxacnhan);
 
+        // Đổ dữ liệu vào spinner
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(CartActivity.this, android.R.layout.simple_list_item_1, paymentMethods);
         spinner.setAdapter(arrayAdapter);
 
@@ -87,12 +89,16 @@ public class CartActivity extends  BaseActivity {
         double total = Math.round((managmentCart.getTotalFee()+tax+delivery)* 100.0)/100.0;
         txttongtien.setText("Tổng Tiền: " + total);
 
+        // Xử lý sự kiện khi người dùng nhấn nút "Xác nhận"
         btnxacnhan.setOnClickListener(v -> {
+            // Lấy dữ liệu từ dialog
             hoten = edithoten.getText().toString().trim();
             diachi = editdiachi.getText().toString().trim();
             sdt = editsdt.getText().toString().trim();
 
+            // Kiểm tra dữ liệu
             if (validateInputs(hoten, diachi, sdt)) {
+                // Nếu dữ liệu hợp lệ, lưu hóa đơn vào Firestore
                 String paymentMethod = spinner.getSelectedItem().toString();
                 double totalAmount = total;
                 saveBillToFirebase(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid(), FirebaseAuth.getInstance().getCurrentUser().getUid(),hoten, diachi, sdt, paymentMethod, totalAmount);
@@ -104,6 +110,7 @@ public class CartActivity extends  BaseActivity {
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         String date = sdf.format(Calendar.getInstance().getTime());
 
+        // Tạo đối tượng Map để lưu thông tin hóa đơn
         Map<String, Object> bill = new HashMap<>();
         bill.put("userId", userId);
         bill.put("userName", userName); // Lưu tên người dùng
@@ -116,6 +123,7 @@ public class CartActivity extends  BaseActivity {
         bill.put("status", "Đang xử lý"); // Trạng thái mặc định ban đầu
 
 
+        // Lấy danh sách sản phẩm trong giỏ hàng
         List<Map<String, Object>> items = new ArrayList<>();
         for (ItemsDomain item : cartList) {
             Map<String, Object> itemMap = new HashMap<>();
@@ -125,10 +133,13 @@ public class CartActivity extends  BaseActivity {
             itemMap.put("quantity", item.getNumberinCart());
             items.add(itemMap);
         }
+        // Lưu danh sách sản phẩm vào Firestore
         bill.put("items",items);
+        // Lưu hóa đơn vào Firestore
         db.collection("users").document(userId).collection("bills")
                 .add(bill)
                 .addOnSuccessListener(documentReference -> {Toast.makeText(CartActivity.this, "Hóa đơn đã được lưu", Toast.LENGTH_SHORT).show();
+                    // Xóa giỏ hàng
                     managmentCart.clearCart();
                     startActivity(new Intent(CartActivity.this,BillActivity.class));
 displayUserCart(this);
@@ -194,15 +205,18 @@ displayUserCart(this);
 
 private void displayUserCart(Context context) {
     FirebaseFirestore db = FirebaseFirestore.getInstance();
+    // Kiểm tra xem người dùng đã đăng nhập hay chưa
     FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
     if (currentUser != null) {
         String userId = currentUser.getUid();
+        // Lấy danh sách sản phẩm trong giỏ hàng của người dùng hiện tại
 
         db.collection("users").document(userId).collection("carts")
                 .get()
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
                         ArrayList<ItemsDomain> cartItems = new ArrayList<>();
+                        // Lặp qua danh sách sản phẩm và thêm vào danh sách
                         for (QueryDocumentSnapshot document : task.getResult()) {
                             // Convert document to ItemsDomain object
                             ItemsDomain item = document.toObject(ItemsDomain.class);
@@ -225,12 +239,15 @@ private void displayUserCart(Context context) {
         // Sử dụng danh sách sản phẩm giỏ hàng để cập nhật RecyclerView hoặc ListView
         // Ví dụ:
         if (cartItems.isEmpty()) {
+            // Nếu giỏ hàng trống, hiển thị thông báo hoặc xử lý tương ứng
             binding.emptyTxt.setVisibility(View.VISIBLE);
             binding.scrollViewCart.setVisibility(View.GONE);
         } else {
+            // Nếu giỏ hàng không trống, hiển thị danh sách sản phẩm
             binding.emptyTxt.setVisibility(View.GONE);
             binding.scrollViewCart.setVisibility(View.VISIBLE);
         }
+        // Cập nhật RecyclerView hoặc ListView
         binding.cartView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         binding.cartView.setAdapter(new CartAdapter(cartItems, this, this::calculatorCart));
     }
