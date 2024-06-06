@@ -435,7 +435,7 @@
                         android:layout_width="35dp"
                         android:layout_height="35dp"
                         android:background="@drawable/rectangle_radius_gray_10dp"
-                        android:src="@drawable/icon_google_24"
+                        android:src="@drawable/logout_icon"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
