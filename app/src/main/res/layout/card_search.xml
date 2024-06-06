@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:layout_marginRight="4dp"
+    android:layout_marginLeft="4dp"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ImageView
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginRight="10dp"
+        android:id="@+id/imgView"
+        android:layout_centerVertical="true"/>
+
+    <TextView
+        android:layout_width="306dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/nameView"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:layout_toEndOf="@+id/imgView"
+        tools:text="Name:"/>
+    <TextView
+        android:layout_width="306dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/priceView"
+        android:textColor="@color/black"
+        android:layout_toEndOf="@+id/imgView"
+        android:layout_below="@+id/nameView"
+        tools:text="Price:"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@id/imgView"
+        android:layout_marginTop="10dp"
+        android:background="#917C7C"/>
+    <ImageButton
+        android:id="@+id/nextBtn"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/rectangle_radius_black_10dp"
+        android:src="@drawable/icon_chevron_right_24"
+        android:layout_toEndOf="@+id/priceView"/>
+</RelativeLayout>
