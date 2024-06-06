@@ -104,6 +104,7 @@ public class SignUpActivity extends AppCompatActivity {
         }
 
         // Đăng ký
+        //
         mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(SignUpActivity.this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
