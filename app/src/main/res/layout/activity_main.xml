@@ -28,10 +28,10 @@
                 android:background="#04A1DD"
                 app:layout_constraintTop_toTopOf="parent"
                 android:orientation="horizontal"
-                android:padding="10dp">
+                android:paddingTop="10dp">
 
                 <LinearLayout
-                    android:layout_width="330dp"
+                    android:layout_width="384dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:layout_marginTop="32dp"
@@ -41,7 +41,7 @@
                         android:id="@+id/seach_home"
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
-                        android:layout_marginEnd="16dp"
+                        android:layout_marginEnd="8dp"
                         android:layout_weight="1"
                         android:background="@drawable/edittext_bg"
                         android:drawableStart="@drawable/search_icon"
@@ -55,6 +55,7 @@
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:background="@drawable/edittext_bg">
+
 
                         <ImageView
                             android:id="@+id/imageView"

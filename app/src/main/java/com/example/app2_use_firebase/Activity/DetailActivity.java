@@ -145,7 +145,7 @@ public class DetailActivity extends BaseActivity {
             managmentCart.insertProduct(object);
         });
         ImageView btnback = findViewById(R.id.btnBack);
-        btnback.setOnClickListener(v ->  startActivity(new Intent(this,MainActivity.class)));
+        btnback.setOnClickListener(v ->  finish());
     }
 
 }

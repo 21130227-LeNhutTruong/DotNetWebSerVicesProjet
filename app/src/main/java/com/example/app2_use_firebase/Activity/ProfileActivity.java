@@ -27,9 +27,6 @@ public class ProfileActivity extends BaseActivity {
     private FirebaseAuth mAuth;
 
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
