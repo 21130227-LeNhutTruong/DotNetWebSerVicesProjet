@@ -5,13 +5,16 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     app:cardCornerRadius="20dp"
-    app:cardElevation="10dp">
+    app:cardElevation="20dp">
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="530dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:background="@drawable/background_login"
+            android:padding="10dp"
             android:orientation="vertical">
 
             <ImageView
@@ -19,14 +22,16 @@
                 android:layout_width="32dp"
                 android:layout_height="32dp"
                 android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="16dp"
                 android:layout_gravity="end"
-                android:background="#008000"
+                android:background="#00195A"
                 android:src="@android:drawable/ic_menu_close_clear_cancel" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/background_button_login"
                 android:layout_margin="10dp">
 
 
@@ -41,6 +46,7 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/background_button_login"
                 android:layout_margin="10dp">
 
                 <EditText
@@ -54,6 +60,7 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
+                android:background="@drawable/background_button_login"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp">
 
@@ -67,6 +74,7 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
+                android:background="@drawable/background_button_login"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp">
 
@@ -82,6 +90,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
                 android:padding="8dp"
+                android:background="@drawable/background_button_login"
                 android:layout_margin="8dp"
                 />
 
@@ -90,7 +99,7 @@
                 android:layout_height="3dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:background="#008000" />
+                android:background="#011353" />
 
             <TextView
                 android:id="@+id/txttongtien"
@@ -103,14 +112,17 @@
                 android:textColor="@android:color/holo_red_dark"
                 android:textSize="23sp" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnxacnhan"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
                 android:layout_marginLeft="50dp"
+                android:background="@drawable/background_button_login"
                 android:layout_marginTop="15dp"
                 android:layout_marginRight="50dp"
                 android:layout_marginBottom="15dp"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
                 android:text="Xác nhận mua" />
         </LinearLayout>
     </ScrollView>

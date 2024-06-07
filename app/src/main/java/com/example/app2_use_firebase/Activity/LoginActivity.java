@@ -16,6 +16,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.app2_use_firebase.R;
+import com.example.app2_use_firebase.databinding.ActivityCartBinding;
+import com.example.app2_use_firebase.databinding.ActivityLoginBinding;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
@@ -40,7 +42,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.Arrays;
 
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends BaseActivity {
     EditText edtEmail, edtPassword;
     String email, password;
     Button btnLogin, btnSignUp, btnLoginGoogle;
@@ -50,15 +52,15 @@ public class LoginActivity extends AppCompatActivity {
     FirebaseAuth auth;
     FirebaseDatabase database;
     GoogleSignInClient mGoogleSignInClient;
+    ActivityLoginBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
-        FacebookSdk.sdkInitialize(getApplicationContext());
+        binding = ActivityLoginBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+       // FacebookSdk.sdkInitialize(getApplicationContext());
         setBtnLoginAdmin();
-
-
         initUI();
         initListener();
 
@@ -66,10 +68,10 @@ public class LoginActivity extends AppCompatActivity {
 
 
     private void initUI() {
-        edtEmail = findViewById(R.id.edt_Email);
-        edtPassword = findViewById(R.id.edt_Password);
-        btnLogin = findViewById(R.id.btn_Login);
-        btnSignUp = findViewById(R.id.btn_Sign_Up);
+        edtEmail = binding.edtEmail;
+        edtPassword = binding.edtPassword;
+        btnLogin = binding.btnLogin;
+        btnSignUp = binding.btnSignUp;
         progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Loading...");
 
@@ -77,7 +79,7 @@ public class LoginActivity extends AppCompatActivity {
         database = FirebaseDatabase.getInstance();
 
         mCallbackManager = CallbackManager.Factory.create();
-        btnLoginFacebook = (LoginButton) findViewById(R.id.btn_Login_Facebook);
+      //  btnLoginFacebook = (LoginButton) findViewById(R.id.btn_Login_Facebook);
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
@@ -102,12 +104,12 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        btnLoginFacebook.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                loginFacebook();
-            }
-        });
+//        btnLoginFacebook.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                loginFacebook();
+//            }
+//        });
 
         btnLoginGoogle.setOnClickListener(new View.OnClickListener() {
             @Override

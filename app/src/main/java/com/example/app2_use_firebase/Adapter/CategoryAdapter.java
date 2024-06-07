@@ -9,6 +9,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.bitmap.CenterCrop;
+import com.bumptech.glide.request.RequestOptions;
 import com.example.app2_use_firebase.Domain.CategoryDomain;
 import com.example.app2_use_firebase.databinding.ViewholderCategoryBinding;
 
@@ -38,6 +40,13 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
 
         holder.binding.title.setText(items.get(position).getTitle());
 
+        RequestOptions requestOptions = new RequestOptions();
+        requestOptions = requestOptions.transform(new CenterCrop());
+
+        Glide.with(holder.itemView.getContext())
+                .load(items.get(position).getPicUrl().get(0))
+                .apply(requestOptions)
+                .into(holder.binding.imageClothes);
     }
 
     @Override

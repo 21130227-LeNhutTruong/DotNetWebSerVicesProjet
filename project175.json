@@ -10,29 +10,47 @@
   "Category": [
     {
       "id": 0,
-      "picUrl": "https://firebasestorage.googleapis.com/v0/b/project175-f1c13.appspot.com/o/cat1.png?alt=media&token=3ddbccd5-0593-4145-bbd3-c3c81cf1742b",
-      "title": "Adidas"
+      "picUrl": [
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/quan_nam.png?alt=media&token=c606d0b3-1b22-479f-a81a-b097c36ab597"
+      ],
+      "title": "Quần Nam"
     },
     {
       "id": 1,
-      "picUrl": "https://firebasestorage.googleapis.com/v0/b/project175-f1c13.appspot.com/o/cat2.png?alt=media&token=de7f1495-9afd-4a2d-8634-a8954c464301",
-      "title": "Nike"
+      "picUrl": [
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/ao_nam.png?alt=media&token=075172f7-b19b-43d9-b505-0be91dd018a5"
+      ],
+      "title": "Áo Nam"
     },
     {
       "id": 2,
-      "picUrl": "https://firebasestorage.googleapis.com/v0/b/project175-f1c13.appspot.com/o/cat3.png?alt=media&token=7db0bc57-6d38-4e5f-b55c-1749df508755",
-      "title": "Puma"
+      "picUrl": [
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/giay.png?alt=media&token=c51941ee-504d-4d9d-8713-384e6e9079ce"
+      ],
+      "title": "Giày"
     },
     {
       "id": 3,
-      "picUrl": "https://firebasestorage.googleapis.com/v0/b/project175-f1c13.appspot.com/o/cat4.png?alt=media&token=b38081b5-6472-4b0e-8173-ef4326d99b57",
-      "title": "Zara"
+      "picUrl": [
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/quan_nu.png?alt=media&token=4d5f3e88-aa63-4366-a778-4bafa6fc2e6e"
+      ],
+      "title": "Quần Nữ"
     },
     {
       "id": 4,
-      "picUrl": "https://firebasestorage.googleapis.com/v0/b/project175-f1c13.appspot.com/o/cat5.png?alt=media&token=ab0e35db-c9ef-4ce1-b74c-d2bfc51a112c",
-      "title": "Gucci"
+      "picUrl": [
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/ao_nu.png?alt=media&token=98d72c4f-1f3d-40e2-92f9-4179b2276a7e"
+      ],
+      "title": "Áo Nữ"
+    },
+    {
+      "id": 5,
+      "picUrl": [
+        "https://firebasestorage.googleapis.com/v0/b/appmobileshop-b7ca3.appspot.com/o/bags.png?alt=media&token=cdb12a4f-21ce-4f48-afca-257ea6f4b3df"
+      ],
+      "title": "Túi Xách"
     }
+
   ],
   "ItemsPopular": [
     {

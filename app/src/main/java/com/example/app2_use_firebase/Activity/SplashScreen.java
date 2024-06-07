@@ -28,7 +28,7 @@ public class SplashScreen extends AppCompatActivity {
                     finish();
                     Toast.makeText(SplashScreen.this, "Đã Đăng Nhập", Toast.LENGTH_SHORT).show();
                 }else {
-                Intent intent = new Intent(SplashScreen.this, SplashScreen2.class);
+                Intent intent = new Intent(SplashScreen.this, LoginActivity.class);
                 startActivity(intent);
                     finish();
                 }

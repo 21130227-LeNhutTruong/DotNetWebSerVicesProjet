@@ -43,9 +43,6 @@
             android:name=".Activity.SignUpActivity"
             android:exported="false" />
         <activity
-            android:name=".Activity.SplashScreen2"
-            android:exported="false" />
-        <activity
             android:name=".Activity.BillActivity"
             android:exported="false" />
         <activity

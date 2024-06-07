@@ -4,7 +4,23 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/res00">
+    android:background="@drawable/background_login">
+    <ImageView
+        android:layout_width="230dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="100dp"
+        android:layout_gravity="center"
+        android:background="@drawable/logo_fashion"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:text="Welcome  Admin"
+        android:textSize="@dimen/h1"
+        android:textStyle="bold" />
 
     <androidx.cardview.widget.CardView
 
@@ -12,43 +28,76 @@
         android:layout_height="430dp"
         app:cardCornerRadius="20dp"
         app:cardBackgroundColor="@color/white"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginTop="250dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="50dp"
         app:cardElevation="5dp">
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:padding="20dp"
+            android:padding="14dp"
+            android:gravity="center"
+            android:background="@drawable/background_button_login"
             android:layout_height="match_parent">
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-
-                android:layout_marginTop="30dp"
+                android:gravity="center"
                 android:layout_height="wrap_content">
-                <EditText
-                    android:singleLine="true"
-                    android:background="@drawable/backdround_slide"
-                    android:hint="Nhập Email Tài Khoản"
-                    android:id="@+id/editEmail"
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"/>
+                <LinearLayout
+                    android:layout_width="300dp"
+                    android:layout_marginTop="8dp"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:textColor="@color/black"
+                        android:text="Email"
+                        android:textSize="@dimen/h2"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/editEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:background="@drawable/background_edittext"
+                        android:drawableRight="@drawable/icon_check_circle_24"
+                        android:inputType="textEmailAddress"
+                        android:padding="8dp"
+                         />
+                </LinearLayout>
             </com.google.android.material.textfield.TextInputLayout>
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                app:passwordToggleEnabled="true"
 
-                android:layout_marginTop="30dp"
-
+                android:gravity="center"
                 android:layout_height="wrap_content">
-                <EditText
-                    android:inputType="textPassword"
-                    android:singleLine="true"
-                    android:background="@drawable/backdround_slide"
-                    android:hint="Nhập Mật Khẩu"
-                    android:id="@+id/editmatkhau"
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"/>
+                <LinearLayout
+                    android:layout_width="300dp"
+                    android:layout_marginTop="8dp"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:textColor="@color/black"
+                        android:text="Password"
+                        android:textSize="@dimen/h2"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/editmatkhau"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:background="@drawable/background_edittext"
+                        android:autofillHints=""
+                        android:drawableRight="@drawable/icon_check_circle_24"
+                        android:inputType="textPassword"
+                        android:padding="8dp"
+                        />
+                </LinearLayout>
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button

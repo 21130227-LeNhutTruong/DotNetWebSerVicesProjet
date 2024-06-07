@@ -3,16 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="165dp"
-    android:layout_height="275dp"
+    android:layout_height="295dp"
     android:layout_margin="8dp"
-    android:background="@drawable/backdround_slide"
+    android:background="@color/white"
     android:elevation="8dp">
+
+
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/pic"
         android:layout_width="165dp"
-        android:background="@drawable/grey_backround"
-        android:layout_height="155dp"
+        android:layout_height="145dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -59,27 +60,36 @@
         android:id="@+id/oldPriceTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginBottom="8dp"
         android:text="$123"
         android:textColor="@color/drakGray"
         android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/descTxt" />
+        app:layout_constraintBottom_toTopOf="@+id/priceTxt"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/priceTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginBottom="14dp"
         android:text="$123"
-        android:textColor="@color/green"
+        android:textColor="@color/red"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/fav_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/priceTxt"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/descTxt"
+        app:layout_constraintTop_toBottomOf="@+id/oldPriceTxt"
         tools:ignore="MissingConstraints" />
 
 
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

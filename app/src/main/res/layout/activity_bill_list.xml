@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
+    android:background="@drawable/background_main_home"
 android:layout_height="match_parent">
 
 <ScrollView
@@ -18,7 +19,7 @@ android:layout_height="match_parent">
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="70dp"
             android:padding="16dp"
             android:layout_marginTop="26dp"
             tools:ignore="MissingConstraints">
@@ -35,20 +36,28 @@ android:layout_height="match_parent">
                 android:id="@+id/textView8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Danh Sách Hóa Đơn"
+                android:layout_marginStart="24dp"
+                android:text="Đơn mua"
                 android:textColor="@color/black"
                 android:textSize="23sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/backBtnBill"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/search_icon"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="18dp"
+            android:padding="32dp"
             android:orientation="vertical">
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvBillList"
@@ -56,8 +65,6 @@ android:layout_height="match_parent">
                 android:layout_height="match_parent"
                 android:layout_marginTop="10dp"/>
         </LinearLayout>
-
-
 
     </LinearLayout>
 

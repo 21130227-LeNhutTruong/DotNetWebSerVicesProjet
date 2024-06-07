@@ -4,8 +4,97 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:padding="16dp"
-    android:background="@drawable/backdround_slide"
+    android:background="@color/white"
     android:layout_margin="8dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:background="#4AA37C"
+        android:orientation="vertical"
+        android:padding="8dp"
+        android:layout_height="50dp">
+        <TextView
+            android:id="@+id/tvItemsStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Trạng Thái Đơn Hàng: "
+            android:textStyle="bold"
+            android:textSize="14dp"
+            android:textColor="@color/white"/>
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cảm ơn bạn đã đặt hàng tại Shop "
+            android:textStyle="italic"
+            android:textSize="12dp"
+            android:textColor="@color/white"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical"
+        android:padding="8dp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:text="Địa chỉ nhận hàng"/>
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Họ tên: "
+            android:textColor="@color/black"/>
+        <TextView
+            android:id="@+id/tvPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Số điện thoại: "
+            android:textColor="@color/black"/>
+        <TextView
+            android:id="@+id/tvAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Địa chỉ: "
+            android:textColor="@color/black"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="30dp"
+                android:src="@drawable/cash_icon"
+                android:layout_height="30dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_marginStart="8dp"
+                android:text="Phương Thức Thanh Toán"
+                android:textStyle="bold"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <TextView
+            android:id="@+id/tvPaymentMethod"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="Phương thức : "
+            android:textColor="@color/black"/>
+
+    </LinearLayout>
 
     <!-- Header -->
     <LinearLayout
@@ -30,58 +119,21 @@
 
     </LinearLayout>
 
-    <!-- User Information -->
-    <TextView
-        android:id="@+id/tvName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Họ tên: "
-        android:textColor="@color/black"/>
-
-    <TextView
-        android:id="@+id/tvAddress"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Địa chỉ: "
-        android:textColor="@color/black"/>
-
-    <TextView
-        android:id="@+id/tvPhone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Số điện thoại: "
-        android:textColor="@color/black"/>
-
-    <!-- Payment Information -->
-    <TextView
-        android:id="@+id/tvPaymentMethod"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Phương thức thanh toán: "
-        android:textColor="@color/black"/>
-
-    <!-- Total Amount -->
     <TextView
         android:id="@+id/tvTotalAmount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Tổng tiền: "
-        android:textColor="@color/black"/>
-    <TextView
-        android:id="@+id/tvItemsStatus"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Trạng Thái Đơn Hàng: "
         android:textStyle="bold"
-        android:textColor="@color/black"
-        android:layout_marginTop="16dp"/>
+        android:textColor="@color/black"/>
+
 
     <!-- Items -->
     <TextView
         android:id="@+id/tvItemsTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Sản phẩm: "
+        android:text="Sản phẩm trong đơn hàng : "
         android:textStyle="bold"
         android:textColor="@color/black"
         android:layout_marginTop="16dp"/>

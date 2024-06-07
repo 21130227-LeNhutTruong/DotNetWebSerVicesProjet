@@ -1,11 +1,13 @@
 package com.example.app2_use_firebase.Domain;
 
+import java.util.ArrayList;
+
 public class CategoryDomain {
     private String title;
     private int id;
-    private String picUrl;
+    private ArrayList<String> picUrl;
 
-    public CategoryDomain(String title, int id, String picUrl) {
+    public CategoryDomain(String title, int id, ArrayList<String> picUrl) {
         this.title = title;
         this.id = id;
         this.picUrl = picUrl;
@@ -31,13 +33,11 @@ public class CategoryDomain {
         this.id = id;
     }
 
-    public String getPicUrl() {
+    public ArrayList<String> getPicUrl() {
         return picUrl;
     }
 
-    public void setPicUrl(String picUrl) {
+    public void setPicUrl(ArrayList<String> picUrl) {
         this.picUrl = picUrl;
     }
-
-
 }
