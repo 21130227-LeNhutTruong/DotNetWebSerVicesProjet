@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.app2_use_firebase.R;
 import com.example.app2_use_firebase.databinding.ViewholderColorBinding;
-import com.example.app2_use_firebase.databinding.ViewholderSizeBinding;
 
 import java.util.ArrayList;
 

@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+
 
     <application
         android:allowBackup="true"
@@ -15,12 +17,31 @@
         android:theme="@style/Theme.App2_Use_Firebase"
         tools:targetApi="31">
         <activity
-            android:name=".Activity.NotifiActivity"
-            android:exported="false"
-            android:label="@string/title_activity_notifi"
-            android:theme="@style/Theme.App2_Use_Firebase" />
-        <activity
             android:name=".Activity.CartActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.QuanNuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.QuanNamActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.QuanActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.AoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.AoNuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.AoNamActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.GiayActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.BagsActivity"
             android:exported="false" />
         <activity
             android:name=".Activity.SettingProfileActivity"

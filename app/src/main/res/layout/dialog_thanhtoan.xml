@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="370dp"
+    android:layout_width="350dp"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    app:cardCornerRadius="20dp"
     app:cardElevation="20dp">
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
+        android:layout_gravity="center"
         android:layout_height="wrap_content">
         <LinearLayout
             android:layout_width="match_parent"
@@ -15,6 +15,7 @@
             android:gravity="center"
             android:background="@drawable/background_login"
             android:padding="10dp"
+            app:cardCornerRadius="30dp"
             android:orientation="vertical">
 
             <ImageView
@@ -31,6 +32,7 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                app:boxBackgroundMode="none"
                 android:background="@drawable/background_button_login"
                 android:layout_margin="10dp">
 
@@ -39,6 +41,8 @@
                     android:id="@+id/edithoten"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:textColor="@color/white"
                     android:hint="Nhập họ tên"
                     android:textSize="18dp" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -46,6 +50,7 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                app:boxBackgroundMode="none"
                 android:background="@drawable/background_button_login"
                 android:layout_margin="10dp">
 
@@ -62,6 +67,7 @@
                 android:layout_width="match_parent"
                 android:background="@drawable/background_button_login"
                 android:layout_height="wrap_content"
+                app:boxBackgroundMode="none"
                 android:layout_margin="10dp">
 
                 <EditText
@@ -76,6 +82,7 @@
                 android:layout_width="match_parent"
                 android:background="@drawable/background_button_login"
                 android:layout_height="wrap_content"
+                app:boxBackgroundMode="none"
                 android:layout_margin="10dp">
 
                 <EditText
@@ -89,7 +96,9 @@
                 android:id="@+id/spinerphguongthuc"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
+                app:boxBackgroundMode="none"
                 android:padding="8dp"
+
                 android:background="@drawable/background_button_login"
                 android:layout_margin="8dp"
                 />
@@ -125,7 +134,7 @@
                 android:textSize="20sp"
                 android:text="Xác nhận mua" />
         </LinearLayout>
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 
 
 

@@ -1,0 +1,32 @@
+<!-- res/layout/ad_view.xml -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="100dp"
+    android:layout_height="100dp">
+
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="25dp"
+
+        android:background="@drawable/circle_background">
+
+        <ImageView
+            android:id="@+id/ad_image"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/ad_img" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/ad_close_button"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        android:src="@drawable/icon_cancel" />
+
+</RelativeLayout>

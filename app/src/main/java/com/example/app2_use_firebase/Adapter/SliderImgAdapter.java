@@ -2,16 +2,13 @@ package com.example.app2_use_firebase.Adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.app2_use_firebase.databinding.ViewholderSlideItemBinding;
-import com.example.app2_use_firebase.databinding.ViewholderSliderBinding;
 
 import java.util.List;
 

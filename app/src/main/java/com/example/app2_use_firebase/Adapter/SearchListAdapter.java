@@ -6,9 +6,6 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.ListView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -18,10 +15,7 @@ import com.bumptech.glide.load.resource.bitmap.CenterCrop;
 import com.bumptech.glide.request.RequestOptions;
 import com.example.app2_use_firebase.Activity.DetailActivity;
 import com.example.app2_use_firebase.Domain.ItemsDomain;
-import com.example.app2_use_firebase.R;
-import com.example.app2_use_firebase.databinding.ViewholderPopListBinding;
 import com.example.app2_use_firebase.databinding.ViewholderSearchBinding;
-
 
 import java.util.ArrayList;
 import java.util.List;

@@ -40,6 +40,7 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.ViewHold
     @Override
     public void onBindViewHolder(@NonNull PopularAdapter.ViewHolder holder, @SuppressLint("RecyclerView") int position) {
 
+
         holder.binding.title.setText(items.get(position).getTitle());
         holder.binding.descTxt.setText(""+items.get(position).getDes());
         holder.binding.priceTxt.setText(items.get(position).getPrice()+"");

@@ -1,8 +1,8 @@
 package com.example.app2_use_firebase.Adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -36,7 +36,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CategoryAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull CategoryAdapter.ViewHolder holder, @SuppressLint("RecyclerView") int position) {
 
         holder.binding.title.setText(items.get(position).getTitle());
 
@@ -47,7 +47,10 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
                 .load(items.get(position).getPicUrl().get(0))
                 .apply(requestOptions)
                 .into(holder.binding.imageClothes);
+
+
     }
+
 
     @Override
     public int getItemCount() {

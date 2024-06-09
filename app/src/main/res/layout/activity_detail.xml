@@ -9,10 +9,41 @@
     android:elevation="30dp"
     tools:context=".Activity.DetailActivity">
 
-    <ScrollView
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:background="@drawable/grey_backround"
+        tools:ignore="MissingConstraints">
+
+
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPage2Slider"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/back"
+            android:contentDescription="TODO"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="50dp"
+        android:layout_marginTop="400dp"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="50dp">
 
@@ -20,36 +51,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-            <ImageView
-                android:id="@+id/btnBack"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
-                android:layout_marginStart="16dp"
-                android:background="@drawable/back"
-                android:layout_marginBottom="8dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:ignore="MissingConstraints"
-                android:contentDescription="TODO" />
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="400dp"
-                android:background="@drawable/grey_backround">
-
-                <androidx.viewpager2.widget.ViewPager2
-                    android:id="@+id/viewPage2Slider"
-                    android:layout_width="match_parent"
-                    android:layout_height="400dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="MissingConstraints" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -120,20 +121,20 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="150dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="8dp"
                     android:orientation="horizontal">
                     <LinearLayout
                         android:layout_width="280dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="50dp"
-                        android:gravity="center"
+                        android:layout_height="80dp"
+                        android:layout_gravity="center_vertical"
                         android:orientation="vertical">
                         <TextView
                             android:id="@+id/textView10"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
                             android:layout_gravity="center_vertical"
                             android:text="Size"
                             android:textColor="@color/black"
@@ -148,7 +149,7 @@
                     </LinearLayout>
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="120dp"
                         android:layout_marginStart="8dp"
                         android:background="@drawable/color_background"
                         android:orientation="vertical">
@@ -212,7 +213,7 @@
                             android:layout_width="match_parent"
                             android:textAlignment="center"
                             android:layout_height="wrap_content"
-                            android:textSize="16sp"
+                            android:textSize="24sp"
                             android:textColor="@color/black"
                             android:textStyle="italic"
                             android:text="Giá" />
@@ -237,8 +238,8 @@
                         android:layout_width="300dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:background="@drawable/black_button_bg"
-                        android:text="Add to cart"
+                        android:background="@drawable/blue_button_bg"
+                        android:text="Thêm Vào Giỏ Hàng"
                         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                         android:textColor="@color/white"
                         android:textSize="20sp" />
@@ -247,5 +248,5 @@
             </LinearLayout>
 
 
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,7 +1,10 @@
 package com.example.app2_use_firebase.Adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -10,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.CenterCrop;
 import com.bumptech.glide.request.RequestOptions;
+import com.example.app2_use_firebase.Activity.DetailActivity;
 import com.example.app2_use_firebase.Domain.ItemsDomain;
 import com.example.app2_use_firebase.Helper.ChangeNumberItemsListener;
 import com.example.app2_use_firebase.Helper.ManagmentCart;
@@ -21,6 +25,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.Viewholder> {
     ArrayList<ItemsDomain> listItemSelected ;
     ChangeNumberItemsListener changeNumberItemsListener;
     private ManagmentCart managmentCart;
+    Context context;
 
     public CartAdapter(ArrayList<ItemsDomain> listItemSelected, Context context, ChangeNumberItemsListener changeNumberItemsListener) {
         this.listItemSelected = listItemSelected;
@@ -33,13 +38,14 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.Viewholder> {
     @NonNull
     @Override
     public CartAdapter.Viewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        context = parent.getContext();
         ViewholderCartBinding binding = ViewholderCartBinding.inflate(LayoutInflater.from(parent.getContext()),parent,false);
 
         return new Viewholder(binding);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CartAdapter.Viewholder holder, int position) {
+    public void onBindViewHolder(@NonNull CartAdapter.Viewholder holder, @SuppressLint("RecyclerView") int position) {
         holder.binding.titleTxt.setText(listItemSelected.get(position).getTitle());
         holder.binding.feeEachItem.setText("$"+listItemSelected.get(position).getPrice());
         holder.binding.totalEachItem.setText("$"+Math.round(listItemSelected.get(position).getNumberinCart()*listItemSelected.get(position).getPrice()));
@@ -52,6 +58,14 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.Viewholder> {
                 .load(listItemSelected.get(position).getPicUrl().get(0))
                 .apply(requestOptions)
                 .into(holder.binding.pic);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, DetailActivity.class);
+                intent.putExtra("object",listItemSelected.get(position));
+                context.startActivity(intent);
+            }
+        });
 
         holder.binding.plusCartBtn.setOnClickListener(v -> managmentCart.plusItem(listItemSelected,position, () ->{
             notifyDataSetChanged();

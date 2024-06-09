@@ -1,5 +1,6 @@
 package com.example.app2_use_firebase.Adapter;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,65 +11,64 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.app2_use_firebase.Activity.BillActivity;
 import com.example.app2_use_firebase.Domain.BillItems;
+import com.example.app2_use_firebase.Domain.ItemsDomain;
 import com.example.app2_use_firebase.R;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
 // Tạo BillItemsAdapter để hiển thị các mục trong hóa đơn
 public class BillItemsAdapter extends RecyclerView.Adapter<BillItemsAdapter.ViewHolder> {
-    private List<BillItems> billItems;
+    private ArrayList<BillItems> itemsList;
 
 
-    public void setBillItems(List<BillItems> billItems) {
-        this.billItems = billItems;
-        notifyDataSetChanged();
+    public BillItemsAdapter(ArrayList<BillItems> itemsList) {
+        this.itemsList =itemsList;
+
+
     }
+
+
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.viewholder_bill, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.viewholder_my_order, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        BillItems billItem = billItems.get(position);
-        // Đặt thông tin sản phẩm trong mục này vào ViewHolder
-        holder.bind(billItem);
+        BillItems item = itemsList.get(position);
+        holder.bind(item);
     }
-
     @Override
     public int getItemCount() {
-        return billItems != null ? billItems.size() : 0;
+        return itemsList.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        private ImageView ivItemImage;
-        private TextView tvItemName;
-        private TextView tvItemPrice;
-        private TextView tvItemQuantity;
+        ImageView productImage;
+        TextView productName, productPrice, productQuantity;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             // Lấy các View trong mục và gán vào ViewHolder
-            ivItemImage = itemView.findViewById(R.id.ivItemImage);
-            tvItemName = itemView.findViewById(R.id.tvItemName);
-            tvItemPrice = itemView.findViewById(R.id.tvItemPrice);
-            tvItemQuantity = itemView.findViewById(R.id.tvItemQuantity);
+            productImage = itemView.findViewById(R.id.picOrder);
+            productName = itemView.findViewById(R.id.titleTxtOrder);
+            productPrice = itemView.findViewById(R.id.totalEachItemOrder);
+            productQuantity = itemView.findViewById(R.id.feeEachItemOrder);
+
+        }
+        public void bind(BillItems item) {
+            // Gán giá trị cho các View trong mục
+            Glide.with(productImage.getContext()).load(item.getPicUrl()).into(productImage);
+            productName.setText(item.getName());
+            productPrice.setText(String.format("$%.2f", item.getPrice()));
+            productQuantity.setText(String.format("Quantity: %d", item.getQuantity()));
         }
 
-        public void bind(BillItems billItem) {
-            // Đặt hình ảnh, tên, giá và số lượng sản phẩm vào ViewHolder
-            Glide.with(itemView.getContext()).load(billItem.getPicUrl()).into(ivItemImage);
-            tvItemName.setText(billItem.getName());
-            tvItemPrice.setText(String.format(Locale.getDefault(), "$%.2f", billItem.getPrice()));
-            tvItemQuantity.setText(String.valueOf(billItem.getQuantity()));
-        }
     }
 }
 

@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
+    android:background="@drawable/backdround_slide"
     android:padding="16dp">
 
     <TextView
@@ -11,6 +12,7 @@
         android:layout_height="wrap_content"
         android:text="Ngày đặt:"
         android:textSize="16sp"
+        android:layout_marginTop="16dp"
         android:textStyle="bold" />
 
     <TextView

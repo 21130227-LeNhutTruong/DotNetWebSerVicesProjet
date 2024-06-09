@@ -1,12 +1,9 @@
 package com.example.app2_use_firebase.Activity;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -65,8 +62,10 @@ public class ProfileActivity extends BaseActivity {
     }
 
     private void initProfile() {
+        // Lấy thông tin người dùng hiện tại từ Firebase Authentication
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null) {
+            // Hiển thị thông tin người dùng lên UI
             String name = user.getDisplayName();
             String email = user.getEmail();
             Toast.makeText(ProfileActivity.this, "" + name, Toast.LENGTH_SHORT).show();
@@ -86,15 +85,7 @@ public class ProfileActivity extends BaseActivity {
                 finish();
             }
         });
-        LinearLayout notifi = findViewById(R.id.notifi);
-        notifi.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(ProfileActivity.this, CartActivity.class));
-                overridePendingTransition(0, 0);
-                finish();
-            }
-        });
+
         LinearLayout home = findViewById(R.id.home_nav);
         home.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -123,13 +114,17 @@ public class ProfileActivity extends BaseActivity {
 
 
 
+    // đăng xuất
     private void logoutUser() {
         mAuth.signOut();
+        // xóa trạng thái đăng nhập
         clearLoginState();
+        // chuyển sang màn hình đăng nhập
         startActivity(new Intent(ProfileActivity.this, LoginActivity.class));
         finish();
     }
 
+    // xóa trạng thái đăng nhập
     private void clearLoginState() {
         SharedPreferences sharedPref = getSharedPreferences("LoginPrefs", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();

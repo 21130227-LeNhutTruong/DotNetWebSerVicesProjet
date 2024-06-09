@@ -5,6 +5,8 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -14,21 +16,30 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.app2_use_firebase.Adapter.CartAdapter;
-import com.example.app2_use_firebase.Domain.Bill;
+import com.example.app2_use_firebase.Adapter.PopularAdapter;
+import com.example.app2_use_firebase.Adapter.SliderImgAdapter;
 import com.example.app2_use_firebase.Domain.ItemsDomain;
 import com.example.app2_use_firebase.Helper.ManagmentCart;
 import com.example.app2_use_firebase.R;
 import com.example.app2_use_firebase.databinding.ActivityCartBinding;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
@@ -44,6 +55,9 @@ public class CartActivity extends  BaseActivity {
     private String[] paymentMethods = {"Thanh toán khi nhận hàng", "Thanh toán MOMO"};
     private String hoten, diachi, sdt;
     private FirebaseFirestore db;
+    private ViewPager2 viewPager2, viewPager3;
+    private Handler sliderHandler = new Handler(Looper.getMainLooper());
+    private Runnable sliderRunnable,sliderRunnable2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,6 +74,9 @@ public class CartActivity extends  BaseActivity {
         binding.checkOutButton.setOnClickListener(v -> showPaymentDialog());
 
         displayUserCart(this);
+        initPopular();
+        initSliderImage();
+        initSliderImage2();
 
 
     }
@@ -176,14 +193,7 @@ displayUserCart(this);
                 overridePendingTransition(0, 0);
             }
         });
-        LinearLayout notifi = findViewById(R.id.notifi);
-        notifi.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(CartActivity.this,NotifiActivity.class));
-                overridePendingTransition(0, 0);
-            }
-        });
+
         LinearLayout profile = findViewById(R.id.profile);
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -237,15 +247,14 @@ private void displayUserCart(Context context) {
     // Phương thức để hiển thị thông tin giỏ hàng trên giao diện người dùng
     private void showCartItems(Context context,ArrayList<ItemsDomain> cartItems) {
         // Sử dụng danh sách sản phẩm giỏ hàng để cập nhật RecyclerView hoặc ListView
-        // Ví dụ:
         if (cartItems.isEmpty()) {
             // Nếu giỏ hàng trống, hiển thị thông báo hoặc xử lý tương ứng
             binding.emptyTxt.setVisibility(View.VISIBLE);
-            binding.scrollViewCart.setVisibility(View.GONE);
+            binding.cartView.setVisibility(View.GONE);
         } else {
             // Nếu giỏ hàng không trống, hiển thị danh sách sản phẩm
             binding.emptyTxt.setVisibility(View.GONE);
-            binding.scrollViewCart.setVisibility(View.VISIBLE);
+            binding.cartView.setVisibility(View.VISIBLE);
         }
         // Cập nhật RecyclerView hoặc ListView
         binding.cartView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
@@ -253,11 +262,13 @@ private void displayUserCart(Context context) {
     }
 
     private void setVariable() {
-        binding.backBtn.setOnClickListener(v -> startActivity(new Intent(CartActivity.this,MainActivity.class)));
+        binding.backBtn.setOnClickListener(v -> finish());
     }
     @SuppressLint("SetTextI18n")
     private void calculatorCart() {
+        // Tính tổng số lượng và tổng tiền của giỏ hàng
         double percentTax = 0.02;
+        // Tính tổng số lượng
         double delivery = 10;
         tax = Math.round((managmentCart.getTotalFee()* percentTax * 100.0))/100.0;
         double total = Math.round((managmentCart.getTotalFee()+tax+delivery)* 100.0)/100.0;
@@ -267,6 +278,114 @@ private void displayUserCart(Context context) {
         binding.taxTxt.setText(""+tax);
         binding.deliveryTxt.setText(""+delivery);
         binding.totalTxt.setText(""+total);
+    }
+    private void initPopular() {
+        DatabaseReference myRef = database.getReference("ItemsPopular");
+        ArrayList<ItemsDomain> items = new ArrayList<>();
+        myRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()) {
+                    for (DataSnapshot issue : snapshot.getChildren()) {
+                        items.add(issue.getValue(ItemsDomain.class));
+
+                    }
+                    if (!items.isEmpty()) {
+                        binding.itemsPopular.setLayoutManager(new GridLayoutManager(CartActivity.this, 2));
+                        binding.itemsPopular.setAdapter(new PopularAdapter(items));
+
+
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+    private void initSliderImage(){
+        viewPager2 = binding.viewPager2;
+// Thêm danh sách các hình ảnh cho slide
+        List<Integer> slideItems   = Arrays.asList(
+                R.drawable.imgslide_2,
+                R.drawable.imgslide_4,
+                R.drawable.imgslide_7
+        );
+        SliderImgAdapter slideAdapter = new SliderImgAdapter(this, slideItems);
+        viewPager2.setAdapter(slideAdapter);
+
+        sliderRunnable = new Runnable() {
+            @Override
+            public void run() {
+                if (viewPager2.getCurrentItem() < slideItems.size() - 1) {
+                    viewPager2.setCurrentItem(viewPager2.getCurrentItem() + 1);
+                } else {
+                    viewPager2.setCurrentItem(0);
+                }
+                sliderHandler.postDelayed(this, 3000);
+            }
+        };
+
+        viewPager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+            @Override
+            public void onPageSelected(int position) {
+                super.onPageSelected(position);
+                sliderHandler.removeCallbacks(sliderRunnable);
+                sliderHandler.postDelayed(sliderRunnable, 5000);
+            }
+        });
+
+        sliderHandler.postDelayed(sliderRunnable, 5000);
+    }
+    private void initSliderImage2(){
+        viewPager3 = binding.viewPager3;
+// Thêm danh sách các hình ảnh cho slide
+        List<Integer> slideItems   = Arrays.asList(
+                R.drawable.imgslide_4,
+                R.drawable.imgslide_5,
+                R.drawable.imgslide_6
+
+        );
+        SliderImgAdapter  slideAdapter = new SliderImgAdapter(this, slideItems);
+        viewPager3.setAdapter(slideAdapter);
+
+        sliderRunnable2 = new Runnable() {
+            @Override
+            public void run() {
+                if (viewPager3.getCurrentItem() < slideItems.size() - 1) {
+                    viewPager3.setCurrentItem(viewPager3.getCurrentItem() + 1);
+                } else {
+                    viewPager3.setCurrentItem(0);
+                }
+                sliderHandler.postDelayed(this, 3000);
+            }
+        };
+
+        viewPager3.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+            @Override
+            public void onPageSelected(int position) {
+                super.onPageSelected(position);
+                sliderHandler.removeCallbacks(sliderRunnable2);
+                sliderHandler.postDelayed(sliderRunnable2, 3000);
+            }
+        });
+
+        sliderHandler.postDelayed(sliderRunnable2, 3000);
+    }
+    @Override
+    protected void onPause() {
+        super.onPause();
+        sliderHandler.removeCallbacks(sliderRunnable);
+        sliderHandler.removeCallbacks(sliderRunnable2);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        sliderHandler.postDelayed(sliderRunnable, 3000);
+        sliderHandler.postDelayed(sliderRunnable2, 3000);
     }
 
 }

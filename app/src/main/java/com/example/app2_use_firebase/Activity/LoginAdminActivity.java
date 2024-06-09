@@ -3,15 +3,12 @@ package com.example.app2_use_firebase.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.app2_use_firebase.R;
 import com.example.app2_use_firebase.databinding.ActivityLoginAdminBinding;
-import com.example.app2_use_firebase.databinding.ActivityNotifiBinding;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentSnapshot;

@@ -10,11 +10,56 @@
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:background="#04A1DD"
+        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:layout_width="330dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginTop="32dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/seach_home"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginEnd="16dp"
+                android:layout_weight="1"
+                android:background="@drawable/edittext_bg"
+                android:drawableStart="@drawable/search_icon"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="Search"
+                android:padding="10dp"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/btnUser"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="32dp"
+                android:background="@drawable/user_1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints" />
+        </LinearLayout>
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/ScrollView2"
         android:layout_width="match_parent"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="110dp"
+        android:layout_marginTop="110dp"
         android:layout_height="match_parent">
 
         <LinearLayout
@@ -22,78 +67,14 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <androidx.coordinatorlayout.widget.CoordinatorLayout
-                android:layout_width="match_parent"
-                android:layout_height="110dp"
-                android:background="#04A1DD"
-                app:layout_constraintTop_toTopOf="parent"
-                android:orientation="horizontal"
-                android:paddingTop="10dp">
-
-                <LinearLayout
-                    android:layout_width="384dp"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="32dp"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:id="@+id/seach_home"
-                        android:layout_width="wrap_content"
-                        android:layout_height="40dp"
-                        android:layout_marginEnd="8dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/edittext_bg"
-                        android:drawableStart="@drawable/search_icon"
-                        android:ems="10"
-                        android:gravity="center"
-                        android:hint="Search"
-                        android:padding="10dp"
-                        android:textSize="18sp" />
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:background="@drawable/edittext_bg">
-
-
-                        <ImageView
-                            android:id="@+id/imageView"
-                            android:layout_width="35dp"
-                            android:layout_height="35dp"
-                            android:background="@drawable/bell"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            tools:ignore="MissingConstraints" />
-
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-                    <ImageView
-                        android:id="@+id/btnUser"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_marginStart="32dp"
-                        android:background="@drawable/user_1"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        tools:ignore="MissingConstraints" />
-                </LinearLayout>
-
-
-            </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="100dp"
                 android:background="@drawable/bgr_wellcome"
-                android:gravity="center"
-                android:orientation="vertical"
-                android:padding="30dp">
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/textView2"
@@ -118,9 +99,9 @@
             <androidx.coordinatorlayout.widget.CoordinatorLayout
                 android:layout_width="350dp"
                 android:layout_gravity="center"
-                android:background="@color/white"
                 android:elevation="10dp"
-                android:padding="16dp"
+                android:padding="8dp"
+                android:background="@drawable/backdround_slide"
                 android:layout_height="wrap_content">
 
 
@@ -137,6 +118,7 @@
                             android:gravity="center"
                             android:padding="10dp">
                             <RelativeLayout
+                                android:id="@+id/ao"
                                 android:layout_width="50dp"
                                 android:layout_height="50dp">
                                 <ImageView
@@ -147,6 +129,7 @@
 
                             </RelativeLayout>
                             <RelativeLayout
+                                android:id="@+id/quan"
                                 android:layout_width="50dp"
                                 android:layout_marginStart="15dp"
                                 android:layout_height="50dp">
@@ -157,6 +140,7 @@
                                     />
                             </RelativeLayout>
                             <RelativeLayout
+                                android:id="@+id/bag"
                                 android:layout_width="50dp"
                                 android:layout_marginStart="15dp"
                                 android:layout_height="50dp">
@@ -167,6 +151,7 @@
                                     />
                             </RelativeLayout>
                             <RelativeLayout
+                                android:id="@+id/giay"
                                 android:layout_width="50dp"
                                 android:layout_marginStart="15dp"
                                 android:layout_height="50dp">
@@ -187,34 +172,155 @@
                             android:text="Thể Loại "
                             android:textColor="@color/black"
                             android:textSize="18sp"
+                            android:layout_marginBottom="16dp"
                             android:textStyle="bold" />
 
-                        <androidx.constraintlayout.widget.ConstraintLayout
+                        <HorizontalScrollView
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent">
+                            android:fillViewport="true"
+                            android:layout_height="wrap_content">
 
-                            <ProgressBar
-                                android:id="@+id/progressBarOffical"
-                                style="?android:attr/progressBarStyle"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent" />
-
-                            <androidx.recyclerview.widget.RecyclerView
-                                android:id="@+id/recyclerViewOffical"
+                            <LinearLayout
+                                android:id="@+id/LineCategory"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:clipToPadding="false"
-                                android:paddingStart="16dp"
-                                android:paddingEnd="20dp"
+                                android:orientation="horizontal"
+                                android:layout_marginBottom="16dp"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent" />
-                        </androidx.constraintlayout.widget.ConstraintLayout>
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:ignore="Orientation">
+                                <LinearLayout
+                                    android:id="@+id/giay1"
+                                    android:layout_width="100dp"
+                                    android:layout_marginStart="15dp"
+                                    android:gravity="center"
+                                    android:orientation="vertical"
+                                    android:layout_height="wrap_content">
+                                    <ImageView
+                                        android:layout_width="50dp"
+                                        android:layout_height="50dp"
+                                        android:layout_marginBottom="3dp"
+                                        android:background="@drawable/giay"
+                                        />
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/black"
+                                        android:textAlignment="center"
+                                        android:text="Giày"/>
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:id="@+id/aonam"
+                                    android:layout_width="100dp"
+                                    android:layout_marginStart="15dp"
+                                    android:gravity="center"
+                                    android:orientation="vertical"
+                                    android:layout_height="wrap_content">
+                                    <ImageView
+                                        android:layout_width="50dp"
+                                        android:layout_height="50dp"
+                                        android:layout_marginBottom="3dp"
+                                        android:background="@drawable/ao_nam"
+                                        />
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/black"
+                                        android:textAlignment="center"
+                                        android:text="Áo Nam"/>
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:id="@+id/quannam"
+                                    android:layout_width="100dp"
+                                    android:layout_marginStart="15dp"
+                                    android:gravity="center"
+                                    android:orientation="vertical"
+                                    android:layout_height="wrap_content">
+                                    <ImageView
+                                        android:layout_width="50dp"
+                                        android:layout_height="50dp"
+                                        android:layout_marginBottom="3dp"
+                                        android:background="@drawable/quan_nam"
+                                        />
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/black"
+                                        android:textAlignment="center"
+                                        android:text="Quần Nam"/>
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:id="@+id/bags"
+                                    android:layout_width="100dp"
+                                    android:layout_marginStart="15dp"
+                                    android:gravity="center"
+                                    android:orientation="vertical"
+                                    android:layout_height="wrap_content">
+                                    <ImageView
+                                        android:layout_width="50dp"
+                                        android:layout_height="50dp"
+                                        android:layout_marginBottom="3dp"
+                                        android:background="@drawable/bags"
+                                        />
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/black"
+                                        android:textAlignment="center"
+                                        android:text="Túi"/>
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:id="@+id/aonu"
+                                    android:layout_width="100dp"
+                                    android:layout_marginStart="15dp"
+                                    android:gravity="center"
+                                    android:orientation="vertical"
+                                    android:layout_height="wrap_content">
+                                    <ImageView
+                                        android:layout_width="50dp"
+                                        android:layout_height="50dp"
+                                        android:layout_marginBottom="3dp"
+                                        android:background="@drawable/ao_nu"
+                                        />
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/black"
+                                        android:textAlignment="center"
+                                        android:text="Áo Nữ"/>
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:id="@+id/quannu"
+                                    android:layout_width="100dp"
+                                    android:layout_marginStart="15dp"
+                                    android:gravity="center"
+                                    android:orientation="vertical"
+                                    android:layout_height="wrap_content">
+                                    <ImageView
+                                        android:layout_width="50dp"
+                                        android:layout_height="50dp"
+                                        android:layout_marginBottom="3dp"
+                                        android:background="@drawable/quan_nu"
+                                        />
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/black"
+                                        android:textAlignment="center"
+                                        android:text="Quần Nữ"/>
+                                </LinearLayout>
+
+                            </LinearLayout>
+                        </HorizontalScrollView>
 
 
 
@@ -246,17 +352,10 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Sản Phẩm Phổ Biến"
-                    android:textColor="@color/black"
+                    android:textColor="@color/blue"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     tools:ignore="InefficientWeight" />
-
-                <TextView
-                    android:id="@+id/textView5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="xem tất cả"
-                    android:textColor="@color/green" />
             </LinearLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -285,7 +384,11 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
-
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_marginTop="16dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/img_sale"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -305,12 +408,7 @@
                     android:textStyle="bold"
                     tools:ignore="InefficientWeight" />
 
-                <TextView
-                    android:id="@+id/textView6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="xem tất cả"
-                    android:textColor="@color/green" />
+
             </LinearLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -339,7 +437,12 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
-
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/viewPager3"
+                android:layout_width="match_parent"
+                android:layout_marginTop="16dp"
+                android:layout_height="150dp"
+                android:layout_gravity="top" />
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -353,18 +456,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Sản Phẩm Túi Sách"
+                    android:text="Sản Phẩm Túi Xách"
                     android:textColor="@color/black"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     tools:ignore="InefficientWeight" />
 
-                <TextView
-                    android:id="@+id/textView11"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="xem tất cả"
-                    android:textColor="@color/green" />
+
             </LinearLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -393,8 +491,65 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
+<!--<ImageView-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="150dp"-->
+<!--    android:layout_marginTop="16dp"-->
+<!--    android:background="@drawable/imgslide_4"/>-->
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/viewPager4"
+                android:layout_width="match_parent"
+                android:layout_marginTop="16dp"
+                android:layout_height="150dp"
+                android:layout_gravity="top" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="24dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Sản Phẩm Giày"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    tools:ignore="InefficientWeight" />
 
 
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ProgressBar
+                    android:id="@+id/progressBargiay"
+                    style="?android:attr/progressBarStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewGiay"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clipToPadding="false"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 

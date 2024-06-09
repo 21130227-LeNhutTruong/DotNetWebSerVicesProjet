@@ -2,7 +2,6 @@ package com.example.app2_use_firebase.Activity;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.SearchView;
@@ -10,10 +9,8 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.app2_use_firebase.Adapter.PopularAdapter;
 import com.example.app2_use_firebase.Adapter.SearchListAdapter;
 import com.example.app2_use_firebase.Domain.ItemsDomain;
-import com.example.app2_use_firebase.Helper.TinyDB;
 import com.example.app2_use_firebase.R;
 import com.example.app2_use_firebase.databinding.ActivitySearchBinding;
 import com.google.firebase.database.DataSnapshot;
@@ -40,6 +37,12 @@ public class SearchHomeActivity extends BaseActivity{
         setContentView(binding.getRoot());
 
         initSearch();
+        initSearch1();
+        initSearch2();
+        initSearch3();
+        initSearch4();
+
+
 
         super.onCreate(savedInstanceState);
         searchView = findViewById(R.id.searchView);
@@ -87,6 +90,94 @@ public class SearchHomeActivity extends BaseActivity{
             }
         });
     }
+    private void initSearch1(){
+
+        DatabaseReference myData = database.getReference("ItemsQuan");
+        myData.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()) {
+                    for (DataSnapshot issue : snapshot.getChildren()) {
+                        items.add(issue.getValue(ItemsDomain.class));
+
+                    }
+                    if (!items.isEmpty()) {
+                        binding.recyclerViewSearch.setLayoutManager(new LinearLayoutManager(SearchHomeActivity.this,RecyclerView.VERTICAL,false));
+                        binding.recyclerViewSearch.setAdapter(searchListAdapter = new SearchListAdapter(items));
+                    }
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+            }
+        });
+    }
+    private void initSearch2(){
+
+        DatabaseReference myData = database.getReference("ItemsAo");
+        myData.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()) {
+                    for (DataSnapshot issue : snapshot.getChildren()) {
+                        items.add(issue.getValue(ItemsDomain.class));
+
+                    }
+                    if (!items.isEmpty()) {
+                        binding.recyclerViewSearch.setLayoutManager(new LinearLayoutManager(SearchHomeActivity.this,RecyclerView.VERTICAL,false));
+                        binding.recyclerViewSearch.setAdapter(searchListAdapter = new SearchListAdapter(items));
+                    }
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+            }
+        });
+    }
+    private void initSearch3(){
+
+        DatabaseReference myData = database.getReference("ItemsGiay");
+        myData.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()) {
+                    for (DataSnapshot issue : snapshot.getChildren()) {
+                        items.add(issue.getValue(ItemsDomain.class));
+
+                    }
+                    if (!items.isEmpty()) {
+                        binding.recyclerViewSearch.setLayoutManager(new LinearLayoutManager(SearchHomeActivity.this,RecyclerView.VERTICAL,false));
+                        binding.recyclerViewSearch.setAdapter(searchListAdapter = new SearchListAdapter(items));
+                    }
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+            }
+        });
+    }
+    private void initSearch4(){
+
+        DatabaseReference myData = database.getReference("ItemsTuiXach");
+        myData.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()) {
+                    for (DataSnapshot issue : snapshot.getChildren()) {
+                        items.add(issue.getValue(ItemsDomain.class));
+
+                    }
+                    if (!items.isEmpty()) {
+                        binding.recyclerViewSearch.setLayoutManager(new LinearLayoutManager(SearchHomeActivity.this,RecyclerView.VERTICAL,false));
+                        binding.recyclerViewSearch.setAdapter(searchListAdapter = new SearchListAdapter(items));
+                    }
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+            }
+        });
+    }
     public void filterList(String text){
         List<ItemsDomain> fiteredList = new ArrayList<>();
         for (ItemsDomain item : items){
@@ -95,7 +186,7 @@ public class SearchHomeActivity extends BaseActivity{
             }
         }
         if(fiteredList.isEmpty()){
-            Toast.makeText(this, "No data found", Toast.LENGTH_SHORT).show();
+           // Toast.makeText(this, "No data found", Toast.LENGTH_SHORT).show();
         }else{
             searchListAdapter.setFilteredList(fiteredList);
         }

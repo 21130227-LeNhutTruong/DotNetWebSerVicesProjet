@@ -6,64 +6,57 @@
     android:layout_height="match_parent"
     android:background="@drawable/background_main_home"
     android:fitsSystemWindows="true">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:background="#04A1DD"
+        android:layout_marginTop="18dp"
+        tools:ignore="MissingConstraints">
 
-    <ScrollView
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textAlignment="center"
+            android:text="Thông Tin Cá Nhân"
+            android:textSize="@dimen/h1"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="#FFFFFF" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="115dp"
         android:layout_marginBottom="115dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="24dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:padding="8dp"
             android:orientation="vertical">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="18dp">
-
-                <ImageView
-                    android:id="@+id/btnBack"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/back"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="MissingConstraints" />
-
-                <ImageView
-                    android:id="@+id/btnFav"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/fav"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="MissingConstraints" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
-                android:background="@drawable/rectangle_radius_gray_25dp"
+                android:layout_height="100dp"
+                android:gravity="center"
+                android:background="@drawable/background_button_login"
                 android:orientation="horizontal">
 
                 <ImageView
                     android:layout_width="70dp"
                     android:layout_height="70dp"
-                    android:layout_margin="8dp"
+                    android:layout_marginStart="20dp"
                     android:src="@drawable/user_1" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
                     android:layout_gravity="center_vertical"
-                    android:layout_margin="15dp"
                     android:orientation="vertical">
 
                     <TextView
@@ -87,7 +80,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
-                android:background="@drawable/rectangle_radius_black_line_25dp"
+                android:background="@drawable/backdround_slide"
                 android:orientation="vertical">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -95,6 +88,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
+                    android:padding="8dp"
+                    android:background="@drawable/background_button_login"
                     android:layout_marginTop="30dp"
                     android:layout_marginRight="20dp">
 
@@ -135,6 +130,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
+                    android:padding="8dp"
+
+                    android:background="@drawable/background_button_login"
                     android:layout_marginTop="20dp"
                     android:layout_marginRight="20dp">
 
@@ -175,7 +173,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
+                    android:background="@drawable/background_button_login"
                     android:layout_marginTop="20dp"
+                    android:padding="8dp"
                     android:layout_marginRight="20dp">
 
                     <ImageView
@@ -215,7 +215,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
+                    android:background="@drawable/background_button_login"
                     android:layout_marginTop="20dp"
+                    android:padding="8dp"
                     android:layout_marginRight="20dp">
 
                     <ImageView
@@ -255,6 +257,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
+                    android:padding="8dp"
+                    android:background="@drawable/background_button_login"
                     android:layout_marginTop="20dp"
                     android:layout_marginRight="20dp">
 
@@ -296,6 +300,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:layout_marginLeft="20dp"
+                    android:padding="8dp"
+                    android:background="@drawable/background_button_login"
                     android:layout_marginRight="20dp"
                     android:layout_marginBottom="30dp">
 
@@ -339,14 +345,16 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="50dp"
-                android:background="@drawable/rectangle_radius_black_line_25dp"
+                android:background="@drawable/backdround_slide"
                 android:orientation="vertical">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
+                    android:padding="8dp"
                     android:layout_marginTop="20dp"
+                    android:background="@drawable/background_button_login"
                     android:layout_marginRight="20dp">
 
                     <ImageView
@@ -385,7 +393,9 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:padding="8dp"
                     android:layout_marginLeft="20dp"
+                    android:background="@drawable/background_button_login"
                     android:layout_marginTop="30dp"
                     android:layout_marginRight="20dp">
 
@@ -427,8 +437,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:layout_marginLeft="20dp"
+                    android:background="@drawable/background_button_login"
                     android:layout_marginRight="20dp"
                     android:layout_marginBottom="30dp"
+                    android:padding="8dp"
                     android:onClick="signOut">
 
                     <ImageView
@@ -466,7 +478,7 @@
             </LinearLayout>
         </LinearLayout>
 
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 
     <include layout="@layout/bottom_navigation" />
 </androidx.constraintlayout.widget.ConstraintLayout>
