@@ -45,7 +45,7 @@ public class SearchListAdapter extends RecyclerView.Adapter<SearchListAdapter.Vi
     @Override
     public void onBindViewHolder(@NonNull SearchListAdapter.ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         holder.binding.nameView.setText(items.get(position).getTitle());
-        holder.binding.priceView.setText(items.get(position).getPrice()+"");
+        holder.binding.priceView.setText("Giá: "+items.get(position).getPrice()+" vnđ");
         RequestOptions requestOptions = new RequestOptions();
         requestOptions = requestOptions.transform(new CenterCrop());
         Glide.with(context)

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="330dp"
+    android:layout_width="390dp"
     android:layout_height="wrap_content"
     android:layout_marginTop="10dp"
     android:layout_marginRight="4dp"
@@ -9,35 +9,38 @@
     android:layout_gravity="center_horizontal"
     android:background="@drawable/backdround_slide"
     xmlns:tools="http://schemas.android.com/tools">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints">
 
 
-    <ImageView
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginRight="10dp"
-        android:id="@+id/imgView"
-        android:layout_centerVertical="true"/>
+        <ImageView
+            android:id="@+id/imgView"
+            android:layout_width="48dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp" />
 
-    <TextView
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/nameView"
-        android:textSize="20sp"
-        android:textColor="@color/black"
-        android:layout_toEndOf="@+id/imgView"
-        tools:text="Name:"/>
-    <TextView
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/priceView"
-        android:textColor="@color/black"
-        android:layout_toEndOf="@+id/imgView"
-        android:layout_below="@+id/nameView"
-        tools:text="Price:"/>
+        <TextView
+            android:id="@+id/nameView"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/imgView"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            tools:text="Name:" />
+
+        <TextView
+            android:id="@+id/priceView"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/nameView"
+            android:layout_toEndOf="@+id/imgView"
+            android:textColor="@color/black"
+            tools:text="Price:" />
 
 
     </RelativeLayout>
