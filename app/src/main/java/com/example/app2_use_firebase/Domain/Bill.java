@@ -13,7 +13,8 @@ public class Bill {
     private double totalAmount;
     private String status;
 
-    private List<ItemsDomain> items;
+    List<Map<String, Object>> items;
+
     private String userId;
     private String userName;
 
@@ -23,7 +24,7 @@ public class Bill {
         // Constructor mặc định cần thiết cho Firestore
     }
 
-    public Bill( String userName,String userId,String id,String date, String hoten, String diachi, String sdt, String phuongthuc, double totalAmount, List<ItemsDomain> items,String status) {
+    public Bill( String userName,String userId,String id,String date, String hoten, String diachi, String sdt, String phuongthuc, double totalAmount, List<Map<String, Object>> items,String status) {
         this.date = date;
         this.hoten = hoten;
         this.diachi = diachi;
@@ -83,6 +84,9 @@ public class Bill {
     public void setPhuongthuc(String phuongthuc) { this.phuongthuc = phuongthuc; }
     public double getTotalAmount() { return totalAmount; }
     public void setTotalAmount(double totalAmount) { this.totalAmount = totalAmount; }
-    public List<ItemsDomain> getItems() { return items; }
-    public void setItems(List<ItemsDomain> items) { this.items = items; }
+    public List<Map<String, Object>> getItems() { return items; }
+
+    public Object get(String items) {
+        return items;
+    }
 }

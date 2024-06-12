@@ -16,6 +16,7 @@ import com.bumptech.glide.load.resource.bitmap.CenterCrop;
 import com.bumptech.glide.request.RequestOptions;
 import com.example.app2_use_firebase.Activity.DetailActivity;
 import com.example.app2_use_firebase.Domain.ItemsDomain;
+import com.example.app2_use_firebase.Helper.ManagmentCart;
 import com.example.app2_use_firebase.databinding.ViewholderPopListBinding;
 
 import java.util.ArrayList;
@@ -59,6 +60,16 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.ViewHold
                 Intent intent = new Intent(context, DetailActivity.class);
                 intent.putExtra("object",items.get(position));
                 context.startActivity(intent);
+            }
+        });
+        holder.binding.favIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ItemsDomain object;
+                ManagmentCart managmentCart;
+                object = items.get(position);
+                managmentCart = new ManagmentCart(context);
+                managmentCart.insertProductFav(object);
             }
         });
     }

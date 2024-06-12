@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
+    android:layout_marginTop="16dp"
     android:padding="16dp"
     android:background="@drawable/backdround_slide">
     <LinearLayout
@@ -130,23 +131,5 @@
         android:textStyle="bold"
         android:textColor="@color/black"/>
 
-    <TextView
-        android:id="@+id/tvItemsTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Sản phẩm trong đơn hàng : "
-        android:textStyle="bold"
-        android:padding="8dp"
-        android:textColor="@color/black"
-        android:background="@drawable/background_button_login"
-        android:layout_marginTop="16dp"/>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvBillItems"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-
-    </androidx.recyclerview.widget.RecyclerView>
 </LinearLayout>

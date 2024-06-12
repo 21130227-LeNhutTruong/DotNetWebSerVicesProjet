@@ -75,7 +75,6 @@ public class CartActivity extends  BaseActivity {
 
         displayUserCart(this);
         initPopular();
-        initSliderImage();
         initSliderImage2();
 
 
@@ -140,18 +139,7 @@ public class CartActivity extends  BaseActivity {
         bill.put("status", "Đang xử lý"); // Trạng thái mặc định ban đầu
 
 
-        // Lấy danh sách sản phẩm trong giỏ hàng
-        List<Map<String, Object>> items = new ArrayList<>();
-        for (ItemsDomain item : cartList) {
-            Map<String, Object> itemMap = new HashMap<>();
-            itemMap.put("picUrl", item.getPicUrl());
-            itemMap.put("name", item.getTitle());
-            itemMap.put("price", item.getPrice());
-            itemMap.put("quantity", item.getNumberinCart());
-            items.add(itemMap);
-        }
-        // Lưu danh sách sản phẩm vào Firestore
-        bill.put("items",items);
+
         // Lưu hóa đơn vào Firestore
         db.collection("users").document(userId).collection("bills")
                 .add(bill)
@@ -265,7 +253,7 @@ private void displayUserCart(Context context) {
         binding.backBtn.setOnClickListener(v -> finish());
     }
     @SuppressLint("SetTextI18n")
-    private void calculatorCart() {
+    public void calculatorCart() {
         // Tính tổng số lượng và tổng tiền của giỏ hàng
         double percentTax = 0.02;
         // Tính tổng số lượng
@@ -279,6 +267,7 @@ private void displayUserCart(Context context) {
         binding.deliveryTxt.setText(""+delivery);
         binding.totalTxt.setText(""+total);
     }
+
     private void initPopular() {
         DatabaseReference myRef = database.getReference("ItemsPopular");
         ArrayList<ItemsDomain> items = new ArrayList<>();
@@ -305,40 +294,9 @@ private void displayUserCart(Context context) {
             }
         });
     }
-    private void initSliderImage(){
-        viewPager2 = binding.viewPager2;
-// Thêm danh sách các hình ảnh cho slide
-        List<Integer> slideItems   = Arrays.asList(
-                R.drawable.imgslide_2,
-                R.drawable.imgslide_4,
-                R.drawable.imgslide_7
-        );
-        SliderImgAdapter slideAdapter = new SliderImgAdapter(this, slideItems);
-        viewPager2.setAdapter(slideAdapter);
 
-        sliderRunnable = new Runnable() {
-            @Override
-            public void run() {
-                if (viewPager2.getCurrentItem() < slideItems.size() - 1) {
-                    viewPager2.setCurrentItem(viewPager2.getCurrentItem() + 1);
-                } else {
-                    viewPager2.setCurrentItem(0);
-                }
-                sliderHandler.postDelayed(this, 3000);
-            }
-        };
 
-        viewPager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
-            @Override
-            public void onPageSelected(int position) {
-                super.onPageSelected(position);
-                sliderHandler.removeCallbacks(sliderRunnable);
-                sliderHandler.postDelayed(sliderRunnable, 5000);
-            }
-        });
 
-        sliderHandler.postDelayed(sliderRunnable, 5000);
-    }
     private void initSliderImage2(){
         viewPager3 = binding.viewPager3;
 // Thêm danh sách các hình ảnh cho slide

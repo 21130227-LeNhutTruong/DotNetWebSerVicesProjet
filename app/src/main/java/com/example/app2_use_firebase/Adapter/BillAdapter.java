@@ -7,27 +7,23 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.app2_use_firebase.Domain.Bill;
-import com.example.app2_use_firebase.Domain.BillItems;
 import com.example.app2_use_firebase.R;
-import com.google.android.play.integrity.internal.i;
 
 import java.util.ArrayList;
 
 public class BillAdapter extends RecyclerView.Adapter<BillAdapter.BillViewHolder> {
 
     private ArrayList<Bill> billList;
-    private ArrayList<BillItems> billItems;
     private Context context;
 
 
-    public BillAdapter(ArrayList<Bill> billList, Context context,ArrayList<BillItems> billItems) {
+
+    public BillAdapter(ArrayList<Bill> billList, Context context) {
         this.billList = billList;
         this.context = context;
-        this.billItems = billItems;
     }
     @NonNull
     @Override
@@ -49,11 +45,6 @@ public class BillAdapter extends RecyclerView.Adapter<BillAdapter.BillViewHolder
         holder.tvTotalAmount.setText("Tổng tiền: $" + bill.getTotalAmount());
         holder.tvItemsStatus.setText("Trạng thái: " + bill.getStatus());
 
-//       RecyclerView rcvitemsBill = holder.itemsRecyclerView;
-//       BillItemsAdapter itemsAdapter = new BillItemsAdapter(billItems);
-//       rcvitemsBill.setLayoutManager(new LinearLayoutManager(holder.itemView.getContext()));
-//       rcvitemsBill.setAdapter(itemsAdapter);
-
     }
 
     @Override
@@ -63,7 +54,7 @@ public class BillAdapter extends RecyclerView.Adapter<BillAdapter.BillViewHolder
 
     static class BillViewHolder extends RecyclerView.ViewHolder {
         TextView tvDate, tvName, tvAddress, tvPhone, tvPaymentMethod, tvTotalAmount, tvItemsStatus;
-//        RecyclerView itemsRecyclerView;
+
 
         public BillViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -75,8 +66,6 @@ public class BillAdapter extends RecyclerView.Adapter<BillAdapter.BillViewHolder
             tvPaymentMethod = itemView.findViewById(R.id.tvPaymentMethod);
             tvTotalAmount = itemView.findViewById(R.id.tvTotalAmount);
             tvItemsStatus = itemView.findViewById(R.id.tvItemsStatus);
-
-//            itemsRecyclerView = itemView.findViewById(R.id.rvBillItems);
 
 
         }

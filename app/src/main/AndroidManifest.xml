@@ -79,6 +79,9 @@
             android:name=".Activity.LoginAdminActivity"
             android:exported="false" />
         <activity
+            android:name=".Activity.FavActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activity.SearchHomeActivity"
             android:exported="false" />
         <activity

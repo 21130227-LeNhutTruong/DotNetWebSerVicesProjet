@@ -3,6 +3,7 @@ package com.example.app2_use_firebase.Adapter;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +14,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.CenterCrop;
 import com.bumptech.glide.request.RequestOptions;
+import com.example.app2_use_firebase.Activity.CartActivity;
 import com.example.app2_use_firebase.Activity.DetailActivity;
+import com.example.app2_use_firebase.Activity.FavActivity;
 import com.example.app2_use_firebase.Domain.ItemsDomain;
 import com.example.app2_use_firebase.Helper.ChangeNumberItemsListener;
 import com.example.app2_use_firebase.Helper.ManagmentCart;
@@ -75,8 +78,28 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.Viewholder> {
             notifyDataSetChanged();
             changeNumberItemsListener.changed();
         }));
+        holder.binding.trash.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                managmentCart = new ManagmentCart(context);
+                managmentCart.delectProductCart(listItemSelected.get(position));
+                removeItem(position);
+            }
+        });
+
 
     }
+    public void removeItem(int position) {
+        if (position >= 0 && position < listItemSelected.size()) {
+            listItemSelected.remove(position);
+            notifyItemRemoved(position);
+            notifyItemRangeChanged(position, listItemSelected.size());
+
+        } else {
+            Log.e("ItemsAdapter", "Invalid position: " + position);
+        }
+    }
+
 
     @Override
     public int getItemCount() {

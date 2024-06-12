@@ -22,7 +22,6 @@ public class ManagmentCart {
 
     private Context context;
     private TinyDB tinyDB;
-
     private FirebaseFirestore db;
 
     public ManagmentCart(Context context) {
@@ -74,21 +73,43 @@ public void insertProduct(ItemsDomain item) {
                     // Lỗi khi lưu sản phẩm
                     Toast.makeText(context, "Error adding to Cart", Toast.LENGTH_SHORT).show();
                 });
-//        // Lưu sản phẩm cho từng người dùng vào Firestore
-//        db.collection("users").document(userId).collection("cartsBill")
-//                .document(item.getId()) // Sử dụng id của sản phẩm làm id của document
-//                .set(item) // Lưu thông tin sản phẩm vào document
-//                .addOnSuccessListener(aVoid -> {
-//                    // Thành công khi lưu sản phẩm
-//                })
-//                .addOnFailureListener(e -> {
-//                    // Lỗi khi lưu sản phẩm
-//                });
-
         // Lưu danh sách sản phẩm vào SharedPreferences
         tinyDB.putListObject("CartList", listProduct);
     }
 }
+    public void insertProductFav(ItemsDomain item) {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+        if (currentUser != null) {
+            String userId = currentUser.getUid();
+            ArrayList<ItemsDomain> listProduct = getListCart();
+            boolean existAlready = false;
+            int n = 0;
+
+            for (int y = 0; y < listProduct.size(); y++) {
+                if (listProduct.get(y).getTitle().equals(item.getTitle())) {
+                    existAlready = true;
+                    n = y;
+                    break;
+                }
+            }
+            if (existAlready) {
+                listProduct.get(n).setNumberinCart(item.getNumberinCart());
+            } else {
+                listProduct.add(item);
+            }
+
+            db.collection("users").document(userId).collection("favs")
+                    .document(item.getId())
+                    .set(item)
+                    .addOnSuccessListener(aVoid -> {
+                        Toast.makeText(context, "đã thêm vào danh sách yêu thích", Toast.LENGTH_SHORT).show();
+                    })
+                    .addOnFailureListener(e -> {
+                        Toast.makeText(context, "Lỗi khi thêm sản phẩm", Toast.LENGTH_SHORT).show();
+                    });
+        }
+    }
     public void clearCart() {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
@@ -133,49 +154,38 @@ public void insertProduct(ItemsDomain item) {
             Toast.makeText(context, "User not logged in", Toast.LENGTH_SHORT).show();
         }
     }
-    public void delectProduct(ItemsDomain item) {
+    public void delectProductFav(ItemsDomain item) {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
-
-        // Lấy thông tin đăng nhập của người dùng
         FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
         if (currentUser != null) {
-            // Lấy id của người dùng
             String userId = currentUser.getUid();
 
-            ArrayList<ItemsDomain> listProduct = getListCart();
-            boolean existAlready = false;
-            int n = 0;
-            for (int y = 0; y < listProduct.size(); y++) {
-                // Kiểm tra nếu sản phẩm đã tồn tại trong giỏ hàng
-                if (listProduct.get(y).getTitle().equals(item.getTitle())) {
-                    existAlready = true;
-                    n = y;
-                    break;
-                }
-            }
-            if (existAlready) {
-                // Xóa sản phẩm khỏi danh sách cục bộ
-                listProduct.remove(n);
+            db.collection("users").document(userId).collection("favs")
+                    .document(item.getId())
+                    .delete()
+                    .addOnSuccessListener(aVoid -> {
+                        Toast.makeText(context, "đã xóa khỏi danh sách yêu thích", Toast.LENGTH_SHORT).show();
+                    })
+                    .addOnFailureListener(e -> {
+                        Toast.makeText(context, "Lỗi khi xóa sản phẩm", Toast.LENGTH_SHORT).show();
+                    });
+        }
+    }
+    public void delectProductCart(ItemsDomain item) {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+        if (currentUser != null) {
+            String userId = currentUser.getUid();
 
-                // Xóa sản phẩm khỏi Firestore
-                db.collection("users").document(userId).collection("carts")
-                        .document(item.getId()) // Sử dụng id của sản phẩm làm id của document
-                        .delete() // Xóa thông tin sản phẩm khỏi document
-                        .addOnSuccessListener(aVoid -> {
-                            // Thành công khi xóa sản phẩm
-                            Toast.makeText(context, "Removed from your Cart", Toast.LENGTH_SHORT).show();
-                        })
-                        .addOnFailureListener(e -> {
-                            // Lỗi khi xóa sản phẩm
-                            Toast.makeText(context, "Error removing from Cart", Toast.LENGTH_SHORT).show();
-                        });
-
-                // Lưu danh sách sản phẩm vào SharedPreferences
-//            tinyDB.putListObject("CartList", listfood);
-            } else {
-                // Sản phẩm không tồn tại trong giỏ hàng
-                Toast.makeText(context, "Product not found in your Cart", Toast.LENGTH_SHORT).show();
-            }
+            db.collection("users").document(userId).collection("carts")
+                    .document(item.getId())
+                    .delete()
+                    .addOnSuccessListener(aVoid -> {
+                        Toast.makeText(context, "đã xóa khỏi giỏ hàng", Toast.LENGTH_SHORT).show();
+                    })
+                    .addOnFailureListener(e -> {
+                        Toast.makeText(context, "Lỗi khi xóa sản phẩm", Toast.LENGTH_SHORT).show();
+                    });
         }
     }
 

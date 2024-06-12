@@ -45,6 +45,13 @@ public class ProfileActivity extends BaseActivity {
             finish();
         }
 
+        binding.fav.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ProfileActivity.this,FavActivity.class));
+            }
+        });
+
     }
 
     private void setonclickDetil(){
