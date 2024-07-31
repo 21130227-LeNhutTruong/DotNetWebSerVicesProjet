@@ -133,7 +133,7 @@ public class LoginActivity extends BaseActivity {
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 progressDialog.dismiss();
                                 if (task.isSuccessful()) {
-                                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                                    Intent intent = new Intent(getApplicationContext() , MainActivity.class);
                                     startActivity(intent);
 
                                 } else {
@@ -248,6 +248,7 @@ public class LoginActivity extends BaseActivity {
 
     private void setBtnLoginAdmin() {
         Button btnLoginAdmin = findViewById(R.id.btn_Login_admin);
+
         btnLoginAdmin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

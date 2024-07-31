@@ -82,7 +82,7 @@ public class FavActivity extends BaseActivity{
             binding.emptyTxt.setVisibility(View.GONE);
             binding.favView.setVisibility(View.VISIBLE);
         }
-        // Cập nhật RecyclerView hoặc ListView
+        // Cập nhật RecyclerView
         binding.favView.setLayoutManager(new LinearLayoutManager(FavActivity.this, RecyclerView.VERTICAL,false));
         binding.favView.setAdapter(new FavAdapter(this,cartItems));
     }
