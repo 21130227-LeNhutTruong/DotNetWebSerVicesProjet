@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MyWebService")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+20e251ca18babb88f164096089c60f17c6482d9e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3bdd2584bc8993cc0940ad6f7d1888323456342c")]
 [assembly: System.Reflection.AssemblyProductAttribute("MyWebService")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MyWebService")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
