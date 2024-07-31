@@ -465,11 +465,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\ProjectDotNet\\dotnet-project\\MyWebService\\MyWebService.csproj",
-      "projectName": "MyWebService",
-      "projectPath": "D:\\ProjectDotNet\\dotnet-project\\MyWebService\\MyWebService.csproj",
+      "projectUniqueName": "D:\\ProjectDotNet\\dotnet-project\\ProjectWebService\\ProjectWebService.csproj",
+      "projectName": "ProjectWebService",
+      "projectPath": "D:\\ProjectDotNet\\dotnet-project\\ProjectWebService\\ProjectWebService.csproj",
       "packagesPath": "C:\\Users\\LAPTOP\\.nuget\\packages\\",
-      "outputPath": "D:\\ProjectDotNet\\dotnet-project\\MyWebService\\obj\\",
+      "outputPath": "D:\\ProjectDotNet\\dotnet-project\\ProjectWebService\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\LAPTOP\\AppData\\Roaming\\NuGet\\NuGet.Config",
