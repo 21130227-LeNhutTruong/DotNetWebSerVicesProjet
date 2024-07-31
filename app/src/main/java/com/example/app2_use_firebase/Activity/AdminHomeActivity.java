@@ -19,5 +19,5 @@ public class AdminHomeActivity extends BaseActivity{
         binding.cSignOut.setOnClickListener(v -> startActivity(new Intent(AdminHomeActivity.this, LoginActivity.class)));
 
     }
-
+// test
 }
